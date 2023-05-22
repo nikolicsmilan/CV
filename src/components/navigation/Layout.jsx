@@ -15,6 +15,7 @@ const Layout = () => {
           AiOutlineMenu={AiOutlineMenu}
           activeMenu={activeMenu}
           setActiveMenu={setActiveMenu}
+          size={size}
         />
       ) : (
         <DesktopLayout Aside={Aside} />

@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useTranslation } from "react-i18next";
 
 const Asidecv = ({profil,stack,language}) => {
+
+  const { t } = useTranslation();
   return (
-    <div className="w-3/12 border-0 border-sky-400 px-0 ">
+    <div className="w-3/12 border-0 border-sky-400 px-1 ">
     <img
       src={profil}
       alt="Milan"
@@ -15,20 +18,20 @@ const Asidecv = ({profil,stack,language}) => {
         <h3 className="text-dark font-bold">{item.name}</h3>
       </div>
     ))}
-    <h2 className="text-start text-2xl font-bold my-3">Language</h2>
+    <h2 className="text-start text-2xl font-bold my-3">{t("Language.name")}</h2>
     {language.map((item) => (
       <div key={item.name}  className="flex flex-col text-lg  my-3 rounded-2xl p-2 ">
         <h4
           className="text-dark font-bold py-0 border-0"
           style={{ lineHeight: "1" }}
         >
-          {item.name}:
+          {t(`Language.${item.name}`)}:
         </h4>
         <h4
-          className="mx-0 text-sm border-0 text-primary"
+          className="my-1text-sm border-0 text-primary"
           style={{ lineHeight: "1.3" }}
         >
-          {item.level}
+         {t(`Language.${item.level}`)}:
         </h4>
       </div>
     ))}

@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "Fullstack Calendar App",
     description:
-      "This App made by MERN stack.  It performs the basic functions you    would expect from a modern web application. ",
+      "description1",
     textColor: "",
     backgroundColor: "bg-gradient",
     keyword: ["React", "context", "module css", "node"],
@@ -13,24 +13,24 @@ export const projects = [
   {
     title: "CV",
     description:
-      "This App that you see now. This simple webpage introduce me and my work shorts. Use React, Tailwind, Context, Firebase",
+      "description2",
     textColor: "",
     backgroundColor: "bg-gradient",
     keyword: ["React", "context", "tailwind, firebase"],
     gitlink:
-      "https://github.com/nikolicsmilan/Full-Stack-Callendar/tree/master",
-    weblink: "",
+      "https://github.com/nikolicsmilan/CV",
+    weblink: "https://nikolicsmilan-cv.web.app/",
   },
 
 
   {
     title: "Image viewer",
     description:
-      "A furniture image viewer still ... But it will that you never seen before :)",
+      "description3",
     textColor: "",
     backgroundColor: "bg-gradient",
     keyword: ["React", "context", "tailwind", "firebase"],
-    gitlink: "",
-    weblink: "https://sm-calculator-c620f.web.app",
+    gitlink: "https://github.com/nikolicsmilan/SM",
+    weblink: "https://sm-new-8a9a7.web.app",
   },
 ];

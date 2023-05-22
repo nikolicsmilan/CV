@@ -1,6 +1,9 @@
 import React from "react";
 import { skillsIcon } from "../data/aside";
+import { useTranslation } from 'react-i18next';
+
 const Skills = () => {
+    const { t } = useTranslation();
   return (
     <div className="overflow-container py-2">
       <h1 className="text-center text-4xl my-0 font-bold text-info">Stack</h1>
@@ -18,8 +21,8 @@ const Skills = () => {
             >
               {skill.icon}
             </button>{" "}
-            <p>{skill.level}</p>
-            <p className="mt-3">
+            <p className="mt-2">{t(`Stackem.${skill.level}`)}</p>
+            <p className="mt-1">
               <span className="text-lg font-semibold">{skill.title}</span>
               <span className={`text-sm text-${skill.pcColor} ml-2 border-0`}>
                 {/*later use it */}

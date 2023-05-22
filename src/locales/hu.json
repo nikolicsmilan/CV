@@ -1,0 +1,50 @@
+{
+  "myname": "Nikolics Milán",
+  "myjob": "Webfejlesztő",
+  "mainquestion": " - Természetes Központi Intelligencia -",
+  "welcome": "Welcome to my app!",
+  "content": "This is the content of my app.",
+  "greeting": "Hello, {{name}}!",
+  "Home": "Főoldal",
+  "Intro": "Intró",
+  "Projects": "Projektek",
+  "CV": "Önéletrajz",
+  "City": "Város",
+  "Space": "Űr",
+  "stylequestion": "Milyen stílust szeretnél? ",
+  "Project": {
+    "pagename": "Projektek",
+    "maindescription": "  Ezen az oldalon találsz néhányat azokból projektekből, amit az évek során készítettem.",
+    "description1": "Ez az webalkalmazás MERN stackel készült. Mindent tud amit elvárhatsz egy modern webalakalmazástól.",
+    "description2": "Ez webalkamalmazás, amit éppen most nézzel. Ez egyszerű weboldal, ami bemutat engem röviden. Reactot Tailwindet Contextet és Firebaset használtam. ",
+    "description3": "Egy `bútor` képnézegető. Még. De nem sokára az lesz, amilyet még nem láttál... :) "
+  },
+  "Stackem": {
+    "Basic": "Alap",
+    "Advanced": "Haladó"
+  },
+  "CVem": {
+    "jobtitle": " Frontend Web Fejlesztő",
+    "jobsubtext": "egy kevés backend tudással.",
+    "workexperience": "Munkatapasztalat",
+    "jobpost": "Nikolics Milan E.V (egyéni vállalkozó)",
+    "jobdate": "10/2019 - jelenleg is",
+    "jobdescription": "Weboldalak és webalkalmazások készítése magánszemélyeknek és kisvállalkozások részére.",
+    "education": "Tanulmányok",
+    "school": " Általános Rendszergazda, SZÁMALK – Szalézi Technikum és Szakgimnázium",
+    "jobinfo": "Munkavállalási preferenciák",
+    "employmenthours": "Teljes és részmunkaidő is megfelelő.",
+    "remotework": "Csak homeoffice (maximum 1nap/hét az irodában",
+    "employmenttype": "Mind az alklalmazoti mind a vállalkozói státusz elfogadható, de előnyben részesítem az alkalmazotit.",
+    "salarytext": "A nettó fizetési bérigényemet sávosan adom meg. Függ az aktuális állástól:",
+    "salaryamount": "350000 - 600000 HUF",
+    "about": "Számomra a fejlesztés nem csak egy munka. Ez a kedvenc hobbim és a szórakozásom is. Akkor is csinálnám, ha nem kapnék érte pénzt. A fejlesztés számomra azt jelenti, hogy abból élek meg, amit szeretek csinálni."
+  },
+  "Language": {
+    "name": "Nyelvismeret",
+    "Hungarian": "Magyar",
+    "English": "Angol",
+    "Native": "Anyanyelv",
+    "Limited working proficiency": "Társalgási szint"
+  }
+}

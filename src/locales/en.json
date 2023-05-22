@@ -1,0 +1,45 @@
+{
+  "myname": "Nikolics Milan",
+  "myjob": "Webdeveloper",
+  "mainquestion": "  - Central Natural intelligence -",
+  "welcome": "Welcome to my app!",
+  "content": "This is the content of my app.",
+  "greeting": "Hello, {{name}}!",
+  "stylequestion": "What style do you prefer?",
+  "Project": {
+    "pagename": "Projects",
+    "maindescription": "  On this page you can get to know some of my projects that I have made over the years.",
+    "description1": "This web application made by MERN stack.  It performs the basic functions you    would expect from a modern web application. ",
+    "description2": "This web application that you see now. This simple webpage introduce me and my work shorts. Use React, Tailwind, Context, Firebase ",
+    "description3": "A furniture image viewer still ... But it will that you never seen before :) "
+  },
+  "Stackem": {
+    "Basic": "Basic",
+    "Advanced": "Advanced"
+  },
+  "CVem": {
+    "jobtitle": " Frontend Web Developer",
+    "jobsubtext": "with some backend knowledge",
+    "workexperience": "Work Experience",
+    "jobpost": "Nikolics Milan E.V (self-employed)",
+    "jobdate": "10/2019 - Present",
+    "jobdescription": "  Making of websites, web applications for individuals and small businesses.",
+    "education": "Education",
+    "school": " System Administrator, SZÁMALK-SALESIAN POST-SECONDARY INSTITUTE",
+    "jobinfo": "Work Preferences",
+    "employmenthours": "Full and part time appropriate ",
+    "remotework": "Only remote work (max 1 day/week in office)",
+    "employmenttype": " Both as an employee and as an entrepreneur, but I prefer the employee.",
+    "salarytext": " My net salary expectation i will give it in strips. It's depends on    the job:",
+    "salaryamount":"350000 - 600000 HUF",
+    "about":" For me, development is not just a job, it's a hobby and my favourite pastime, and I would do it even if I didn't get paid. Development for me means making a living doing what I love to do."
+  },
+  "Language":{
+    "name":"Language",
+    "Hungarian":"Hungarian",
+    "English":"English",
+    "Native":"Native",
+    "Limited working proficiency":"Limited working proficiency"
+ 
+  }
+}

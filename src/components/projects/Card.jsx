@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FaGithub } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
+import { useTranslation } from 'react-i18next';
+
 
 const Card = ({
   title,
@@ -11,19 +13,21 @@ const Card = ({
   background,
   keyword,
 }) => {
+
+  const { t } = useTranslation();
   return (
     <div
       key="dsadas"
-      className={`text-dark  relative ${background} md:w-40 p-4 pt-9 rounded-2xl border-0 border-sky-400 lg:w-1/5`}
+      className={`text-dark  relative ${background} p-4 pt-9 rounded-2xl border-0 border-sky-400 lg:w-1/5`}
     >
       <h1 className="text-2xl opacity-0.9 rounded-full p-1 hover:drop-shadow-xl text-white">
-        {title}
+       {title}   
       </h1>
 
       <p className="text-truncate h-52 overflow-hidden text-white ">
-        {description}
+      {t(`Project.${description}`)}
       </p>
-      <div className="mt-0 ">
+      <div className="mt-0 border-0 border-red-400">
         <span className="text-3xl font-semibold ">
           {gitlink && (
             <a href={gitlink} target="_blank" rel="noreferrer">

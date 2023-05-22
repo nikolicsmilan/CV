@@ -26,6 +26,7 @@ function App() {
           <Route path="/stack" element={<Skills />} /> {/* Skills page */}
           <Route path="/projects" element={<Projects />} /> {/* Projects page */}
           <Route path="/cv" element={<CV />} /> {/* CV page */}
+          
         </Route>
       </Routes>
     </div>

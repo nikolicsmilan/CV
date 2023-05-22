@@ -5,7 +5,7 @@ const DesktopLayout = ({ Aside, activeMenu }) => {
   return (
     <>
       <div className="flex w-full border-0 border-lime-400">
-        <div className=" flex w-1/6 bg-asidebg  ">
+        <div className=" flex  w-1/6  bg-asidebg  ">
           <Aside />
         </div>
 
@@ -18,5 +18,4 @@ const DesktopLayout = ({ Aside, activeMenu }) => {
 };
 
 export default DesktopLayout;
-
-
+//<div className=" flex w-1/6 bg-asidebg  ">

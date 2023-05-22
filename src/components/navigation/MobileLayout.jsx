@@ -1,7 +1,14 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
-const MobileLayout = ({ Aside, AiOutlineMenu, activeMenu, setActiveMenu }) => {
+const MobileLayout = ({
+  Aside,
+  AiOutlineMenu,
+  activeMenu,
+  setActiveMenu,
+  size,
+}) => {
   useEffect(() => {
     if (activeMenu) {
       window.scrollTo(0, 0);
@@ -21,11 +28,18 @@ const MobileLayout = ({ Aside, AiOutlineMenu, activeMenu, setActiveMenu }) => {
           className="fixed right-4 bottom-4 border-0 h-78"
           style={{ zIndex: "50" }}
         >
-          <AiOutlineMenu
-            title="Menu"
-            className="text-primary text-2xl "
-            onClick={() => setActiveMenu((prevState) => !prevState)}
-          />
+          {!activeMenu ? (
+            <AiOutlineMenu
+              title="Menu"
+              className="text-primary text-2xl "
+              onClick={() => setActiveMenu((prevState) => !prevState)}
+            />
+          ) : (
+            <FaArrowLeft
+              className="text-secondary text-xl "
+              onClick={() => setActiveMenu((prevState) => !prevState)}
+            />
+          )}
         </div>
         <main className="relative bg-secondary border-0 border-sky-400 ">
           <Outlet />
