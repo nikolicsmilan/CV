@@ -2,6 +2,7 @@ import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import zumzum from "../../assets/zumzum4.png";
 import { useTranslation } from "react-i18next";
+import { NavLink, useMatch } from "react-router-dom";
 
 const StyleChangeAside = ({ style, setStyle, setActiveMenu, size }) => {
   const { t } = useTranslation();
@@ -9,10 +10,12 @@ const StyleChangeAside = ({ style, setStyle, setActiveMenu, size }) => {
     <div className="mx-3 mt-2 uppercase border-0 text-dark">
       <div className="flex  flex-col">
         <div className=" flex  flex-col">
-          <img className="w-8 border-0 mx-2" alt="zumzum" src={zumzum} />{" "}
-          <p className="normal-case mx-2 ">   {t("stylequestion")}</p>
-        </div>
+          <NavLink to="/">
+            <img className="w-8 border-0 mx-2" alt="zumzum" src={zumzum} />
+          </NavLink>
 
+          <p className="normal-case mx-2 "> {t("stylequestion")}</p>
+        </div>
       </div>
 
       <div className=" flex flex-row border-0">
