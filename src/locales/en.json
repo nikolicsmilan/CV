@@ -41,5 +41,6 @@
     "Native":"Native",
     "Limited working proficiency":"Limited working proficiency"
  
-  }
+  },
+  "Infom": "This page is visited by {{visit}} times."
 }

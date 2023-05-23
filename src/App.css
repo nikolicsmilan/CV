@@ -26,3 +26,23 @@
   /*margin-top: 15px;*/
 }
 
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  animation: typing 2s steps(20);
+  white-space: nowrap;
+}
+
+
+
+

@@ -172,6 +172,11 @@ export const links = [
         icon: <FaBookOpen />,
         path: "/Cv",
       },
+      {
+        name: "Info",
+        icon: <  FaInfoCircle />,
+        path: "/info",
+      },
     
     ],
   },

@@ -17,7 +17,7 @@ const LanguageChangeAside = () => {
       <div className="relative inline-block border-0 flex flex-col items-center">
         <div className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
           {currentLanguage}
-          {console.log(currentLanguage)}
+       
         </div>
         {isOpen && currentLanguage === "hu" && (
           <div className=" mt-2  rounded-md ">
