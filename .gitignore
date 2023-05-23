@@ -24,3 +24,6 @@ yarn-error.log*
 
 #own
 /src/firebase.js
+
+# Firebase Hosting cache
+.firebase/

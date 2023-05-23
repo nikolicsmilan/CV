@@ -42,5 +42,6 @@
     "Limited working proficiency":"Limited working proficiency"
  
   },
-  "Infom": "This page is visited by {{visit}} times."
+  "Infom": "This page is visited by {{visit}} times.",
+  "errror404":" 404 error - Something went wrong"
 }

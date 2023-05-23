@@ -47,5 +47,6 @@
     "Native": "Anyanyelv",
     "Limited working proficiency": "Társalgási szint"
   },
-  "Infom": "Ez az oldal {{visit}}x lett meglátogatva."
+  "Infom": "Ez az oldal {{visit}}x lett meglátogatva.",
+  "errror404":" 404 - Valami hiba történt"
 }
