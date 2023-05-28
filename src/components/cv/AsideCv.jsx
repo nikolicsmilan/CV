@@ -31,7 +31,7 @@ const Asidecv = ({profil,stack,language}) => {
           className="my-1text-sm border-0 text-primary"
           style={{ lineHeight: "1.3" }}
         >
-         {t(`Language.${item.level}`)}:
+         {t(`Language.${item.level}`)}
         </h4>
       </div>
     ))}

@@ -46,19 +46,3 @@ const LanguageChangeAside = () => {
 
 export default LanguageChangeAside;
 
-/* {isOpen && (
-          <div className="absolute top-8  mt-2  rounded-md shadow-md ">
-            <div
-              className="px-0 py-1 cursor-pointer hover:bg-gray-200 text-primary "
-              onClick={() => handleLanguageChange('en')}
-            >
-              EN
-            </div>
-            <div
-              className="px-0 py-1 cursor-pointer hover:bg-gray-200"
-              onClick={() => handleLanguageChange('hu')}
-            >
-              HU
-            </div>
-          </div>
-        )} */

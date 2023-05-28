@@ -27,12 +27,13 @@
     "education": "Education",
     "school": " System Administrator, SZÁMALK-SALESIAN POST-SECONDARY INSTITUTE",
     "jobinfo": "Work Preferences",
+    "About":"About",
     "employmenthours": "Full and part time appropriate ",
     "remotework": "Only remote work (max 1 day/week in office)",
     "employmenttype": " Both as an employee and as an entrepreneur, but I prefer the employee.",
     "salarytext": " My net salary expectation i will give it in strips. It's depends on    the job:",
     "salaryamount":"350000 - 600000 HUF",
-    "about":" For me, development is not just a job, it's a hobby and my favourite pastime, and I would do it even if I didn't get paid. Development for me means making a living doing what I love to do."
+    "aboutdes":" For me, development is not just a job, it's a hobby and my favourite pastime, and I would do it even if I didn't get paid. Development for me means making a living doing what I love to do."
   },
   "Language":{
     "name":"Language",

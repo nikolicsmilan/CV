@@ -33,12 +33,13 @@
     "education": "Tanulmányok",
     "school": " Általános Rendszergazda, SZÁMALK – Szalézi Technikum és Szakgimnázium",
     "jobinfo": "Munkavállalási preferenciák",
+    "About":"Rólam",
     "employmenthours": "Teljes és részmunkaidő is megfelelő.",
     "remotework": "Csak homeoffice (maximum 1nap/hét az irodában",
     "employmenttype": "Mind az alklalmazoti mind a vállalkozói státusz elfogadható, de előnyben részesítem az alkalmazotit.",
     "salarytext": "A nettó fizetési bérigényemet sávosan adom meg. Függ az aktuális állástól:",
     "salaryamount": "350000 - 600000 HUF",
-    "about": "Számomra a fejlesztés nem csak egy munka. Ez a kedvenc hobbim és a szórakozásom is. Akkor is csinálnám, ha nem kapnék érte pénzt. A fejlesztés számomra azt jelenti, hogy abból élek meg, amit szeretek csinálni."
+    "aboutdes": "Számomra a fejlesztés nem csak egy munka. Ez a kedvenc hobbim és a szórakozásom is. Akkor is csinálnám, ha nem kapnék érte pénzt. A fejlesztés számomra azt jelenti, hogy abból élek meg, amit szeretek csinálni."
   },
   "Language": {
     "name": "Nyelvismeret",

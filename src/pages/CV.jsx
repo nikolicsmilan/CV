@@ -14,9 +14,9 @@ const CV = () => {
   const { style, size } = MyGeneralContext();
   const { i18n } = useTranslation();
   const dochu =
-    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_05_22_hu.pdf";
+    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_05_28_hu.pdf";
   const docen =
-    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_05_22_en.pdf";
+    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_05_28_en.pdf";
   const currentLanguage = i18n.language;
 
   console.log('ez mi????',currentLanguage)
@@ -25,7 +25,7 @@ const CV = () => {
       <div className="w-full flex flex-col items-center justify-center m-0 border-0 border-red-400">
       {currentLanguage === "hu" ? (
         <button
-          className={`m-0 ${
+          className={` m-0 ${
             style === "city" ? "text-dark" : "text-white"
           } hover:text-primary`}
           onClick={()=>{downloadPDF(dochu,"hu")}}
@@ -34,7 +34,7 @@ const CV = () => {
         </button>
       ) : (
         <button
-          className={`m-0 ${
+          className={`  m-0 ${
             style === "city" ? "text-dark" : "text-white"
           } hover:text-primary`}
           onClick={()=>{downloadPDF(docen,"en")}}
