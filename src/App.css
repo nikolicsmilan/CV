@@ -43,6 +43,19 @@
   white-space: nowrap;
 }
 
+@keyframes typing-delayed {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.typing-animation-delayed {
+  animation-delay: 2s;
+}
+
 
 
 

@@ -27,22 +27,26 @@
     "education": "Education",
     "school": " System Administrator, SZÁMALK-SALESIAN POST-SECONDARY INSTITUTE",
     "jobinfo": "Work Preferences",
-    "About":"About",
+    "About": "About",
     "employmenthours": "Full and part time appropriate ",
     "remotework": "Only remote work (max 1 day/week in office)",
     "employmenttype": " Both as an employee and as an entrepreneur, but I prefer the employee.",
     "salarytext": " My net salary expectation i will give it in strips. It's depends on    the job:",
-    "salaryamount":"350000 - 600000 HUF",
-    "aboutdes":" For me, development is not just a job, it's a hobby and my favourite pastime, and I would do it even if I didn't get paid. Development for me means making a living doing what I love to do."
+    "salaryamount": "350000 - 600000 HUF",
+    "aboutdes": " For me, development is not just a job, it's a hobby and my favourite pastime, and I would do it even if I didn't get paid. Development for me means making a living doing what I love to do."
   },
-  "Language":{
-    "name":"Language",
-    "Hungarian":"Hungarian",
-    "English":"English",
-    "Native":"Native",
-    "Limited working proficiency":"Limited working proficiency"
- 
+  "Language": {
+    "name": "Language",
+    "Hungarian": "Hungarian",
+    "English": "English",
+    "Native": "Native",
+    "Limited working proficiency": "Limited working proficiency"
   },
-  "Infom": "This page is visited by {{visit}} times.",
-  "errror404":" 404 error - Something went wrong"
+  "Infom": {
+    "visited": "This page is visited by {{visit}} times.",
+    "gps":"Your GPS coordinates: {{longitude}} {{latitude}}",
+    "ip":"Your ip address: {{ipAddress}}",
+    "browser":"browser: {{browserName}} os: {{osName}} device: {{deviceType}}"
+  },
+  "errror404": " 404 error - Something went wrong"
 }

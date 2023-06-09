@@ -12,7 +12,7 @@ export const GeneralContextProvider = ({ children }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   }); // State for the window size
-  const [visit, setVisit] = useState(0);
+  
 
   // Use the useEffect hook to handle the window resize event
   useEffect(() => {
@@ -42,8 +42,7 @@ export const GeneralContextProvider = ({ children }) => {
         setActiveMenu,
         size,
         setSize,
-        visit,
-        setVisit,
+        
       }}
     >
       {children}
