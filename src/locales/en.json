@@ -46,7 +46,7 @@
     "visited": "This page is visited by {{visit}} times.",
     "gps":"Your GPS coordinates: {{longitude}} {{latitude}}",
     "ip":"Your ip address: {{ipAddress}}",
-    "browser":"browser: {{browserName}} os: {{osName}} device: {{deviceType}}"
+    "browser":"Browser: {{browserName}} Os: {{osName}} "
   },
   "errror404": " 404 error - Something went wrong"
 }

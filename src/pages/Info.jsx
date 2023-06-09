@@ -13,8 +13,12 @@ const Info = () => {
   const [showThirdText, setShowThirdText] = useState(false);
   const [showFourthText, setShowFourthText] = useState(false);
   const { t } = useTranslation();
-  const { browser:{name: browserName}, os: { name: osName }, device: { type: deviceType } } = browserInfo;
-  console.log('browserName',browserName,osName,deviceType)
+  const {
+    browser: { name: browserName },
+    os: { name: osName },
+    device: { type: deviceType },
+  } = browserInfo;
+  console.log("browserName", browserName, osName, deviceType);
   //This here and not context cause only run when this page is load
   useEffect(() => {
     const unsubscribe = myOnSnapshotVisited(setVisit);
@@ -52,21 +56,31 @@ const Info = () => {
         <span className="typing-animation ">
           {t("Infom.visited", { visit })}
         </span>
-        <br></br>
-        {showSecondText && (
-          <span className="typing-animation">
-            {t("Infom.gps", { longitude, latitude })}
-          </span>
+        {showSecondText && longitude && latitude && (
+          <>
+            <br></br>
+            <span className="typing-animation">
+              {t("Infom.gps", { longitude, latitude })}
+            </span>
+          </>
         )}{" "}
-        <br></br>
-        {showThirdText && (
-          <span className="typing-animation">
-            {" "}
-            {t("Infom.ip", { ipAddress })}
-          </span>
-        )} <br></br>
-        {showFourthText && (
-          <span className="typing-animation"> {t("Infom.browser", {browserName,osName,deviceType})}</span>
+        {showThirdText && ipAddress && (
+          <>
+            <br></br>
+            <span className="typing-animation">
+              {" "}
+              {t("Infom.ip", { ipAddress })}
+            </span>
+          </>
+        )}
+        {showFourthText && browserName && osName && (
+          <>
+            <br></br>
+            <span className="typing-animation">
+              {" "}
+              {t("Infom.browser", { browserName, osName })}
+            </span>
+          </>
         )}
       </div>
     </div>

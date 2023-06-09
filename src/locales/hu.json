@@ -48,6 +48,11 @@
     "Native": "Anyanyelv",
     "Limited working proficiency": "Társalgási szint"
   },
-  "Infom": "Ez az oldal {{visit}}x lett meglátogatva.",
+  "Infom": {
+    "visited": "Ez az oldal {{visit}} x lett meglátogatva.",
+    "gps":"A GPS koordinátáid: {{longitude}} {{latitude}}",
+    "ip":"Az ip címed: {{ipAddress}}",
+    "browser":"Böngésző: {{browserName}} Op: {{osName}} "
+  },
   "errror404":" 404 - Valami hiba történt"
 }
