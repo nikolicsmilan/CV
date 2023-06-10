@@ -88,6 +88,8 @@ const Info = () => {
 };
 
 export default Info;
+
+
 /* GPS
         Weather
         Screen Size
