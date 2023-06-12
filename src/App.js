@@ -19,7 +19,7 @@ function App() {
 
   return (
     // Top-level container for the entire application
-    <div className={`w-full flex font-sans text-base ${style} border-0 border-red-400`}>
+    <div className={`w-full  flex font-sans text-base ${style} border-0 border-red-400`}>
       {/* Set up the routing for different pages */}
       <Routes>
         {/* Parent route with the layout component */}

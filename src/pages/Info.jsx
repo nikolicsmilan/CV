@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import {
-  myOnSnapshotVisited,
-  myOnSnapShotUpdateVisit,
-} from "../firebase/Firestore";
+import { myOnSnapshotVisited } from "../firebase/Firestore";
 import { MyInfoContext } from "../context/InfoContext";
+import { MyGeneralContext } from "../context/GeneralContext";
 import TypingAnimation from "../components/info/TypingAnimation";
 
 const Info = () => {
   const { visit, setVisit, latitude, longitude, ipAddress, browserInfo } =
     MyInfoContext();
+  const { style } = MyGeneralContext();
   const { t } = useTranslation();
   const {
     browser: { name: browserName },
@@ -25,7 +24,13 @@ const Info = () => {
   }, []);
 
   const shouldShowText =
-    visit || ipAddress || longitude || latitude || browserName || osName || deviceType;
+    visit ||
+    ipAddress ||
+    longitude ||
+    latitude ||
+    browserName ||
+    osName ||
+    deviceType;
 
   const getTextContent = () => {
     if (shouldShowText) {
@@ -54,76 +59,19 @@ const Info = () => {
   };
 
   return (
-    <div className="text-primary text-xl mx-2">
-      <TypingAnimation customcontent={getTextContent()} />
+    <div className="flex justify-center h-screen">
+      <div
+        className={`border-2  text-primary text-md mx-2 bg-sky-300 bg-opacity-10 my-10 rounded-xl p-2 w-full  lg:w-1/2 h-56 lg:h-56 ${
+          style === "space" ? "border-sky-800" : ""
+        }`}
+      >
+        <TypingAnimation customcontent={getTextContent()} />
+      </div>
     </div>
   );
 };
 
 export default Info;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import {
-  myOnSnapshotVisited,
-  myOnSnapShotUpdateVisit,
-} from "../firebase/Firestore";
-import { MyInfoContext } from "../context/InfoContext";
-import TypingAnimation from "../components/info/TypingAnimation";
-
-const Info = () => {
-  const { visit, setVisit, latitude, longitude, ipAddress, browserInfo } =
-    MyInfoContext();
-  const { t } = useTranslation();
-  const {
-    browser: { name: browserName },
-    os: { name: osName },
-    device: { type: deviceType },
-  } = browserInfo;
- // console.log("browserName", browserName, osName, deviceType);
-  //This here and not context cause only run when this page is load
-  useEffect(() => {
-    const unsubscribe = myOnSnapshotVisited(setVisit);
-    return () => {
-      unsubscribe();
-    };
-  }, []);
-
-  return (
-    <div className="text-primary text-xl mx-2">
-      <TypingAnimation
-        customcontent={`${t("Infom.visited", { visit })} ${t("Infom.ip", {
-          ipAddress,
-        })} ${t("Infom.gps", { longitude, latitude })} ${t("Infom.browser", {
-          browserName,
-          osName, deviceType
-        })}`}
-      />
-    </div>
-  );
-};
-
-export default Info;*/
 
 /* GPS
         Weather

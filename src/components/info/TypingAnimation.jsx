@@ -33,11 +33,12 @@ const TypingAnimation = ({ customcontent }) => {
   }, [customcontent]);
   return (
     <>
-      <div className="text-primary text-xl max-w-sm text-info ">
+     
         {text}
-      </div>
+      
     </>
   );
 };
 
 export default TypingAnimation;
+/* <div className="text-primary text-xl max-w-sm text-info ">*/
