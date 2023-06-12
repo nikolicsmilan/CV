@@ -54,7 +54,7 @@
     "ip":"Az ip címed: {{ipAddress}}",
     "browser":"Böngésző: {{browserName}} ",
     "os":" Operációs rendszer: {{osName}} ",
-    "version":"verzió: {{osVersion}}",
+    "version":"Verzió: {{osVersion}}",
     "devicetype": "Eszköztípus: {{deviceType}}"
   },
   "errror404":" 404 - Valami hiba történt"
