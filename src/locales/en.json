@@ -47,7 +47,8 @@
     "gps":"Your GPS coordinates: {{longitude}} {{latitude}}",
     "ip":"Your ip address: {{ipAddress}}",
     "browser":"Browser: {{browserName}}",
-    "os":" Os: {{osName}} ",
+    "os":" Operating System: {{osName}} ",
+    "version":"version: {{osVersion}}",
     "devicetype": "Devicetype: {{deviceType}}"
   },
   "errror404": " 404 error - Something went wrong"

@@ -12,7 +12,7 @@ const Info = () => {
   const { t } = useTranslation();
   const {
     browser: { name: browserName },
-    os: { name: osName },
+    os: { name: osName,version: osVersion  },
     device: { type: deviceType },
   } = browserInfo;
 
@@ -49,6 +49,9 @@ const Info = () => {
       }
       if (osName) {
         content += `${t("Infom.os", { osName })} `;
+      }
+      if (osVersion) {
+        content += `${t("Infom.version", { osVersion })} `;
       }
       if (deviceType) {
         content += `${t("Infom.devicetype", { deviceType })} `;
