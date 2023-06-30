@@ -43,13 +43,13 @@
     "Limited working proficiency": "Limited working proficiency"
   },
   "Infom": {
-    "visited": "This page is visited by {{visit}} times.",
-    "gps":"Your GPS coordinates: {{longitude}} {{latitude}}",
-    "ip":"Your ip address: {{ipAddress}}",
-    "browser":"Browser: {{browserName}}",
-    "os":" Operating System: {{osName}} ",
-    "version":"Version: {{osVersion}}",
-    "devicetype": "Devicetype: {{deviceType}}"
+    "visited": "This page is visited by {{visit}} times. ",
+    "gps":"Your GPS coordinates: {{longitude}} {{latitude}}. ",
+    "ip":"Your ip address: {{ipAddress}}. ",
+    "browser":"Browser: {{browserName}}. ",
+    "os":" Operating System: {{osName}}. ",
+    "version":"Version: {{osVersion}}. ",
+    "devicetype": "Devicetype: {{deviceType}}. "
   },
   "errror404": " 404 error - Something went wrong"
 }

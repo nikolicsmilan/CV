@@ -49,13 +49,13 @@
     "Limited working proficiency": "Társalgási szint"
   },
   "Infom": {
-    "visited": "Ez az oldal {{visit}} x lett meglátogatva.",
-    "gps":"A GPS koordinátáid: {{longitude}} {{latitude}}",
-    "ip":"Az ip címed: {{ipAddress}}",
-    "browser":"Böngésző: {{browserName}} ",
-    "os":" Operációs rendszer: {{osName}} ",
-    "version":"Verzió: {{osVersion}}",
-    "devicetype": "Eszköztípus: {{deviceType}}"
+    "visited": "Ez az oldal {{visit}} x lett meglátogatva. ",
+    "gps":"A GPS koordinátáid: {{longitude}} {{latitude}}. ",
+    "ip":"Az ip címed: {{ipAddress}}. ",
+    "browser":"Böngésző: {{browserName}}. ",
+    "os":" Operációs rendszer: {{osName}}. ",
+    "version":"Verzió: {{osVersion}}. ",
+    "devicetype": "Eszköztípus: {{deviceType}}. "
   },
   "errror404":" 404 - Valami hiba történt"
 }

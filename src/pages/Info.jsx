@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { myOnSnapshotVisited } from "../firebase/Firestore";
+import { myOnSnapshotVisited,myOnSnapShotUpdateVisit } from "../firebase/Firestore";
 import { MyInfoContext } from "../context/InfoContext";
 import { MyGeneralContext } from "../context/GeneralContext";
 import TypingAnimation from "../components/info/TypingAnimation";
@@ -9,7 +9,9 @@ const Info = () => {
   const { visit, setVisit, latitude, longitude, ipAddress, browserInfo } =
     MyInfoContext();
   const { style } = MyGeneralContext();
-  const { t } = useTranslation();
+  const { t,i18n } = useTranslation();
+
+  const currentLanguage = i18n.language;
   const {
     browser: { name: browserName },
     os: { name: osName,version: osVersion  },
@@ -21,6 +23,10 @@ const Info = () => {
     return () => {
       unsubscribe();
     };
+  }, []);
+
+  useEffect(() => {
+    myOnSnapShotUpdateVisit();
   }, []);
 
   const shouldShowText =
@@ -56,6 +62,9 @@ const Info = () => {
       if (deviceType) {
         content += `${t("Infom.devicetype", { deviceType })} `;
       }
+     /* if(true){
+        content +=` ${currentLanguage ==="en" ? "Other: I know what you did last summer...":"Egyéb: Tudom mit tettél tavaly nyáron..." }`
+      }*/
       return content.trim(); // Trim any extra whitespace
     }
     return "No information available";
