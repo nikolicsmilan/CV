@@ -10,7 +10,7 @@ export const downloadPDF = (doc,lng) => {
   })
     .then((response) => {
       const pdfBlob = new Blob([response.data], { type: "application/pdf" });
-      saveAs(pdfBlob, `${lng==='hu'?'nikolicsmilan-cv.web.app_2023_05_28_hu.pdf':'nikolicsmilan-cv.web.app_2023_05_28_en.pdf'}`); // Specify the filename for the downloaded file
+      saveAs(pdfBlob, `${lng==='hu'?'nikolicsmilan-cv.web.app_2023_07_14_hu.pdf':'nikolicsmilan-cv.web.app_2023_07_14_en.pdf'}`); // Specify the filename for the downloaded file
     })
     .catch((error) => {
       console.error("Error occurred while downloading the PDF file:", error);

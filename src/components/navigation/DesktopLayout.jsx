@@ -18,4 +18,3 @@ const DesktopLayout = ({ Aside, activeMenu }) => {
 };
 
 export default DesktopLayout;
-

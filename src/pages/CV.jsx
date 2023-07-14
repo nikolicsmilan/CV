@@ -14,15 +14,15 @@ const CV = () => {
   const { style, size } = MyGeneralContext();
   const { i18n } = useTranslation();
   const dochu =
-    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_05_28_hu.pdf";
+    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_07_14_hu.pdf";
   const docen =
-    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_05_28_en.pdf";
+    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_07_14_en.pdf";
   const currentLanguage = i18n.language;
 
   console.log('ez mi????',currentLanguage)
   return (
     <>
-      <div className="w-full flex flex-col items-center justify-center m-0 border-0 border-red-400">
+      <div className=" w-full flex flex-col items-center justify-center m-0 border-0 border-red-400">
       {currentLanguage === "hu" ? (
         <button
           className={` m-0 ${
@@ -30,7 +30,7 @@ const CV = () => {
           } hover:text-primary`}
           onClick={()=>{downloadPDF(dochu,"hu")}}
         >
-          Download PDF
+         Letöltés PDF
         </button>
       ) : (
         <button
