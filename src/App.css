@@ -1,4 +1,3 @@
-
 /*MY SPECIAL COLOR*/
 .mycity {
   font-family: "Josefin Sans";
@@ -10,7 +9,7 @@
   color: transparent !important;
   text-transform: uppercase;
   text-decoration-thickness: 3px;
- /* margin-top: 15px;*/
+  /* margin-top: 15px;*/
 }
 
 .myspace {
@@ -25,7 +24,6 @@
   text-decoration-thickness: 3px;
   /*margin-top: 15px;*/
 }
-
 
 @keyframes typing {
   0% {
@@ -56,8 +54,34 @@
   animation-delay: 2s;
 }
 
+.background-video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
 
+.mukodj {
+  background-color: rgba(34, 211, 238, 0.1) !important;
+}
 
-
-
+.content2 {
+  position: relative;
+  z-index: 11;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+ /* color: white!important;*/
+  height: 100%;
+  margin-top: 100px;
+}
