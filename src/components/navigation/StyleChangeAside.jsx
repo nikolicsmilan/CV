@@ -14,7 +14,14 @@ const StyleChangeAside = ({ style, setStyle, setActiveMenu, size }) => {
             <img className="w-8 border-0 mx-2" alt="zumzum" src={zumzum} />
           </NavLink>
 
-          <p className="normal-case mx-2 "> {t("stylequestion")}</p>
+          <p
+            className={`normal-case mx-2  ${
+              style === "city" ? "text-secondary" : "text-primary"
+            } `}
+          >
+            {" "}
+            {t("stylequestion")}
+          </p>
         </div>
       </div>
 
@@ -33,7 +40,9 @@ const StyleChangeAside = ({ style, setStyle, setActiveMenu, size }) => {
           />
           <label
             htmlFor="city"
-            className="ml-2 text-md cursor-pointer capitalize "
+            className={`normal-case mx-2  ${
+              style === "city" ? "text-secondary" : "text-primary"
+            } `}
           >
             {t("City")}
           </label>
@@ -52,7 +61,9 @@ const StyleChangeAside = ({ style, setStyle, setActiveMenu, size }) => {
           />
           <label
             htmlFor="space"
-            className="ml-2 text-md cursor-pointer capitalize "
+            className={`normal-case mx-2  ${
+              style === "city" ? "text-secondary" : "text-primary"
+            } `}
           >
             {t("Space")}
           </label>

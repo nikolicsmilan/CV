@@ -59,6 +59,7 @@ module.exports = {
               gradient4: "linear-gradient(130deg, yellow, black 95%, #000000)",
               gradient5:
                 "linear-gradient(130deg,#C34A36 23.41%, rgb(23, 23, 23) 88.02%)",
+                cityvertical: "url('../src/assets/city-vertical.jpg')",
             },
           },
         },
@@ -89,6 +90,8 @@ module.exports = {
                 "linear-gradient(130deg,#C34A36 23.41%, rgb(23, 23, 23) 88.02%)",
               gradient6:
                 "linear-gradient(130deg, rgb(70, 70, 70, 0.938) 80.1%, rgb(40, 40, 40, 0.938 ) 111.02%)",
+                spacevertical: "url('../src/assets/space-vertical.jpg')",
+              
             },
           },
         },
