@@ -8,7 +8,7 @@ import { MyGeneralContext } from "../../context/GeneralContext";
 const Layout = () => {
   const { activeMenu, setActiveMenu, size } = MyGeneralContext();
   return (
-    <div className="border-0  border-dark w-full">
+    <div className="border-0  border-dark w-full  ">
       {size.width < 667 || size.width < size.height || 500 > size.height ? (
         <MobileLayout
           Aside={Aside}

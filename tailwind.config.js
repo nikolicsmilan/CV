@@ -60,6 +60,7 @@ module.exports = {
               gradient5:
                 "linear-gradient(130deg,#C34A36 23.41%, rgb(23, 23, 23) 88.02%)",
                 cityvertical: "url('../src/assets/city-vertical.jpg')",
+                cityvertical2: "url('../src/assets/city-vertical6.jpg')",
             },
           },
         },

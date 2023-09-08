@@ -38,7 +38,7 @@ const Aside = () => {
     );
   };
   return (
-    <div className={` mt-0 border-0 border-red-400 w-full flex flex-col h-screen  ${style==='city'?" bg-cityvertical ":"bg-spacevertical "} `}>
+    <div className={`mt-0 border-0 border-red-400 w-full flex flex-col h-screen ${style === 'city' ? 'bg-cityvertical ' : 'bg-spacevertical'} ${size.height < 800 ? 'bg-cityvertical2' : ''}`}>
       <StyleChangeAside
         style={style}
         setStyle={setStyle}
@@ -66,3 +66,4 @@ const Aside = () => {
 };
 
 export default Aside;
+/*   <div className={` mt-0 border-0 border-red-400 w-full flex flex-col h-screen  ${style==='city'?" bg-cityvertical ":"bg-spacevertical "} `}> */
