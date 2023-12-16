@@ -31,6 +31,6 @@ export const projects = [
     backgroundColor: "bg-gradient",
     keyword: ["React", "context", "tailwind", "firebase"],
     gitlink: "https://github.com/nikolicsmilan/SM",
-    weblink: "https://sm-new-8a9a7.web.app",
+    weblink: "https://smbutordesign.hu/",
   },
 ];
