@@ -13,13 +13,14 @@ const Jobinfo = () => {
         <li> {t("CVem.employmenthours")}</li>
         <li> {t("CVem.remotework")} </li>
         <li>{t("CVem.employmenttype")}</li>
-        <li>
-          {t("CVem.salarytext")}
-          <span className="font-bold"> {t("CVem.salaryamount")} </span>
-        </li>
+       
       </ul>
     </div>
   );
 };
 
 export default Jobinfo;
+/* <li>
+          {t("CVem.salarytext")}
+          <span className="font-bold"> {t("CVem.salaryamount")} </span>
+        </li> */

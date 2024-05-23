@@ -50,10 +50,11 @@ export const InfoContextProvider = ({ children }) => {
     const parser = new UAParser();
     const userAgent = navigator.userAgent;
     const parsedInfo = parser.setUA(userAgent).getResult();
+    console.log("parsedinfo: ",parsedInfo );
     setBrowserInfo(parsedInfo);
   }, []);
 
-console.log( "browserinfoooooooo",browserInfo)
+//console.log( "browserinfoooooooo",browserInfo)
   // Provide the context values using the GeneralContext.Provider component
   return (
     <InfoContext.Provider

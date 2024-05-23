@@ -16,9 +16,9 @@ i18n
   .use(Backend)
   .use(LanguageDetector) // Use LanguageDetector
   .init({
-    lng: "hu", // Set the default language
+    lng: "en", // Set the default language
     fallbackLng: "en", // Fallback language if a translation is not available
-    debug: true, // Enable debug mode for development
+    debug: false, // Enable debug mode for development
    
     // Backend options for loading translation files
     resources: {

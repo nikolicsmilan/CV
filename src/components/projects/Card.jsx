@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FaGithub } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
-import { useTranslation } from 'react-i18next';
-
+import { useTranslation } from "react-i18next";
+import nasa from "../../assets/nasa_project.JPG";
 
 const Card = ({
   title,
@@ -13,21 +13,22 @@ const Card = ({
   background,
   keyword,
 }) => {
-
   const { t } = useTranslation();
   return (
     <div
-      key="dsadas"
-      className={`text-dark  relative ${background} p-4 pt-9 rounded-2xl border-0 border-sky-400 lg:w-1/5`}
+      className={`text-dark  relative ${background} p-0 pt-0 rounded-2xl border-2  border-sky-400 w-80 shadow-2xl`}
     >
-      <h1 className="text-2xl opacity-0.9 rounded-full p-1 hover:drop-shadow-xl text-white">
-       {title}   
+      <img src={nasa} className="w-full" />
+      <h1 className="text-lg rounded-full  text-white p-2">
+        {title}
       </h1>
+      <div className="h-36">
+        <p className="text-truncate  overflow-hidden text-white text-base p-2">
+          {t(`Project.${description}`)}
+        </p>
+      </div>
 
-      <p className="text-truncate h-52 overflow-hidden text-white ">
-      {t(`Project.${description}`)}
-      </p>
-      <div className="mt-0 border-0 border-red-400">
+      <div className="mt-0 border-2 border-red-400 h-12">
         <span className="text-3xl font-semibold ">
           {gitlink && (
             <a href={gitlink} target="_blank" rel="noreferrer">
@@ -43,7 +44,7 @@ const Card = ({
           )}
         </span>
 
-        <div className="bottom-12 absolute text-white">
+        <div className="bottom-12 absolute text-white border-0 border-amber-400">
           #
           {keyword.map((item, index) => (
             <span key={index} className="text-md  ">
@@ -66,4 +67,3 @@ Card.propTypes = {
 };
 
 export default Card;
-

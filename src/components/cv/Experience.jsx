@@ -12,7 +12,7 @@ const Experience = () => {
       <p> {  t("CVem.jobpost")}</p>
       <p className="font-bold my-1 w-40">{  t("CVem.jobdate")}</p>
     </div>
-
+   
     <p>
     {  t("CVem.jobdescription")}
     </p>

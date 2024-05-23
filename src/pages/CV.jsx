@@ -4,6 +4,7 @@ import AsideCv from "../components/cv/AsideCv";
 import MainCv from "../components/cv/MainCv";
 import CvMobil from "../components/cv/mobil/CvMobil";
 import profil from "../assets/Profil3.PNG";
+import profil4 from "../assets/Profil4.jpg";
 import { stack, language, contact } from "../data/stack";
 import { downloadPDF } from "../components/cv/pdfUtils";
 import { MyGeneralContext } from "../context/GeneralContext";
@@ -25,7 +26,7 @@ const CV = () => {
       <div className=" w-full flex flex-col items-center justify-center m-0 border-0 border-red-400">
       {currentLanguage === "hu" ? (
         <button
-          className={` m-0 ${
+          className={`hidden m-0 ${
             style === "city" ? "text-dark" : "text-white"
           } hover:text-primary`}
           onClick={()=>{downloadPDF(dochu,"hu")}}
@@ -34,7 +35,7 @@ const CV = () => {
         </button>
       ) : (
         <button
-          className={`  m-0 ${
+          className={`hidden  m-0 ${
             style === "city" ? "text-dark" : "text-white"
           } hover:text-primary`}
           onClick={()=>{downloadPDF(docen,"en")}}
@@ -54,7 +55,7 @@ const CV = () => {
             className="max-w-screen-lg w-full px-4 sm:px-6 lg:px-8 py-6 bg-white shadow-md flex flex-row border-0 border-red-400"
             style={{ height: "29.7cm", width: "21cm" }}
           >
-            <AsideCv profil={profil} stack={stack} language={language} />
+            <AsideCv profil={profil4} stack={stack} language={language} />
             <MainCv contact={contact} />
           </div>
         )}

@@ -2,6 +2,10 @@ import React from "react";
 
 const Contact = ({ contact }) => {
   return (
+
+    <>
+
+   <h1 className="text-dark font-bold uppercase  text-xl my-2">Clickable webpage and GitHub links in the PDF document</h1>
     <div className="flex flex-wrap justify-center border-0 my-5 border-red-400 items-center ">
       {contact.map((item, index) => (
         <React.Fragment key={`${item.name}_${index}`}>
@@ -62,6 +66,7 @@ const Contact = ({ contact }) => {
         </React.Fragment>
       ))}
     </div>
+    </>
   );
 };
 

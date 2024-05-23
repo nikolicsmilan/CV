@@ -31,8 +31,14 @@ const Skills = () => {
           </div>
         ))}
       </div>
+    
     </div>
   );
 };
 
 export default Skills;
+/*  <h2 className="text-primary">Ez egy szöveg</h2>
+      <h2 className="bg-primary">Ez egy szöveg </h2>
+      <h2 className="text-primaryb">Ez egy szöveg</h2>
+      <h2 className="bg-primaryb">Ez egy szöveg </h2>
+      <h2 className="city:font-bold space:text-red-400">Ez egy szöveg </h2> */
