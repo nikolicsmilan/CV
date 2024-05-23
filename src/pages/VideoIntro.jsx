@@ -1,5 +1,6 @@
 import React from "react";
 import cv3 from "../assets/cv3.mp4";
+import teszt from "../assets/English_interview_teszt.mp4"
 
 const VideoIntro = () => {
   return (
@@ -7,7 +8,7 @@ const VideoIntro = () => {
       <div className="flex justify-start items-center flex-col h-screen">
         <div className=" relative w-full h-full">
           <video
-            src={cv3}
+            src={teszt}
             type="video/mp4"
             controls={false}
             autoPlay
@@ -23,4 +24,4 @@ const VideoIntro = () => {
   );
 };
 
-export default VideoIntro;
+export default VideoIntro;                                                                                                 
