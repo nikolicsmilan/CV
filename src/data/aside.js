@@ -173,9 +173,9 @@ export const links = [
         path: "/Cv",
       },
       {
-        name: "Info",
+        name: "Roadmap",
         icon: <  FaInfoCircle />,
-        path: "/info",
+        path: "/roadmap",
       },
     
     ],

@@ -29,6 +29,7 @@ const Heading = ({ style, setActiveMenu }) => {
           >
              {t("mainquestion")} 
           </h3> 
+         <h3 className="text-3xl text-primary text-center"> {t("clickhere")} </h3>
         </NavLink>
       </div>
     </div>

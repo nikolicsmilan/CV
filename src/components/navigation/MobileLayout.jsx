@@ -17,7 +17,7 @@ const MobileLayout = ({
 
   return (
     <>
-      <div className="relative w-full border-0  border-lime-600">
+      <div className="relative w-full border-0   border-lime-600">
         {activeMenu && (
           <div className="absolute inset-0 bg-asidebg  border-0 border-red-400 z-20">
             <Aside />
@@ -25,18 +25,18 @@ const MobileLayout = ({
         )}
 
         <div
-          className="fixed right-4 bottom-4 border-0 h-78"
+          className="fixed left-4 top-4 border-0 h-78"
           style={{ zIndex: "50" }}
         >
           {!activeMenu ? (
             <AiOutlineMenu
               title="Menu"
-              className="text-primary text-2xl "
+              className="text-primary text-3xl"
               onClick={() => setActiveMenu((prevState) => !prevState)}
             />
           ) : (
             <FaArrowLeft
-              className="text-secondary text-xl "
+              className="text-primary text-2xl "
               onClick={() => setActiveMenu((prevState) => !prevState)}
             />
           )}

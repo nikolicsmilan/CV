@@ -7,12 +7,12 @@ const Projects = () => {
   const { t } = useTranslation();
   return (
     <>
-      <h1 className="text-center text-4xl my-0 font-bold text-info">
+      <h1 className="text-center text-4xl my-0 font-bold text-primary city:text-primary">
         {t("Project.pagename")}
       </h1>
 
       <p className="text-center text-base my-2
-       font-bold text-info">
+       font-bold ">
         {t("Project.maindescription")}
       </p>
       <div className="flex flex-wrap 

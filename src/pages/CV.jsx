@@ -26,7 +26,7 @@ const CV = () => {
       <div className=" w-full flex flex-col items-center justify-center m-0 border-0 border-red-400">
       {currentLanguage === "hu" ? (
         <button
-          className={`hidden m-0 ${
+          className={` m-0 ${
             style === "city" ? "text-dark" : "text-white"
           } hover:text-primary`}
           onClick={()=>{downloadPDF(dochu,"hu")}}
@@ -35,7 +35,7 @@ const CV = () => {
         </button>
       ) : (
         <button
-          className={`hidden  m-0 ${
+          className={`  m-0 ${
             style === "city" ? "text-dark" : "text-white"
           } hover:text-primary`}
           onClick={()=>{downloadPDF(docen,"en")}}

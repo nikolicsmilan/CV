@@ -19,7 +19,7 @@ const StyleChangeAside = ({ style, setStyle, setActiveMenu, size }) => {
         </div>
       </div>
 
-      <div className="flex flex-row border-0 justify-start p-5">
+      <div className="flex flex-row border-0 justify-start px-10 lg:px-5">
       <NavLink to="/">
             <img className="w-8 border-0 mx-2" alt="zumzum" src={zumzum} />
           </NavLink>
