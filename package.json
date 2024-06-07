@@ -1,8 +1,10 @@
 {
-  "name": "cv",
+  "name": "cv2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "^9.106.0",
+    "@react-three/fiber": "^8.16.8",
     "axios": "^1.4.0",
     "chart.js": "^4.2.1",
     "file-saver": "^2.0.5",
@@ -21,6 +23,8 @@
     "react-icons": "^4.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "tailwindcss-themer": "^4.0.0",
+    "three": "^0.165.0",
     "ua-parser-js": "^1.0.35",
     "webpack": "^5.82.0"
   },
@@ -51,7 +55,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.5",
     "postcss": "^8.4.12",
-    "tailwindcss": "^3.2.7",
-    " ": "^3.0.1"
+    "tailwindcss": "^3.2.7"
   }
 }

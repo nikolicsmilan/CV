@@ -1,12 +1,13 @@
 import React from "react";
 import { skillsIcon } from "../data/aside";
 import { useTranslation } from 'react-i18next';
+import Icon3d from "../components/stack/Icon3d";
 
 const Skills = () => {
     const { t } = useTranslation();
   return (
     <div className="overflow-container py-2">
-      <h1 className="text-center text-4xl my-0 font-bold text-info">Stack</h1>
+      <h1 className="text-center text-4xl my-0 font-bold ">Stack</h1>
       <div className="flex m-3 flex-wrap justify-center gap-12 items-center border-0">
         {skillsIcon.map((skill) => (
           <div
@@ -31,7 +32,7 @@ const Skills = () => {
           </div>
         ))}
       </div>
-    
+    <Icon3d/>
     </div>
   );
 };

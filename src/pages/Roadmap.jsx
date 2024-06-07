@@ -4,9 +4,9 @@ import stillpicture from "../assets/allokep_en_18.png";
 const Roadmap = () => {
   const roadmapItems = [
     { date: "2024", event: "Enter CNI" },
-    { date: "2019", event: " Establishing web development business" },
+    { date: "2019", event: "Establishing web development business" },
     { date: "2017", event: "Start Learning Development" },
-    { date: "2014", event: " Graduated as Sytem Administrator" },
+    { date: "2014", event: "Graduated as System Administrator" },
     // Add more roadmap items as needed
   ];
 
