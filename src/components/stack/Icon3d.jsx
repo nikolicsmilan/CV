@@ -4,6 +4,99 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import glbModeljs from "../../assets/glb/js.glb";
 import glbModelhtml5 from "../../assets/glb/html5.glb";
 import glbModelcss from "../../assets/glb/css.glb";
+import glbModelreact from "../../assets/glb/react3D.glb";
+import glbModeltailwind from "../../assets/glb/tailwind.glb";
+import glbModelnodejs from "../../assets/glb/nodejs2.glb";
+import glbModelfirebase from "../../assets/glb/firebase4.glb";
+import glbModelgithub from "../../assets/glb/github.glb";
+
+function Model({ path, scale, color, speed, direction }) {
+  const { scene } = useGLTF(path);
+  const ref = useRef();
+  const maxPosition = 2; // Maximális pozíció
+  const minPosition = -2; // Minimális pozíció
+  let moveDirection = direction; // Kezdeti mozgási irány
+
+  useFrame(() => {
+    // Az objektum pozíciójának módosítása az aktuális irány és sebesség alapján
+    ref.current.position.x += moveDirection.x * speed;
+    ref.current.position.y += moveDirection.y * speed;
+    ref.current.position.z += moveDirection.z * speed;
+
+    // Ha az objektum elérte a maximális pozíciót, megfordítjuk az irányt
+    if (ref.current.position.x >= maxPosition || ref.current.position.x <= minPosition) {
+      moveDirection.x = -moveDirection.x;
+    }
+    if (ref.current.position.y >= maxPosition || ref.current.position.y <= minPosition) {
+      moveDirection.y = -moveDirection.y;
+    }
+    if (ref.current.position.z >= maxPosition || ref.current.position.z <= minPosition) {
+      moveDirection.z = -moveDirection.z;
+    }
+
+    // Forgatás
+    ref.current.rotation.x += speed 
+    ref.current.rotation.y += speed 
+    ref.current.rotation.z += speed 
+  });
+
+  return <primitive object={scene} scale={scale} ref={ref} />;
+}
+
+function Icon3D({ path, scale, speed, direction }) {
+  return (
+    <Canvas >
+      <OrbitControls enableZoom={false} />
+      <ambientLight intensity={1.5} />
+      <directionalLight position={[1, 1, 1]} intensity={1} />
+      <Model path={path} scale={scale} speed={speed} direction={direction} />
+    </Canvas>
+  );
+}
+
+const Icon3dComp = ({ path, scale, speed, direction }) => {
+  return (
+    <div className="border-0 absolute border-red-400 w-full h-full">
+      <Icon3D path={path} scale={scale} speed={speed} direction={direction} />
+    </div>
+  );
+};
+
+const Icon3d = () => {
+  const icons = [
+    { path: glbModeljs, scale: [10, 10, 10], speed: 0.01, direction: { x: -3, y: 3, z: 0 } },
+    { path: glbModelhtml5, scale: [10, 10, 10], speed: 0.02, direction: { x: -1, y: 2, z: 0 } },
+    { path: glbModelcss, scale: [0.1, 0.1, 0.1], speed: 0.003, direction: { x: 10, y: 10, z: 10 }}, 
+    { path: glbModelreact, scale: [3, 3, 3], speed: 0.004, direction: { x: -10, y: -1, z: -5 }},  
+    { path: glbModeltailwind, scale: [0.3, 0.3, 1], speed: 0.004, direction: { x: -1, y: -4, z: -7 }},
+    { path: glbModelnodejs, scale: [0.5, 0.3, 0.5], speed: 0.003, direction: { x: -5, y: 2, z: 7 }},
+    { path: glbModelfirebase, scale: [0.2, 0.1, 0.2], speed: 0.003, direction: { x: 2, y: 2, z: 2 }},
+    { path: glbModelgithub, scale: [20, 20, 20], speed: 0.003, direction: { x: 2, y: 12, z: 2 }}
+  ];
+
+  return (
+    <div className="flex flex-wrap w-full h-full justify-center 
+    items-center border-0 border-orange-400 p-0 rounded-lg">
+      {icons.map((icon, index) => (
+        <div key={index} className="flex absolute  w-full h-full border-purple-400 border-0">
+          <Icon3dComp path={icon.path} scale={icon.scale} speed={icon.speed} direction={icon.direction} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Icon3d;
+
+
+
+
+/*import React, { useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import glbModeljs from "../../assets/glb/js.glb";
+import glbModelhtml5 from "../../assets/glb/html5.glb";
+import glbModelcss from "../../assets/glb/css.glb";
 
 function Model({ path, scale, color }) {
   const { scene } = useGLTF(path);
@@ -54,7 +147,7 @@ const Icon3d = () => {
   );
 };
 
-export default Icon3d;
+export default Icon3d;*/
 
 
 /*

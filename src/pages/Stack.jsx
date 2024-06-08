@@ -7,10 +7,10 @@ const Skills = () => {
   const { t } = useTranslation();
   return (
     <div
-      className="overflow-container py-2 bg-primary space:bg-black h-full
-     border-0 border-red-400 "
+      className="overflow-container py-0 bg-primar space:bg-black h-screen
+     border-0 border-sky-400 relative z-10"
     >
-      <h1 className="text-center text-4xl my-0 font-bold ">Stack</h1>
+    
       <Icon3d />
     </div>
   );
