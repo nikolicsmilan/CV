@@ -1,14 +1,30 @@
 import React from "react";
 import { skillsIcon } from "../data/aside";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import Icon3d from "../components/stack/Icon3d";
 
 const Skills = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <div className="overflow-container py-2">
+    <div
+      className="overflow-container py-2 bg-primary space:bg-black h-full
+     border-0 border-red-400 "
+    >
       <h1 className="text-center text-4xl my-0 font-bold ">Stack</h1>
-      <div className="flex m-3 flex-wrap justify-center gap-12 items-center border-0">
+      <Icon3d />
+    </div>
+  );
+};
+
+export default Skills;
+/*  <h2 className="text-primary">Ez egy szöveg</h2>
+      <h2 className="bg-primary">Ez egy szöveg </h2>
+      <h2 className="text-primaryb">Ez egy szöveg</h2>
+      <h2 className="bg-primaryb">Ez egy szöveg </h2>
+      <h2 className="city:font-bold space:text-red-400">Ez egy szöveg </h2> */
+
+/*
+            <div className="flex m-3 flex-wrap justify-center gap-12 items-center border-0">
         {skillsIcon.map((skill) => (
           <div
             key={skill.title}
@@ -26,20 +42,10 @@ const Skills = () => {
             <p className="mt-1">
               <span className="text-lg font-semibold">{skill.title}</span>
               <span className={`text-sm text-${skill.pcColor} ml-2 border-0`}>
-                {/*later use it */}
-              </span>
-            </p>
+              
+                </span>
+                </p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    <Icon3d/>
-    </div>
-  );
-};
-
-export default Skills;
-/*  <h2 className="text-primary">Ez egy szöveg</h2>
-      <h2 className="bg-primary">Ez egy szöveg </h2>
-      <h2 className="text-primaryb">Ez egy szöveg</h2>
-      <h2 className="bg-primaryb">Ez egy szöveg </h2>
-      <h2 className="city:font-bold space:text-red-400">Ez egy szöveg </h2> */
+      */
