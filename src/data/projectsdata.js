@@ -70,7 +70,6 @@ export const projects = [
       { name: "CSS", icon: <FaCss3Alt /> },
       { name: "HTML", icon: <FaHtml5 /> },
       { name: "Tailwind", icon: <SiTailwindcss /> },
-      { name: "Node", icon: <FaNodeJs /> },
       { name: "Firebase", icon: <SiFirebase /> },
     ],
   },

@@ -25,6 +25,12 @@
     "Basic": "Alap",
     "Advanced": "Haladó"
   },
+  "Roadmapem": {
+    "2024": "Belépés a CNI -be",
+    "2019": "Megalapítom a webfejlesztő vállalkozásom",
+    "2017": "Elkezdek fejlesztést tanulni",
+    "2014": "Általános Rendszergazdaként végzek"
+  },
   "CVem": {
     "jobtitle": " Frontend Web Fejlesztő",
     "jobsubtext": "egy kevés backend tudással.",

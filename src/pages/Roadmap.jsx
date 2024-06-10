@@ -1,7 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import stillpicture from "../assets/allokep_en_18.png";
 // made the bold decision to resign from my job and ventured into the world of web development, establishing my own business
 const Roadmap = () => {
+  const { t, i18n } = useTranslation();
   const roadmapItems = [
     { date: "2024", event: "Enter CNI" },
     { date: "2019", event: "Establishing web development business" },
@@ -19,7 +21,7 @@ const Roadmap = () => {
           >
             <div className=" w-48 h-0.5 bg-primary ">
               <h2 className="ml-[0px] lg:mt-[-55px] bg-dark rounded text-center p-0 ">
-                {item.event}
+              {t(`Roadmapem.${item.date}`)}
               </h2>
             </div>
             <div

@@ -7,7 +7,7 @@ import "./App.css";
 // Lazy load the page components
 const Home = React.lazy(() => import("./pages/Home"));
 const VideoIntro = React.lazy(() => import("./pages/VideoIntro"));
-const Skills = React.lazy(() => import("./pages/Stack"));
+const Stack = React.lazy(() => import("./pages/Stack"));
 const Projects = React.lazy(() => import("./pages/Projects"));
 const CV = React.lazy(() => import("./pages/CV"));
 const Info = React.lazy(() => import("./pages/Info"));
@@ -29,7 +29,7 @@ function App() {
           {/* Child routes for individual pages */}
           <Route path="/" element={<Suspense fallback={<div>Loading...</div>}> <Home /> </Suspense>} /> {/* Home page */}
           <Route path="/intro" element={<Suspense fallback={<div>Loading...</div>}> <VideoIntro /> </Suspense>} /> {/* Video introduction page */}
-          <Route path="/stack" element={<Suspense fallback={<div>Loading...</div>}> <Skills /> </Suspense>} /> {/* Skills page */}
+          <Route path="/stack" element={<Suspense fallback={<div>Loading...</div>}> <Stack /> </Suspense>} /> {/* Skills page */}
           <Route path="/projects" element={<Suspense fallback={<div>Loading...</div>}> <Projects /> </Suspense>} /> {/* Projects page */}
           <Route path="/cv" element={<Suspense fallback={<div>Loading...</div>}> <CV /> </Suspense>} /> {/* CV page */}
           <Route path="/roadmap" element={<Suspense fallback={<div>Loading...</div>}> <Roadmap /> </Suspense>} /> {/* Info page */}
