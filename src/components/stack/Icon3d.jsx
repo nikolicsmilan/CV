@@ -9,6 +9,12 @@ import glbModeltailwind from "../../assets/glb/tailwind.glb";
 import glbModelnodejs from "../../assets/glb/nodejs2.glb";
 import glbModelfirebase from "../../assets/glb/firebase4.glb";
 import glbModelgithub from "../../assets/glb/github.glb";
+import glbModelgithub2 from "../../assets/glb/github2.glb";
+import glbModelbootstrap from "../../assets/glb/bootstrap.glb";
+import glbModelexpress from "../../assets/glb/express9.glb";
+import glbModelsql from "../../assets/glb/sql2.glb";
+import glbModelMongo from "../../assets/glb/mongo3.glb";
+import glbModelnpm from "../../assets/glb/npm.glb";
 
 function Model({ path, scale, color, speed, direction }) {
   const { scene } = useGLTF(path);
@@ -64,14 +70,19 @@ const Icon3dComp = ({ path, scale, speed, direction }) => {
 
 const Icon3d = () => {
   const icons = [
-    { path: glbModeljs, scale: [10, 10, 10], speed: 0.01, direction: { x: -3, y: 3, z: 0 } },
+    { path: glbModeljs, scale: [10, 10, 10], speed: 0.01, direction: { x: -3, y: 3, z: 2 } },
     { path: glbModelhtml5, scale: [10, 10, 10], speed: 0.02, direction: { x: -1, y: 2, z: 0 } },
     { path: glbModelcss, scale: [0.1, 0.1, 0.1], speed: 0.003, direction: { x: 10, y: 10, z: 10 }}, 
-    { path: glbModelreact, scale: [3, 3, 3], speed: 0.004, direction: { x: -10, y: -1, z: -5 }},  
+    { path: glbModelreact, scale: [4, 4, 4], speed: 0.004, direction: { x: -10, y: -1, z: -5 }},  
     { path: glbModeltailwind, scale: [0.3, 0.3, 1], speed: 0.004, direction: { x: -1, y: -4, z: -7 }},
-    { path: glbModelnodejs, scale: [0.5, 0.3, 0.5], speed: 0.003, direction: { x: -5, y: 2, z: 7 }},
+    { path: glbModelnodejs, scale: [0.4, 0.2, 0.4], speed: 0.003, direction: { x: -5, y: 2, z: 7 }},
     { path: glbModelfirebase, scale: [0.2, 0.1, 0.2], speed: 0.003, direction: { x: 2, y: 2, z: 2 }},
-    { path: glbModelgithub, scale: [20, 20, 20], speed: 0.003, direction: { x: 2, y: 12, z: 2 }}
+    { path: glbModelgithub2, scale: [2, 2, 2], speed: 0.003, direction: { x: 5, y: 12, z: 2 }},
+    { path: glbModelbootstrap, scale: [6, 6, 6], speed: 0.003, direction: { x: 2, y: 12, z: 2 }},
+    { path: glbModelexpress, scale: [50, 50, 50], speed: 0.003, direction: { x: -2, y: 12, z: 2 }},
+    { path: glbModelsql, scale: [0.3, 0.3, 0.3], speed: 0.003, direction: { x: 2, y: 0, z: 2 }},
+    { path: glbModelMongo, scale: [8, 8, 8], speed: 0.01, direction: { x: 0, y: 2, z: 0 }},
+    { path: glbModelnpm, scale: [80, 80, 80], speed: 0.005, direction: { x: -6, y: 2, z: 2 }}
   ];
 
   return (
@@ -87,6 +98,7 @@ const Icon3d = () => {
 };
 
 export default Icon3d;
+//mongo #499D4A
 
 
 
