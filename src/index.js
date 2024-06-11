@@ -11,20 +11,30 @@ import i18n from "i18next";
 import Backend from "i18next-xhr-backend";
 import enTranslation from "./locales/en.json";
 import huTranslation from "./locales/hu.json";
+
 // Initialize i18next
+
 i18n
   .use(Backend)
-  .use(LanguageDetector) // Use LanguageDetector
+  .use(LanguageDetector)
   .init({
-    lng: "en", // Set the default language
-    fallbackLng: "en", // Fallback language if a translation is not available
-    debug: false, // Enable debug mode for development
-   
-    // Backend options for loading translation files
+    fallbackLng: "en",
+    debug: false,
+    detection: {
+      order: [
+        "querystring",
+        "cookie",
+        "localStorage",
+        "navigator",
+        "htmlTag",
+        "path",
+        "subdomain",
+      ],
+      caches: ["localStorage", "cookie"],
+    },
     resources: {
       en: { translation: enTranslation },
       hu: { translation: huTranslation },
-     
     },
   });
 
@@ -32,11 +42,11 @@ const RootComponent = () => (
   <I18nextProvider i18n={i18n}>
     <GeneralContextProvider>
       <InfoContextProvider>
-      <Router>
-        <Routes>
-          <Route path="/*" element={<App />} />
-        </Routes>
-      </Router>
+        <Router>
+          <Routes>
+            <Route path="/*" element={<App />} />
+          </Routes>
+        </Router>
       </InfoContextProvider>
     </GeneralContextProvider>
   </I18nextProvider>
@@ -55,3 +65,19 @@ ReactDOM.render(
 
 
 */
+
+/*i18n
+  .use(Backend)
+  .use(LanguageDetector) // Use LanguageDetector
+  .init({
+    lng: "en", // Set the default language
+    fallbackLng: "en", // Fallback language if a translation is not available
+    debug: false, // Enable debug mode for development
+   
+    // Backend options for loading translation files
+    resources: {
+      en: { translation: enTranslation },
+      hu: { translation: huTranslation },
+     
+    },
+  });*/
