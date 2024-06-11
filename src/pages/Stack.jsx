@@ -10,12 +10,9 @@ const Stack = () => {
       className="overflow-container py-0 bg-primar space:bg-black h-screen
      border-0 border-sky-400 relative z-10"
     >
-
-
       <Icon3d />
     </div>
   );
 };
 
 export default Stack;
-
