@@ -1,17 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import glbModeljs from "../../assets/glb/js.glb";
-import glbModelhtml5 from "../../assets/glb/html5.glb";
-import glbModelcss from "../../assets/glb/css.glb";
-import glbModelreact from "../../assets/glb/react3D.glb";
-import glbModeltailwind from "../../assets/glb/tailwind.glb";
-import glbModelnodejs from "../../assets/glb/nodejs2.glb";
-import glbModelfirebase from "../../assets/glb/firebase4.glb";
-import glbModelgithub from "../../assets/glb/github.glb";
-import glbModelgithub2 from "../../assets/glb/github2.glb";
-import glbModelbootstrap from "../../assets/glb/bootstrap.glb";
-import glbModelexpress from "../../assets/glb/express9.glb";
+import glbModeljs from "../../assets/glb/jsok.glb";
+import glbModelhtml5 from "../../assets/glb/html5ok.glb";
+import glbModelcss from "../../assets/glb/cssok.glb";
+import glbModelreact from "../../assets/glb/reactok.glb";
+import glbModeltailwind from "../../assets/glb/tailwindok.glb";
+import glbModelnodejs from "../../assets/glb/nodejsok.glb";
+import glbModelfirebase from "../../assets/glb/firebaseok.glb";
+import glbModelgithub2 from "../../assets/glb/githubok.glb";
+import glbModelbootstrap from "../../assets/glb/bootstrapok.glb";
+import glbModelexpress from "../../assets/glb/expressok.glb";
 import glbModelsql from "../../assets/glb/sql2.glb";
 import glbModelMongo from "../../assets/glb/mongo3.glb";
 import glbModelnpm from "../../assets/glb/npm.glb";
@@ -41,9 +40,9 @@ function Model({ path, scale, speed, direction }) {
   let moveDirection = direction;
 
   useFrame(() => {
-    ref.current.position.x += moveDirection.x * speed;
-    ref.current.position.y += moveDirection.y * speed;
-    ref.current.position.z += moveDirection.z * speed;
+    ref.current.position.x += moveDirection.x * speed/2;
+    ref.current.position.y += moveDirection.y * speed/2;
+    ref.current.position.z += moveDirection.z * speed/2;
 
     if (ref.current.position.x >= maxPosition || ref.current.position.x <= minPosition) {
       moveDirection.x = -moveDirection.x;
@@ -86,30 +85,33 @@ const Icon3d = () => {
   const isMobile = useMobileView();
 
   const desktopIcons = [
-    { path: glbModeljs, scale: [10, 10, 10], speed: 0.01, direction: { x: -3, y: 3, z: 2 } },
-    { path: glbModelhtml5, scale: [10, 10, 10], speed: 0.02, direction: { x: -1, y: 2, z: 0 } },
-    { path: glbModelcss, scale: [0.1, 0.1, 0.1], speed: 0.003, direction: { x: 10, y: 10, z: 10 } },
-    { path: glbModelreact, scale: [4, 4, 4], speed: 0.004, direction: { x: -10, y: -1, z: -5 } },
-    { path: glbModeltailwind, scale: [0.3, 0.3, 1], speed: 0.004, direction: { x: -1, y: -4, z: -7 } },
-    { path: glbModelnodejs, scale: [0.4, 0.2, 0.4], speed: 0.003, direction: { x: -5, y: 2, z: 7 } },
-    { path: glbModelfirebase, scale: [0.2, 0.1, 0.2], speed: 0.003, direction: { x: 2, y: 2, z: 2 } },
-    { path: glbModelgithub2, scale: [2, 2, 2], speed: 0.003, direction: { x: 5, y: 12, z: 2 } },
+    { path: glbModeljs, scale: [15, 15, 15], speed: 0.01, direction: { x: -3, y: 3, z: 2 } },
+    { path: glbModelhtml5, scale: [150, 150, 150], speed: 0.02, direction: { x: -1, y: 2, z: 0 } },
+    { path: glbModelcss, scale: [0.3, 0.3, 0.3], speed: 0.003, direction: { x: 10, y: 10, z: 10 } },
+    { path: glbModelreact, scale: [10, 10, 10], speed: 0.004, direction: { x: -10, y: -1, z: -5 } },
+    { path: glbModeltailwind, scale: [500, 500, 500], speed: 0.014, direction: { x: -1, y: -2, z: -1 } },
+    { path: glbModelnodejs, scale: [1, 0.2, 1], speed: 0.003, direction: { x: -5, y: 2, z: 7 } },
+    { path: glbModelfirebase, scale: [0.4, 0.2, 0.4], speed: 0.003, direction: { x: 2, y: 2, z: 2 } },
+    { path: glbModelbootstrap, scale: [7, 7, 7], speed: 0.003, direction: { x: 1, y: 2, z: 1 } },
+    /*   { path: glbModelgithub2, scale: [2, 2, 2], speed: 0.003, direction: { x: 5, y: 12, z: 2 } },
     { path: glbModelbootstrap, scale: [6, 6, 6], speed: 0.003, direction: { x: 2, y: 12, z: 2 } },
     { path: glbModelexpress, scale: [50, 50, 50], speed: 0.003, direction: { x: -2, y: 12, z: 2 } },
     { path: glbModelsql, scale: [0.3, 0.3, 0.3], speed: 0.003, direction: { x: 2, y: 0, z: 2 } },
     { path: glbModelMongo, scale: [8, 8, 8], speed: 0.01, direction: { x: 0, y: 2, z: 0 } },
-    { path: glbModelnpm, scale: [80, 80, 80], speed: 0.005, direction: { x: -6, y: 2, z: 2 } }
+    { path: glbModelnpm, scale: [80, 80, 80], speed: 0.005, direction: { x: -6, y: 2, z: 2 } }*/
   ];
 
   const mobileIcons = [
-   { path: glbModelhtml5, scale: [5, 5, 5], speed: 0.001, direction: { x: -1, y: 2, z: 0 } },
-    { path: glbModelcss, scale: [0.05, 0.05, 0.05], speed: 0.001, direction: { x: 5, y: 5, z: 5 } },
-    { path: glbModeljs, scale: [5, 5, 5], speed: 0.02, direction: { x: -1, y: 0, z: 1 } },   
-    { path: glbModelreact, scale: [3, 3, 3], speed: 0.003, direction: { x: -3, y: -0.5, z: -1.5 } },
-    { path: glbModeltailwind, scale: [0.2, 0.2, 0.2], speed: 0.003, direction: { x: -0.5, y: -2, z: -3.5 } },
-    { path: glbModelnodejs, scale: [0.15, 0.1, 0.15], speed: 0.0025, direction: { x: -2.0, y: 1, z: 1.5 } },
-    { path: glbModelfirebase, scale: [0.1, 0.02, 0.1], speed: 0.01, direction: { x: 1, y: 1, z: 1 } },
-   /* { path: glbModelgithub2, scale: [0.5, 0.5, 0.5], speed: 0.0015, direction: { x: 2.5, y: 6, z: 1 } },
+   { path: glbModelhtml5, scale: [100, 110, 100], speed: 0.003, direction: { x: -1, y: 2, z: 1 } },
+    { path: glbModelcss, scale: [0.1, 0.1, 0.1], speed: 0.001, direction: { x: 5, y: 5, z: 5 } },
+    { path: glbModeljs, scale: [10, 10, 10], speed: 0.02, direction: { x: -1, y: 0, z: 1 } },   
+    { path: glbModelreact, scale: [5, 5, 5], speed: 0.003, direction: { x: -3, y: -0.5, z: -1.5 } },
+    { path: glbModeltailwind, scale: [400, 400, 400], speed: 0.003, direction: { x: -0.5, y: -2, z: -3.5 } },
+    { path: glbModelnodejs, scale: [0.3, 0.05, 0.3], speed: 0.0025, direction: { x: -2.0, y: 1, z: 1.5 } },
+    { path: glbModelfirebase, scale: [0.5, 0.1, 0.5], speed: 0.01, direction: { x: 1, y: 1, z: 1 } },
+    { path: glbModelbootstrap, scale: [5, 5, 5], speed: 0.003, direction: { x: 1, y: 2, z: 1 } },
+   
+    /* { path: glbModelgithub2, scale: [0.5, 0.5, 0.5], speed: 0.0015, direction: { x: 2.5, y: 6, z: 1 } },
     { path: glbModelbootstrap, scale: [3, 3, 3], speed: 0.0015, direction: { x: 1, y: 2, z: 1 } },
     { path: glbModelexpress, scale: [25, 25, 25], speed: 0.0015, direction: { x: -1, y: 3, z: 1 } },
     { path: glbModelsql, scale: [0.15, 0.15, 0.15], speed: 0.0015, direction: { x: 1, y: 0, z: 1 } },
@@ -131,6 +133,8 @@ const Icon3d = () => {
   );
 };
 export default Icon3d;
+
+//js #FFD928
 /*
 function Model({ path, scale, color, speed, direction }) {
   const { scene } = useGLTF(path);
