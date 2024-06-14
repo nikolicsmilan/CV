@@ -12,8 +12,8 @@ const LanguageChangeAside = () => {
   const currentLanguage = i18n.language;
 
   return (
-    <div className="mx-3 mt-0 uppercase border-0 text-dark">
-      <div className="border-0">
+    <div className="mx-3 mt-0 uppercase border-4 border-lime-400 text-dark ">
+      <div className="border-4">
         <select
           value={currentLanguage}
           onChange={handleLanguageChange}
