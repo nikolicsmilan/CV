@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import cv3 from "../assets/cv3.mp4";
-import teszt from "../assets/English_interview_teszt.mp4"
+//import cv3 from "../assets/cv3.mp4";
+import teszt from "../assets/English_interview_teszt_2.mp4"
 
 const VideoIntro = () => {
 
