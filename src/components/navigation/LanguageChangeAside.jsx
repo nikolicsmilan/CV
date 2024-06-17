@@ -13,7 +13,7 @@ const LanguageChangeAside = () => {
   const currentLanguage = i18n.language;
 
   return (
-    <div className="  mx-3 mt-0 uppercase  text-primary bg-secondary p-2 rounded border-4 border-sky-400">
+    <div className="  mx-3 mt-0 uppercase  text-primary bg-secondary p-2 rounded border-4 border-primary">
       <div className="relative inline-block border-0 flex flex-col items-center">
         <div className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
           {currentLanguage}
