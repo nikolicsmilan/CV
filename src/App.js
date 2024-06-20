@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/navigation/Layout";
 import { MyGeneralContext } from "./context/GeneralContext";
+import useOrientationLock from "./hooks/use-orientation";
 import "./App.css";
 
 // Lazy load the page components
@@ -18,11 +19,19 @@ const NotFound = React.lazy(() => import("./pages/NotFound")); // Lazy load the 
 function App() {
   // Get the style value from the MyGeneralContext
   const { style } = MyGeneralContext();
-
+  const isLandscape = useOrientationLock();
   return (
     // Top-level container for the entire application
+    <>
+    {isLandscape && (
+        <div className="landscape-warning h-screen w-screen fixed z-50 bg-white flex justify-center items-center">
+         <div> <p>Kérjük, fordítsd vissza az eszközt álló módba.</p></div>
+        </div>
+      )}
     <div className={`w-full  flex font-sans text-base ${style} border-0 border-red-400 text-primary`}>
       {/* Set up the routing for different pages */}
+
+    
       <Routes>
         {/* Parent route with the layout component */}
         <Route path="/" element={<Layout />}>
@@ -38,6 +47,7 @@ function App() {
         </Route>
       </Routes>
     </div>
+    </>
   );
 }
 

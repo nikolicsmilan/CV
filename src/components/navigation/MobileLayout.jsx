@@ -31,7 +31,7 @@ const MobileLayout = ({
           {!activeMenu ? (
             <AiOutlineMenu
               title="Menu"
-              className="text-primary text-3xl"
+              className="text-primary text-3xl city:bg-primary city:text-white"
               onClick={() => setActiveMenu((prevState) => !prevState)}
             />
           ) : (
