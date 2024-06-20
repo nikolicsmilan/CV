@@ -14,13 +14,13 @@ const Roadmap = () => {
 
   return (
     <div className="overflow-hidden overscroll-none flex flex-row   relative  bg-cover bg-prmary space:bg-black  w-full h-screen flex items-center justify-center border-0 border-orange-400">
-      <div className=" relative right-0 z-10 lg:w-1/3 h-screen mt-[440px] lg:mt-[20px]">
+      <div className=" relative right-0 z-10 lg:w-1/3 h-screen mt-[500px] lg:mt-[20px] border-0 border-red-400">
         {roadmapItems.map((item, index) => (
           <div
-            className={`absolut lg:relative left-0 border-0 ml-[50px] top-10 lg:top-1 flex  lg:mt-[120px] mt-[${20}px]`}
+            className={` border-0 border-lime-400 absolut lg:relative left-0 ml-[50px] top-10 lg:top-1 flex  lg:mt-[120px] mt-[${20}px]`}
           >
-            <div className=" w-48 h-0.5 bg-primary ">
-              <h2 className="ml-[0px] lg:mt-[-55px] bg-dark rounded text-center p-0 ">
+            <div className="w-48 lg:w-96 h-0.5 bg-primary border-0 border-purple-400">
+              <h2 className="ml-[0px] lg:mt-[-75px] bg-dark rounded text-center p-0 ">
               {t(`Roadmapem.${item.date}`)}
               </h2>
             </div>
@@ -29,12 +29,12 @@ const Roadmap = () => {
                 transform: `
          rotateX(${0}deg)
          rotateY(${0}deg)
-         rotateZ(${20}deg)`,
+         rotateZ(${90}deg)`,
               }}
-              className=" w-28 lg:w-40 h-0.5 bg-primary mt-[27px] ml-[-5px]"
+              className=" w-12  lg:w-12 h-0.5 bg-primary mt-[35px] md:mt-[22px] ml-[-5px]"
             ></div>
-            <div className=" top-10 w-20 h-0.5 bg-primary ml-[-5px] mt-[54px]">
-              <h2 className="bg-dark rounded lg:text-center lg:ml-[20px] mt-[-25px]">
+            <div className=" top-10 w-20 h-0.5 bg-primary ml-[-5px] mt-[54px] md:mt-[45px]">
+              <h2 className="bg-dark rounded text-center lg:ml-[20px] mt-[-25px] md:mt-[-25px]">
                 {item.date}
               </h2>
             </div>
@@ -42,7 +42,7 @@ const Roadmap = () => {
         ))}
       </div>
 
-      <div className=" absolute lg:relative right-0 z-10  h-screen mt-[20px]">
+      <div className=" absolute lg:relative right-0 z-5  h-screen mt-[20px] border-0 border-red-400">
         <img
           src={stillpicture} // Álló kép forrása
           alt="Profile"
