@@ -7,6 +7,7 @@
   "greeting": "Hello, {{name}}!",
   "stylequestion": "What style do you prefer?",
   "clickhere":"Click here!",
+  "pleaseturn":"Please turn the device back to portrait mode.",
   "Project": {
     "pagename": "Projects",
     "maindescription": "  On this page you can get to know some of my projects that I have made over the years.",

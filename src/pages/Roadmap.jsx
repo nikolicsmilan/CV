@@ -17,13 +17,18 @@ const Roadmap = () => {
       <div className=" relative right-0 z-10 lg:w-1/3 h-screen mt-[500px] lg:mt-[20px] border-0 border-red-400">
         {roadmapItems.map((item, index) => (
           <div
-            className={` border-0 border-lime-400 absolut lg:relative left-0 ml-[50px] top-10 lg:top-1 flex  lg:mt-[120px] mt-[${20}px]`}
+            className={` border-0 border-lime-400 absolut lg:relative left-0 ml-[50px] top-10 lg:top-1 flex  lg:mt-[120px] mt-[${0}px] my-2`}
           >
-            <div className="w-48 lg:w-96 h-0.5 bg-primary border-0 border-purple-400">
-              <h2 className="ml-[0px] lg:mt-[-75px] bg-dark rounded text-center p-0 ">
-              {t(`Roadmapem.${item.date}`)}
-              </h2>
+            <div className="border-b-2 border-primary w-48 lg:w-96 h-20 bg-dark flex justify-center items-center">
+              <div>
+                <h2 className="ml-[0px]  rounded text-center p-0 ">
+                  {t(`Roadmapem.${item.date}`)}
+                </h2>
+              </div>
+             
+
             </div>
+
             <div
               style={{
                 transform: `
@@ -58,7 +63,7 @@ const Roadmap = () => {
 };
 
 export default Roadmap;
-
+// <div className="w-48 lg:w-96 h-0.5 bg-primary border-0 border-purple-400 my-0"></div>
 /*
     <div className=" flex flex-row overflow-y-scroll  relative  bg-cover bg-prmary space:bg-black  w-full h-screen flex items-center justify-center border-0 border-orange-400">
       <div className=" relative right-0 z-10 lg:w-1/3 h-screen mt-[440px] lg:mt-[20px]">

@@ -39,7 +39,7 @@ const Card = ({
 
   return (
     <div
-      className={`text-dark  relative ${background} p-0 pt-0 rounded border-2 space:shadow-2xl  space:border-sky-400 w-80 `}
+      className={`text-dark  relative ${background} p-0 pt-0 rounded border-0 space:shadow-2xl  w-80 `}
     >
       <img src={image} className="w-full h-60 rounded" />
       <h1 className="text-lg rounded-full  text-white p-2">{title}</h1>
