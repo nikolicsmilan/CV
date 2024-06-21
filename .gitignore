@@ -27,3 +27,11 @@ yarn-error.log*
 
 # Firebase Hosting cache
 .firebase/
+
+# Don't upload this folder
+/src/api/
+/src/pages/mentes
+/src/assets
+/src/assets/video
+/src/assets/images
+build/
