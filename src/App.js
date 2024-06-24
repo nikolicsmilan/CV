@@ -12,9 +12,7 @@ const VideoIntro = React.lazy(() => import("./pages/VideoIntro"));
 const Stack = React.lazy(() => import("./pages/Stack"));
 const Projects = React.lazy(() => import("./pages/Projects"));
 const CV = React.lazy(() => import("./pages/CV"));
-const Info = React.lazy(() => import("./pages/Info"));
 const Roadmap = React.lazy(() => import("./pages/Roadmap"));
-const BackgroundVideo = React.lazy(() => import("./pages/BackgroundVideo"));
 const NotFound = React.lazy(() => import("./pages/NotFound")); // Lazy load the custom 404 page
 
 function App() {
@@ -105,17 +103,7 @@ function App() {
                 </Suspense>
               }
             />{" "}
-            {/* Info page */}
-            <Route
-              path="/back"
-              element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  {" "}
-                  <BackgroundVideo />{" "}
-                </Suspense>
-              }
-            />{" "}
-            {/* Info page */}
+          
             <Route
               path="*"
               element={

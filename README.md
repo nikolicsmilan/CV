@@ -31,11 +31,11 @@ This is my personal portfolio website showcasing my web development projects.
 
 1. **Clone the repository:**
 
-   git clone https://github.com/username/portfolio-website.git
+   git clone https://github.com/nikolicsmilan/CV.git
 
 2. **Navigate to the project directory:**
 
-    cd portfolio-website
+    cd .\CV\
 
 3. **Navigate to the project directory:**
 

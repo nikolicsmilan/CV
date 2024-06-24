@@ -60,24 +60,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-// <DataContextProvider>  </DataContextProvider>
-/*
 
-
-*/
-
-/*i18n
-  .use(Backend)
-  .use(LanguageDetector) // Use LanguageDetector
-  .init({
-    lng: "en", // Set the default language
-    fallbackLng: "en", // Fallback language if a translation is not available
-    debug: false, // Enable debug mode for development
-   
-    // Backend options for loading translation files
-    resources: {
-      en: { translation: enTranslation },
-      hu: { translation: huTranslation },
-     
-    },
-  });*/
