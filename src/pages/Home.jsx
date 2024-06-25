@@ -1,11 +1,12 @@
 import React from "react";
 import Heading from "../components/home/Heading";
 import { MyGeneralContext } from "../context/GeneralContext";
-import city from "../assets/city.mp4";
-import space from "../assets/space.mov";
+//import city from "../assets/city.mp4";
+//import space from "../assets/space.mov";
 const Home = () => {
   const { style, size, activeMenu, setActiveMenu } = MyGeneralContext();
-
+  const city="https://cockers-43ccb.web.app/videos/city.mp4"
+  const space ="https://cockers-43ccb.web.app/videos/space.mov"
   return (
     <div className="flex justify-start items-center flex-col border-0 border-sky-400 h-screen">
       <div className=" relative w-full h-full">

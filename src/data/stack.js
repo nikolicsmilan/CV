@@ -9,6 +9,7 @@ import {
   FaNodeJs,
   FaGit,
   FaNpm,
+  FaGithub,
 //  FaInfoCircle,
  // FaMapMarkerAlt,
 } from "react-icons/fa";
@@ -25,8 +26,8 @@ export const stack = [
   { name: "Bootstrap", icon: <FaBootstrap /> },
   { name: "NodeJs", icon: <FaNodeJs /> },
   { name: "npm", icon: <FaNpm /> },
-  { name: "git", icon: <FaGit /> },
-  { name: "firebase", icon: <SiFirebase /> },
+  { name: "Github", icon: <FaGithub  /> },
+  { name: "Firebase", icon: <SiFirebase /> },
 ];
 
 export const language = [

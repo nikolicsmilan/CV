@@ -6,8 +6,8 @@
   "content": "This is the content of my app.",
   "greeting": "Hello, {{name}}!",
   "stylequestion": "What style do you prefer?",
-  "clickhere":"Click here!",
-  "pleaseturn":"Please turn the device back to portrait mode.",
+  "clickhere": "Click here!",
+  "pleaseturn": "Please turn the device back to portrait mode.",
   "Project": {
     "pagename": "Projects",
     "maindescription": "  On this page you can get to know some of my projects that I have made over the years.",
@@ -15,6 +15,9 @@
     "description2": "This web application that you see now. This simple webpage introduce me and my work shorts. Use React, Tailwind, Context, Firebase ",
     "description3": "A furniture image viewer still ... But it will that you never seen before :) ",
     "description4": "Nasa api processing system. Based on NASA API portal's data. React frontend, Firestore database, Node backend server, Express webserver"
+  },
+  "Contact": {
+    "heading": "The website and the GitHub link are clickable! Check out my projects!"
   },
   "Stackem": {
     "Basic": "Basic",
@@ -53,11 +56,11 @@
   },
   "Infom": {
     "visited": "This page is visited by {{visit}} times. ",
-    "gps":"Your GPS coordinates: {{longitude}} {{latitude}}. ",
-    "ip":"Your ip address: {{ipAddress}}. ",
-    "browser":"Browser: {{browserName}}. ",
-    "os":" Operating System: {{osName}}. ",
-    "version":"Version: {{osVersion}}. ",
+    "gps": "Your GPS coordinates: {{longitude}} {{latitude}}. ",
+    "ip": "Your ip address: {{ipAddress}}. ",
+    "browser": "Browser: {{browserName}}. ",
+    "os": " Operating System: {{osName}}. ",
+    "version": "Version: {{osVersion}}. ",
     "devicetype": "Devicetype: {{deviceType}}. "
   },
   "errror404": " 404 error - Something went wrong"

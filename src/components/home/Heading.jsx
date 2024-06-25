@@ -14,23 +14,23 @@ const Heading = ({ style, setActiveMenu }) => {
               style === "city" ? " mycity" : "myspace"
             }`}
           >
-           <TypingAnimation customcontent={t("myname")} late={0}/>
+           <TypingAnimation customcontent={t("myname")} late={1000}/>
           </h1>
           <h2
             className={` text-center text-xl lg:text-3xl  border-0 ${
               style === "city" ? "mycity" : "myspace"
             }`}
           >
-        <TypingAnimation customcontent={t("myjob")}late={1000}/>
+        <TypingAnimation customcontent={t("myjob")}late={2000}/>
           </h2>
           <h3
             className={` text-center text-sm lg:text-xl my-5 ${
               style === "city" ? "mycity" : "myspace"
             }`}
           >
-            <TypingAnimation customcontent={t("mainquestion")} late={2000}/>   
+            <TypingAnimation customcontent={t("mainquestion")} late={3000}/>   
           </h3> 
-         <h3 className="text-3xl text-primary text-center">  <TypingAnimation customcontent={t("clickhere")} late={4000} />   </h3>
+         <h3 className="text-3xl text-primary text-center">  <TypingAnimation customcontent={t("clickhere")} late={5000} />   </h3>
        
         </NavLink>
       </div>
@@ -40,4 +40,4 @@ const Heading = ({ style, setActiveMenu }) => {
 
 export default Heading;
 
-//{t("Translation.ize")}
+

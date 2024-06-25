@@ -1,12 +1,8 @@
-import React, { useRef } from 'react';
-//import cv3 from "../assets/cv3.mp4";
-import teszt from "../assets/English_interview_teszt_2.mp4"
-
+import React, { useRef,useEffect } from "react";
+import { useLocation } from "react-router-dom";
 const VideoIntro = () => {
-
-
   const videoRef = useRef(null);
-
+  const location = useLocation();
   const handleVideoEnd = () => {
     // Újraindítás a videó visszatekerésével
     if (videoRef.current) {
@@ -14,13 +10,23 @@ const VideoIntro = () => {
       videoRef.current.play();
     }
   };
+
+  useEffect(() => {
+    // Újratöltjük a videót, amikor az útvonal változik
+    if (videoRef.current && location.pathname === "/intro") {
+      videoRef.current.load();
+      videoRef.current.play();
+    }
+  }, [location]);
   return (
     <div>
       <div className="flex justify-start items-center flex-col h-screen">
         <div className=" relative w-full h-full">
           <video
-          ref={videoRef}
-            src={teszt}
+            ref={videoRef}
+            src={
+              "https://cockers-43ccb.web.app/videos/English_interview_teszt_2.mp4"
+            }
             type="video/mp4"
             controls={false}
             autoPlay
@@ -37,4 +43,4 @@ const VideoIntro = () => {
   );
 };
 
-export default VideoIntro;                                                                                                 
+export default VideoIntro;

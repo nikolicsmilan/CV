@@ -23,6 +23,9 @@
     "description3": "Egy `bútor` képnézegető. Még. De nem sokára az lesz, amilyet még nem láttál... :) ",
     "description4": "Nasa API feldolgozó rendszer. A NASA API-portál adatai alapján. React frontend, Firestore adatbázis, Node backend, Express webszerver"
   },
+    "Contact": {
+    "heading": "A weboldal és a GitHub link kattintható! Nézd meg a projektejeimet!"
+  },
   "Stackem": {
     "Basic": "Alap",
     "Advanced": "Haladó"
@@ -37,8 +40,8 @@
     "jobtitle": " Frontend Web Fejlesztő",
     "jobsubtext": "egy kevés backend tudással.",
     "workexperience": "Munkatapasztalat",
-    "jobpost": "Nikolics Milan E.V (egyéni vállalkozó)",
-    "jobdate": "10/2019 - jelenleg is",
+    "jobpost": "Nikolics Milan Egyéni Vállalkozó",
+    "jobdate": "2019-2024",
     "jobdescription": "Weboldalak és webalkalmazások készítése magánszemélyeknek és kisvállalkozások részére.",
     "education": "Tanulmányok",
     "school": " Általános Rendszergazda, SZÁMALK – Szalézi Technikum és Szakgimnázium",
