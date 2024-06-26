@@ -15,9 +15,9 @@ const CV = () => {
   const { style, size } = MyGeneralContext();
   const { i18n } = useTranslation();
   const dochu =
-    "https://nikolicsmilan.hu/nikolicsmilan-cv.web.app_2024_06_26_hu.pdf";
+    "https://nikolicsmilan.hu/nikolicsmilan-cv.web.app_2024_06_27_hu.pdf";
   const docen =
-    "https://nikolicsmilan.hu/nikolicsmilan-cv.web.app_2024_06_26_en.pdf";
+    "https://nikolicsmilan.hu/nikolicsmilan-cv.web.app_2024_06_27_en.pdf";
   const currentLanguage = i18n.language;
 
 

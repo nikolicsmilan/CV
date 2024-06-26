@@ -79,7 +79,7 @@ module.exports = {
               asidebg: "rgb(237, 237, 237)",
             },
             fontFamily: {
-              sans: "Inter",
+              sans: "Josefin Sans",
               brush: "Comforter Brush",
             },
             backgroundImage: {

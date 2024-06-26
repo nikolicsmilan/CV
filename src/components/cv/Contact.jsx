@@ -4,6 +4,54 @@ const Contact = ({ contact }) => {
   const { t } = useTranslation();
   return (
     <>
+      <h1 className="text-dark rounded font-bold 
+      uppercase  text-base text-center py-2 text-red-600 city:bg-dark">
+        {t("Contact.heading")}
+      </h1>
+
+
+      <div className="    rounded flex 
+      flex-wrap justify-center border-0 my-5
+       border-lime-400 items-center text-base">
+        {contact.map((item, index) => (
+          <div
+            key={`${item.name}_${index}`}
+            className="w-[270px] h-28 p-1 m-1 border-2 md:border-2 
+            rounded border-primary flex flex-col  items-center justify-center my-1 "
+          >
+            <div className="text-3xl mx-2 ">{item.icon}</div>{" "}
+            <div className="md:text-xl">
+              <a href={item.url} target="_blank" rel="noreferrer">
+                {item.name}
+              </a>
+            </div>
+            <div className=" py-1">
+            {item.url ? (
+              <div
+                className="rounded bg-primary text-white border-0 border-red-400  
+              mx-1 px-2 flex justify-center items-center cursor-pointer "
+              >
+                <div className="text-base">
+                  {" "}
+                  <a href={item.url} target="_blank" rel="noreferrer">
+                    {t("CVem.clickhere")}
+                  </a>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}</div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default Contact;
+
+/*
+    <>
       <h1 className="text-dark rounded font-bold uppercase  text-base text-center py-2 text-red-600 bg-dark">
         {t("Contact.heading")}
       </h1>
@@ -39,10 +87,8 @@ const Contact = ({ contact }) => {
         ))}
       </div>
     </>
-  );
-};
 
-export default Contact;
+*/
 
 /*
 import React from "react";
