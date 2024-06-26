@@ -7,7 +7,7 @@ import About from "./About";
 
 const MainCv = ({ contact }) => {
   return (
-    <div className="w-8/12  border-0 border-lime-400">
+    <div className="  border-0 border-lime-400">
       <div className=" border-l-0 lg:border-l-0 border-0 border-primary m-0 mx-10 h-screen">
         <Introduction contact={contact} />
         <Experience />

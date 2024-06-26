@@ -36,9 +36,10 @@ export const language = [
 ];
 
 export const contact = [
+  { name: "nikolicsmilan.hu", icon: <TbWorldWww /> ,url:"https://nikolicsmilan.hu"},
+  { name: " github.com/nikolicsmilan", icon: <AiFillGithub />,url:"https://github.com/nikolicsmilan" },
   { name: "nikolicsmilan77@gmail.com", icon: <AiFillMail /> },
-  { name: "+36 20 475 24 60", icon: <AiFillMobile /> },  
-  { name: "github", icon: <AiFillGithub /> },
-  { name: "webpage", icon: <TbWorldWww /> },
+  { name: "+36 20 475 24 60", icon: <AiFillMobile />, },  
+ 
 ];
 //{ name: "Hungary", icon: <FaMapMarkerAlt /> },

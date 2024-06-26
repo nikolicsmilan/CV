@@ -24,7 +24,7 @@
     "description4": "Nasa API feldolgozó rendszer. A NASA API-portál adatai alapján. React frontend, Firestore adatbázis, Node backend, Express webszerver"
   },
     "Contact": {
-    "heading": "A weboldal és a GitHub link kattintható! Nézd meg a projektejeimet!"
+    "heading": "A weboldal és a GitHub link kattintható! Nézd meg!"
   },
   "Stackem": {
     "Basic": "Alap",
@@ -52,7 +52,8 @@
     "employmenttype": "Mind az alklalmazoti mind a vállalkozói státusz elfogadható, de előnyben részesítem az alkalmazotit.",
     "salarytext": "A nettó fizetési bérigényemet sávosan adom meg. Függ az aktuális állástól:",
     "salaryamount": "350000 - 600000 HUF",
-    "aboutdes": "Számomra a fejlesztés nem csak egy munka. Ez a kedvenc hobbim és a szórakozásom is. Akkor is csinálnám, ha nem kapnék érte pénzt. A fejlesztés számomra azt jelenti, hogy abból élek meg, amit szeretek csinálni."
+    "aboutdes": "Számomra a fejlesztés nem csak egy munka. Ez a kedvenc hobbim és a szórakozásom is. Akkor is csinálnám, ha nem kapnék érte pénzt. A fejlesztés számomra azt jelenti, hogy abból élek meg, amit szeretek csinálni.",
+    "clickhere":"Kattints ide!"
   },
   "Language": {
     "name": "Nyelvismeret",

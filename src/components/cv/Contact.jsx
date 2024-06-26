@@ -4,10 +4,57 @@ const Contact = ({ contact }) => {
   const { t } = useTranslation();
   return (
     <>
-      <h1 className="text-dark font-bold uppercase  text-xl my-2 text-red-600">
+      <h1 className="text-dark rounded font-bold uppercase  text-base text-center py-2 text-red-600 bg-dark">
         {t("Contact.heading")}
       </h1>
-      <div className="flex flex-wrap justify-center border-0 my-5 border-red-400 items-center ">
+      <div className=" shadow-2xl rounded flex flex-wrap justify-center border-0 my-5 border-red-400 items-center text-base">
+        {contact.map((item, index) => (
+          <div
+            key={`${item.name}_${index}`}
+            className="w-full border-2 md:border-0 rounded border-primary flex flex-col md:flex-row items-center my-1 "
+          >
+            <div className="text-2xl mx-2 ">{item.icon}</div>{" "}
+            <div className="md:text-xl">
+              <a href={item.url} target="_blank" rel="noreferrer">
+                {item.name}
+              </a>
+            </div>
+            <div className="md:ml-auto py-1">
+            {item.url ? (
+              <div
+                className="rounded bg-primary text-white border-0 border-red-400  
+              mx-1 px-2 flex justify-center items-center cursor-pointer "
+              >
+                <div className="text-base">
+                  {" "}
+                  <a href={item.url} target="_blank" rel="noreferrer">
+                    {t("CVem.clickhere")}
+                  </a>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}</div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default Contact;
+
+/*
+import React from "react";
+import { useTranslation } from "react-i18next";
+const Contact = ({ contact }) => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h1 className="text-dark font-bold uppercase  text-base text-center my-2 text-red-600">
+        {t("Contact.heading")}
+      </h1>
+      <div className="flex flex-wrap justify-center border-2 my-5 border-red-400 items-center text-base">
         {contact.map((item, index) => (
           <React.Fragment key={`${item.name}_${index}`}>
             {item.name !== "github" && item.name !== "webpage" && (
@@ -66,3 +113,4 @@ const Contact = ({ contact }) => {
 };
 
 export default Contact;
+*/

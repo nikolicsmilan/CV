@@ -7,13 +7,13 @@ const Introduction = ({ contact }) => {
   return (
     <div className="border-0 border-orange-400 m-3">
       <div>
-        <h1 className=" sm:text-center lg:text-start text-3xl ">
+        <h1 className=" text-center lg:text-start text-3xl ">
           Milán Nikolics
         </h1>
-        <h2 className=" lg:text-start xs:text-center md:text-center sm:text-center text-xl lg:text-2xl text-primary font-bold ">
+        <h2 className="text-center lg:text-start xs:text-center md:text-center sm:text-center text-xl lg:text-2xl text-primary font-bold ">
         {  t("CVem.jobtitle")}
         </h2>
-        <p className="lg:text-start sm:text-center">
+        <p className="text-center lg:text-start sm:text-center">
         {  t("CVem.jobsubtext")}
         </p>
       </div>

@@ -17,7 +17,7 @@
     "description4": "Nasa api processing system. Based on NASA API portal's data. React frontend, Firestore database, Node backend server, Express webserver"
   },
   "Contact": {
-    "heading": "The website and the GitHub link are clickable! Check out my projects!"
+    "heading": "The website and the GitHub link are clickable! Check it out!"
   },
   "Stackem": {
     "Basic": "Basic",
@@ -45,7 +45,8 @@
     "employmenttype": " Both as an employee and as an entrepreneur, but I prefer the employee.",
     "salarytext": " My net salary expectation i will give it in strips. It's depends on    the job:",
     "salaryamount": "350000 - 600000 HUF",
-    "aboutdes": " For me, development is not just making a living, it’s a hobby and my favourite pastime, and I would do it even if I didn’t get paid. Development for me means doing what I love to do."
+    "aboutdes": " For me, development is not just making a living, it’s a hobby and my favourite pastime, and I would do it even if I didn’t get paid. Development for me means doing what I love to do.",
+    "clickhere":"Click here!"
   },
   "Language": {
     "name": "Language",
