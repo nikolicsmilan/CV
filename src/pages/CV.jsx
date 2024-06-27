@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CvMobil from "../components/cv/mobil/CvMobil";
-import profil from "../assets/Profil3.PNG";
-import profil4 from "../assets/Profil4.jpg";
 import profil7 from "../assets/Profil7.JPG"
 import { stack, language, contact } from "../data/stack";
 import { downloadPDF } from "../components/cv/pdfUtils";

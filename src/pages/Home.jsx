@@ -1,8 +1,7 @@
 import React from "react";
 import Heading from "../components/home/Heading";
 import { MyGeneralContext } from "../context/GeneralContext";
-//import city from "../assets/city.mp4";
-//import space from "../assets/space.mov";
+
 const Home = () => {
   const { style, size, activeMenu, setActiveMenu } = MyGeneralContext();
   const city="https://cockers-43ccb.web.app/videos/city.mp4"
