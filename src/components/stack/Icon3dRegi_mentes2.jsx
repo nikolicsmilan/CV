@@ -10,12 +10,13 @@ import glbModelnodejs from "../../assets/glb/nodejsok.glb";
 import glbModelfirebase from "../../assets/glb/firebaseok.glb";
 import glbModelbootstrap from "../../assets/glb/bootstrapok.glb";
 
+// Hook a mobil nézet felismerésére
 const useMobileView = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 768); // Mobil nézet, ha az ablak szélessége kisebb vagy egyenlő 768 pixel
     };
 
     checkMobile();
@@ -26,13 +27,14 @@ const useMobileView = () => {
   return isMobile;
 };
 
-function Model({ path, scale, speed, direction, onClick }) {
-  const { scene } = useGLTF(path);
+// Modell komponens, amely a 3D modellt jeleníti meg és animálja
+const Model = ({ path, scale, speed, direction }) => {
+  const { scene } = useGLTF(path); // 3D modell betöltése GLTF formátumból
   const ref = useRef();
-  const [moveDirection, setMoveDirection] = useState(direction);
+  const [moveDirection, setMoveDirection] = useState(direction); // Mozgási irány állapot
 
   useFrame(() => {
-    if (!ref.current || speed === 0) return;
+    if (!ref.current || speed === 0) return; // Ha nincs referencia vagy a sebesség 0, ne animáljon
 
     const newPos = {
       x: ref.current.position.x + moveDirection.x * speed / 2,
@@ -40,42 +42,49 @@ function Model({ path, scale, speed, direction, onClick }) {
       z: ref.current.position.z + moveDirection.z * speed / 2,
     };
 
-    if (newPos.x >= 2 || newPos.x <= -2) moveDirection.x = -moveDirection.x;
-    if (newPos.y >= 2 || newPos.y <= -2) moveDirection.y = -moveDirection.y;
-    if (newPos.z >= 2 || newPos.z <= -2) moveDirection.z = -moveDirection.z;
+    // Ellenőrzi az új pozíciót, és megváltoztatja a mozgási irányt, ha eléri a határokat
+    if (newPos.x >= 2 || newPos.x <= -2) {
+      setMoveDirection((dir) => ({ ...dir, x: -dir.x }));
+    }
+    if (newPos.y >= 2 || newPos.y <= -2) {
+      setMoveDirection((dir) => ({ ...dir, y: -dir.y }));
+    }
+    if (newPos.z >= 2 || newPos.z <= -2) {
+      setMoveDirection((dir) => ({ ...dir, z: -dir.z }));
+    }
 
-    ref.current.position.set(newPos.x, newPos.y, newPos.z);
-    ref.current.rotation.x += speed;
+    ref.current.position.set(newPos.x, newPos.y, newPos.z); // Új pozíció beállítása
+    ref.current.rotation.x += speed; // Rotáció animálása
     ref.current.rotation.y += speed;
     ref.current.rotation.z += speed;
   });
 
-  return <primitive object={scene} scale={scale} ref={ref} onClick={onClick} />;
-}
-
-function Icon3D({ path, scale, speed, direction, onClick }) {
-  return (
-    <Canvas>
-      <OrbitControls enableZoom={false} />
-      <ambientLight intensity={1.5} />
-      <directionalLight position={[1, 1, 1]} intensity={1} />
-      <Model path={path} scale={scale} speed={speed} direction={direction} onClick={onClick} />
-    </Canvas>
-  );
-}
-
-const Icon3dComp = ({ path, scale, speed, direction, onClick }) => {
-  return (
-    <div className="border-0 absolute border-red-400 w-full h-full" onClick={onClick}>
-      <Icon3D path={path} scale={scale} speed={speed} direction={direction} />
-    </div>
-  );
+  return <primitive object={scene} scale={scale} ref={ref} />;
 };
 
-const Icon3d = () => {
-  const isMobile = useMobileView();
-  const [selectedIcon, setSelectedIcon] = useState(null);
+// Icon3D komponens, amely a 3D modellt Canvas-ban jeleníti meg
+const Icon3D = ({ path, scale, speed, direction }) => (
+  <Canvas>
+    <OrbitControls enableZoom={false} /> {/* OrbitControls a 3D modell navigációjához */}
+    <ambientLight intensity={1.5} /> {/* Ambient fény */}
+    <directionalLight position={[1, 1, 1]} intensity={1} /> {/* Irányított fény */}
+    <Model path={path} scale={scale} speed={speed} direction={direction} />
+  </Canvas>
+);
 
+// Icon3dComp komponens, amely az egyes ikonokat tartalmazza
+const Icon3dComp = ({ path, scale, speed, direction, onClick }) => (
+  <div className="border-0 absolute w-full h-full" onClick={onClick}>
+    <Icon3D path={path} scale={scale} speed={speed} direction={direction} />
+  </div>
+);
+
+// Icon3d fő komponens, amely az összes ikont kezeli
+const Icon3d = () => {
+  const isMobile = useMobileView(); // Ellenőrzi, hogy mobil nézetben van-e
+  const [selectedIcon, setSelectedIcon] = useState(null); // Állapot a kiválasztott ikon tárolására
+
+  // Asztali nézet ikonok
   const desktopIcons = [
     { path: glbModeljs, scale: [15, 15, 15], speed: 0.01, direction: { x: -3, y: 3, z: 2 } },
     { path: glbModelhtml5, scale: [150, 150, 150], speed: 0.02, direction: { x: -1, y: 2, z: 0 } },
@@ -84,9 +93,10 @@ const Icon3d = () => {
     { path: glbModeltailwind, scale: [500, 500, 500], speed: 0.014, direction: { x: -1, y: -2, z: -1 } },
     { path: glbModelnodejs, scale: [1, 0.2, 1], speed: 0.005, direction: { x: 4, y: 2, z: 7 } },
     { path: glbModelfirebase, scale: [0.4, 0.2, 0.4], speed: 0.003, direction: { x: 2, y: 2, z: 2 } },
-  //  { path: glbModelbootstrap, scale: [7, 7, 7], speed: 0.003, direction: { x: 1, y: 2, z: 1 } },
+    { path: glbModelbootstrap, scale: [7, 7, 7], speed: 0.003, direction: { x: 1, y: 2, z: 1 } },
   ];
 
+  // Mobil nézet ikonok
   const mobileIcons = [
     { path: glbModelhtml5, scale: [100, 110, 100], speed: 0.003, direction: { x: -1, y: 2, z: 1 } },
     { path: glbModelcss, scale: [0.1, 0.1, 0.1], speed: 0.001, direction: { x: 5, y: 5, z: 5 } },
@@ -98,46 +108,31 @@ const Icon3d = () => {
     { path: glbModelbootstrap, scale: [5, 5, 5], speed: 0.003, direction: { x: 1, y: 2, z: 1 } },
   ];
 
-  const icons = isMobile ? mobileIcons : desktopIcons;
-
-  const handleClick = (index) => {
-    setSelectedIcon(icons[index]);
-  };
+  const icons = isMobile ? mobileIcons : desktopIcons; // Válassza ki a megfelelő ikonokat a nézettől függően
 
   return (
     <div className="flex flex-wrap w-full h-full justify-center items-center border-0 p-0 rounded-lg">
       {icons.map((icon, index) => (
-        <div key={index} className="flex absolute w-full h-full border-0">
+        <div
+          key={index}
+          className="flex absolute w-full h-full border-0"
+          onClick={() => setSelectedIcon(index)} // Kiválasztja az ikont
+        >
           <Icon3dComp
             path={icon.path}
             scale={icon.scale}
-            speed={selectedIcon ? 0 : icon.speed}
+            speed={selectedIcon !== null ? 0 : icon.speed} // Megállítja az animációt, ha egy ikon ki van választva
             direction={icon.direction}
-            onClick={() => handleClick(index)}
           />
         </div>
       ))}
-
-      {selectedIcon && (
+      {selectedIcon !== null && (
+        // Információs panel a kiválasztott ikonról
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
           <div className="bg-white p-4 rounded-lg">
             <h2>Icon Information</h2>
             <p>Information about the selected icon.</p>
-            <div className="w-64 h-64 border-2">
-              <Canvas>
-                <OrbitControls enableZoom={false} />
-                <ambientLight intensity={1.5} />
-                <directionalLight position={[1, 1, 1]} intensity={1} />
-                <Model
-                  path={selectedIcon.path}
-                  scale={selectedIcon.scale}
-                  speed={0}
-                  direction={selectedIcon.direction}
-                />
-              </Canvas>
-            </div>
-            {selectedIcon.path}
-            <button onClick={() => setSelectedIcon(null)}>Close</button>
+            <button onClick={() => setSelectedIcon(null)}>Close</button> {/* Bezárja az információs panelt */}
           </div>
         </div>
       )}
@@ -146,7 +141,6 @@ const Icon3d = () => {
 };
 
 export default Icon3d;
-
 
 
 //js #FFD928
