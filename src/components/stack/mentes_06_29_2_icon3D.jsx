@@ -148,8 +148,3 @@ const Icon3d = () => {
 };
 
 export default Icon3d;
-
-
-
-
-//js #FFD928

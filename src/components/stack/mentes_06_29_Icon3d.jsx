@@ -64,11 +64,13 @@ function Icon3D({ path, scale, speed, direction, onClick }) {
   );
 }
 
-const Icon3dComp = ({ path, scale, speed, direction, onClick, borderColor }) => {
+const Icon3dComp = ({ path, scale, speed, direction, onClick }) => {
   return (
-    <div className="w-32 h-32 p-2">
-      <div className={`border-4 ${borderColor} w-full h-full`} onClick={onClick}>
-        <Icon3D path={path} scale={scale} speed={speed} direction={direction} />
+    <div className="w-full h-full relative">
+      <div className="border-4 border-orange-400 
+      absolute w-full h-full" onClick={onClick}>
+        <Icon3D path={path} scale={scale} speed={speed} 
+        direction={direction} />
       </div>
     </div>
   );
@@ -79,25 +81,25 @@ const Icon3d = () => {
   const [selectedIcon, setSelectedIcon] = useState(null);
 
   const desktopIcons = [
-    { path: glbModeljs, scale: [15, 15, 15], speed: 0.01, direction: { x: -3, y: 3, z: 2 }, borderColor: "border-red-500" },
-    { path: glbModelhtml5, scale: [150, 150, 150], speed: 0.02, direction: { x: -1, y: 2, z: 0 }, borderColor: "border-green-500" },
-    { path: glbModelcss, scale: [0.3, 0.3, 0.3], speed: 0.003, direction: { x: 10, y: 10, z: 10 }, borderColor: "border-blue-500" },
-    { path: glbModelreact, scale: [10, 10, 10], speed: 0.004, direction: { x: -10, y: -1, z: -5 }, borderColor: "border-yellow-500" },
-    { path: glbModeltailwind, scale: [500, 500, 500], speed: 0.014, direction: { x: -1, y: -2, z: -1 }, borderColor: "border-purple-500" },
-    { path: glbModelnodejs, scale: [1, 0.2, 1], speed: 0.005, direction: { x: 4, y: 2, z: 7 }, borderColor: "border-pink-500" },
-    { path: glbModelfirebase, scale: [0.4, 0.2, 0.4], speed: 0.003, direction: { x: 2, y: 2, z: 2 }, borderColor: "border-indigo-500" },
-    //  { path: glbModelbootstrap, scale: [7, 7, 7], speed: 0.003, direction: { x: 1, y: 2, z: 1 }, borderColor: "border-teal-500" },
+    { path: glbModeljs, scale: [15, 15, 15], speed: 0.01, direction: { x: -3, y: 3, z: 2 } },
+    { path: glbModelhtml5, scale: [150, 150, 150], speed: 0.02, direction: { x: -1, y: 2, z: 0 } },
+    { path: glbModelcss, scale: [0.3, 0.3, 0.3], speed: 0.003, direction: { x: 10, y: 10, z: 10 } },
+    { path: glbModelreact, scale: [10, 10, 10], speed: 0.004, direction: { x: -10, y: -1, z: -5 } },
+    { path: glbModeltailwind, scale: [500, 500, 500], speed: 0.014, direction: { x: -1, y: -2, z: -1 } },
+    { path: glbModelnodejs, scale: [1, 0.2, 1], speed: 0.005, direction: { x: 4, y: 2, z: 7 } },
+    { path: glbModelfirebase, scale: [0.4, 0.2, 0.4], speed: 0.003, direction: { x: 2, y: 2, z: 2 } },
+  //  { path: glbModelbootstrap, scale: [7, 7, 7], speed: 0.003, direction: { x: 1, y: 2, z: 1 } },
   ];
 
   const mobileIcons = [
-    { path: glbModelhtml5, scale: [100, 110, 100], speed: 0.003, direction: { x: -1, y: 2, z: 1 }, borderColor: "border-red-500" },
-    { path: glbModelcss, scale: [0.1, 0.1, 0.1], speed: 0.001, direction: { x: 5, y: 5, z: 5 }, borderColor: "border-green-500" },
-    { path: glbModeljs, scale: [10, 10, 10], speed: 0.02, direction: { x: -1, y: 0, z: 1 }, borderColor: "border-blue-500" },
-    { path: glbModelreact, scale: [5, 5, 5], speed: 0.005, direction: { x: -3, y: -0.5, z: -1.5 }, borderColor: "border-yellow-500" },
-    { path: glbModeltailwind, scale: [400, 400, 400], speed: 0.003, direction: { x: -0.5, y: -2, z: -3.5 }, borderColor: "border-purple-500" },
-    { path: glbModelnodejs, scale: [0.3, 0.05, 0.3], speed: 0.005, direction: { x: 2.0, y: -1, z: 1.5 }, borderColor: "border-pink-500" },
-    { path: glbModelfirebase, scale: [0.5, 0.1, 0.5], speed: 0.01, direction: { x: 1, y: 1, z: 1 }, borderColor: "border-indigo-500" },
-    { path: glbModelbootstrap, scale: [5, 5, 5], speed: 0.003, direction: { x: 1, y: 2, z: 1 }, borderColor: "border-teal-500" },
+    { path: glbModelhtml5, scale: [100, 110, 100], speed: 0.003, direction: { x: -1, y: 2, z: 1 } },
+    { path: glbModelcss, scale: [0.1, 0.1, 0.1], speed: 0.001, direction: { x: 5, y: 5, z: 5 } },
+    { path: glbModeljs, scale: [10, 10, 10], speed: 0.02, direction: { x: -1, y: 0, z: 1 } },
+    { path: glbModelreact, scale: [5, 5, 5], speed: 0.005, direction: { x: -3, y: -0.5, z: -1.5 } },
+    { path: glbModeltailwind, scale: [400, 400, 400], speed: 0.003, direction: { x: -0.5, y: -2, z: -3.5 } },
+    { path: glbModelnodejs, scale: [0.3, 0.05, 0.3], speed: 0.005, direction: { x: 2.0, y: -1, z: 1.5 } },
+    { path: glbModelfirebase, scale: [0.5, 0.1, 0.5], speed: 0.01, direction: { x: 1, y: 1, z: 1 } },
+    { path: glbModelbootstrap, scale: [5, 5, 5], speed: 0.003, direction: { x: 1, y: 2, z: 1 } },
   ];
 
   const icons = isMobile ? mobileIcons : desktopIcons;
@@ -107,17 +109,17 @@ const Icon3d = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-center items-center w-full h-full p-4">
+    <div className="flex flex-wrap w-full h-full justify-center items-center border-0 p-0 rounded-lg">
       {icons.map((icon, index) => (
-        <Icon3dComp
-          key={index}
-          path={icon.path}
-          scale={icon.scale}
-          speed={selectedIcon ? 0 : icon.speed}
-          direction={icon.direction}
-          onClick={() => handleClick(index)}
-          borderColor={icon.borderColor}
-        />
+        <div key={index} className="flex absolute w-full h-full border-0">
+          <Icon3dComp
+            path={icon.path}
+            scale={icon.scale}
+            speed={selectedIcon ? 0 : icon.speed}
+            direction={icon.direction}
+            onClick={() => handleClick(index)}
+          />
+        </div>
       ))}
 
       {selectedIcon && (
@@ -148,8 +150,3 @@ const Icon3d = () => {
 };
 
 export default Icon3d;
-
-
-
-
-//js #FFD928
