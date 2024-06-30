@@ -64,6 +64,7 @@ module.exports = {
                 citybg2: "url('../src/assets/citybg2.jpg')",
                 citybg3: "url('../src/assets/citybg3.jpg')",
                 citybg4: "url('../src/assets/citybg4.jpg')",
+                flaskbg: "url('../src/assets/flask.png')",
             },
           },
         },
