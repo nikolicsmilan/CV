@@ -85,3 +85,17 @@
   margin-top: 100px;
 }
 
+.points-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.point {
+  position: absolute;
+  background-color: blue;
+  border-radius: 50%;
+  transition: all 0.1s ease-out;
+}
+

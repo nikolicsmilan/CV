@@ -9,6 +9,7 @@ import glbModeltailwind from "../../assets/glb/tailwindok.glb";
 import glbModelnodejs from "../../assets/glb/nodejsok.glb";
 import glbModelfirebase from "../../assets/glb/firebaseok.glb";
 import glbModelbootstrap from "../../assets/glb/bootstrapok.glb";
+import GravityPoints from "./GravityPoints";
 
 const useMobileView = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -80,6 +81,7 @@ const Icon3dComp = ({
 }) => {
   return (
     <div className=" w-96  h-96 p-2 bg-flaskbg bg-center bg-no-repeat bg-cover">
+
       <div
         className={`border-0 ${borderColor} w-full h-full`}
         onClick={onClick}
@@ -214,6 +216,7 @@ const Icon3d = () => {
 
   return (
     <div className="flex flex-wrap justify-center items-center w-full h-full p-4">
+        <GravityPoints/>
       {icons.map((icon, index) => (
         <Icon3dComp
           key={index}
