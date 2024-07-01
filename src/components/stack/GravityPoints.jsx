@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect, useRef } from "react";
 
 const GravityPoints = () => {
   const [points, setPoints] = useState([]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef(null);
 
   const createPoints = () => {
     const pointsArray = [];
-    const spacing = 100; // A pontok közötti távolság
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const spacing = 50; // A pontok közötti távolság
+    const width = containerRef.current.clientWidth;
+    const height = containerRef.current.clientHeight;
 
-    for (let x = spacing; x < width; x += spacing) {
-      for (let y = spacing; y < height; y += spacing) {
+    for (let x = spacing / 2; x < width; x += spacing) {
+      for (let y = spacing / 2; y < height; y += spacing) {
         pointsArray.push({ x, y, size: 10 });
       }
     }
@@ -21,14 +21,18 @@ const GravityPoints = () => {
 
   useEffect(() => {
     createPoints();
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
   const handleMouseMove = (event) => {
-    setMousePosition({ x: event.clientX, y: event.clientY });
+    const rect = containerRef.current.getBoundingClientRect();
+    setMousePosition({
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    });
   };
 
   const calculateDistance = (point, mouse) => {
@@ -39,8 +43,8 @@ const GravityPoints = () => {
 
   const calculateNewPosition = (point, mouse) => {
     const distance = calculateDistance(point, mouse);
-    const maxDistance = 200; // Maximális távolság, amin belül hat a "gravitáció"
-    const strength = 0.05; // A "gravitáció" erőssége
+    const maxDistance = 150; // Maximális távolság, amin belül hat a "gravitáció"
+    const strength = 0.2; // A "gravitáció" erőssége
 
     if (distance < maxDistance) {
       const angle = Math.atan2(mouse.y - point.y, mouse.x - point.x);
@@ -54,7 +58,7 @@ const GravityPoints = () => {
   };
 
   return (
-    <div className="points-container">
+    <div ref={containerRef} className="points-container">
       {points.map((point, index) => {
         const newPoint = calculateNewPosition(point, mousePosition);
         return (
@@ -62,8 +66,8 @@ const GravityPoints = () => {
             key={index}
             className="point"
             style={{
-              left: `${newPoint.x}px`,
-              top: `${newPoint.y}px`,
+              left: `${newPoint.x - newPoint.size / 2}px`, // Középre igazítás
+              top: `${newPoint.y - newPoint.size / 2}px`, // Középre igazítás
               width: `${newPoint.size}px`,
               height: `${newPoint.size}px`,
             }}

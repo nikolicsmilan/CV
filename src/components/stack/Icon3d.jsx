@@ -10,6 +10,7 @@ import glbModelnodejs from "../../assets/glb/nodejsok.glb";
 import glbModelfirebase from "../../assets/glb/firebaseok.glb";
 import glbModelbootstrap from "../../assets/glb/bootstrapok.glb";
 import GravityPoints from "./GravityPoints";
+import GravityGrids from "./GravityGrid";
 
 const useMobileView = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -217,6 +218,7 @@ const Icon3d = () => {
   return (
     <div className="flex flex-wrap justify-center items-center w-full h-full p-4">
         <GravityPoints/>
+   
       {icons.map((icon, index) => (
         <Icon3dComp
           key={index}
@@ -257,5 +259,5 @@ const Icon3d = () => {
 };
 
 export default Icon3d;
-
+//     <GravityGrids/>
 //js #FFD928

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const Introduction = ({ contact }) => {
   const { t } = useTranslation();
   return (
-    <div className="border-0 border-orange-400 m-3 bg-secondary">
+    <div className="border-0 border-orange-400 m-3 bg-white space:bg-dark">
       <div>
         <h1 className=" text-center  text-3xl ">
           Milán Nikolics
