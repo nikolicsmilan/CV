@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import GravityPoints from "./GravityPoints";
+import GravityGrids from "./GravityGrid";
 import { mobileIcons, desktopIcons } from "../../data/stack";
 
 const useMobileView = () => {
@@ -23,7 +25,7 @@ function Model({ path, scale, speed, direction, onClick }) {
   const { scene } = useGLTF(path);
   const ref = useRef();
   const [moveDirection, setMoveDirection] = useState(direction);
-/*
+
   useFrame(() => {
     if (!ref.current || speed === 0) return;
 
@@ -41,13 +43,6 @@ function Model({ path, scale, speed, direction, onClick }) {
     ref.current.rotation.x += speed;
     ref.current.rotation.y += speed;
     ref.current.rotation.z += speed;
-  });*/
-  useFrame(() => {
-    if (!ref.current) return;
-    //ref.current.rotation.x += speed;
-    ref.current.rotation.x =-10
-    ref.current.rotation.y += speed;
-   // ref.current.rotation.z += speed;
   });
 
   return <primitive object={scene} scale={scale} ref={ref} onClick={onClick} />;
@@ -79,7 +74,7 @@ const Icon3dComp = ({
   borderColor,
 }) => {
   return (
-    <div className="w-full h-full p-2 bg-flaskb absolute bg-center bg-no-repeat bg-cover">
+    <div className=" w-full  h-full p-2 bg-flaskbg bg-center bg-no-repeat bg-cover">
       <div
         className={`border-0 ${borderColor} w-full h-full`}
         onClick={onClick}
@@ -101,7 +96,7 @@ const Icon3d = () => {
   };
 
   return (
-    <div className="relative flex flex-wrap justify-center items-center w-full h-full p-4">
+    <div className="flex absolute border-2 max-h-screen border-red-400 flex-wrap justify-center items-center w-full h-full p-4">
       {icons.map((icon, index) => (
         <Icon3dComp
           key={index}
@@ -142,7 +137,6 @@ const Icon3d = () => {
 };
 
 export default Icon3d;
-
 //  <GravityPoints/>
 //     <GravityGrids/>
 //js #FFD928
