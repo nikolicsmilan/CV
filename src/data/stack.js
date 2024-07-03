@@ -61,8 +61,17 @@ export const contact = [
 
 export const desktopIcons = [
   {
+    path: glbModelreact,
+    scale: [10, 10, 10],
+    speed: 0.01,
+    direction: { x: 0, y: 0, z: 0 },
+    borderColor: "border-yellow-500",
+    sizeW:"64",
+    sizeH:"64"
+  },
+ /* {
     path: glbModeljs,
-    scale: [15, 15, 15],
+    scale: [10, 10, 10],
     speed: 0.01,
     direction: { x: -3, y: 3, z: 2 },
     borderColor: "border-red-500",
@@ -81,13 +90,7 @@ export const desktopIcons = [
     direction: { x: 10, y: 10, z: 10 },
     borderColor: "border-blue-500",
   },
-  {
-    path: glbModelreact,
-    scale: [15, 15, 15],
-    speed: 0.004,
-    direction: { x: -10, y: -1, z: -5 },
-    borderColor: "border-yellow-500",
-  },
+ 
   {
     path: glbModeltailwind,
     scale: [500, 500, 500],
@@ -109,7 +112,7 @@ export const desktopIcons = [
     direction: { x: 2, y: 2, z: 2 },
     borderColor: "border-indigo-500",
   },
-    { path: glbModelbootstrap, scale: [7, 7, 7], speed: 0.003, direction: { x: 1, y: 2, z: 1 }, borderColor: "border-teal-500" },
+    { path: glbModelbootstrap, scale: [7, 7, 7], speed: 0.003, direction: { x: 1, y: 2, z: 1 }, borderColor: "border-teal-500" },*/
 ];
 
 export const mobileIcons = [
