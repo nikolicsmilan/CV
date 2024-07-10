@@ -25,13 +25,14 @@ const VideoIntro = () => {
           <video
             ref={videoRef}
             src={
-              "https://cockers-43ccb.web.app/videos/English_interview_teszt_2.mp4"
+              "https://cockers-43ccb.web.app/videos/English_interview_teszt_3.mp4"
             }
             type="video/mp4"
             controls={false}
             autoPlay
+            preload="auto"
             className="w-full h-full object-cover"
-            onEnded={handleVideoEnd}
+           // onEnded={handleVideoEnd}
           />
 
           <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-12    bg-blackOverlay">

@@ -48,6 +48,11 @@ function Model({ path, scale, speed, direction, onPositionUpdate }) {
     ref.current.rotation.x += speed;
     ref.current.rotation.y += speed;
     ref.current.rotation.z += speed;
+/*
+    onPositionUpdate({
+      x: ref.current.position.x,
+      y: ref.current.position.y,
+    });*/
 
     onPositionUpdate({
       x: ref.current.position.x,
@@ -76,10 +81,10 @@ const Icon3dComp = ({ path, scale, speed, direction, onPositionUpdate }) => {
   );
 };
 
-const CoordinatesTable = ({ icons, positions, mousePosition }) => {
+const CoordinatesTable = ({ icons, positions }) => {
   return (
-    <div className="absolute top-0 left-0 bg-white bg-opacity-75 p-2 z-50">
-      <table className="border-collapse">
+    <div className="absolute top-0 left-0 bg-white bg-opacity-75 p-2 z-50 w-96">
+      <table className="border-collaps w-96">
         <thead>
           <tr>
             <th className="border px-2">Icon</th>
@@ -89,12 +94,6 @@ const CoordinatesTable = ({ icons, positions, mousePosition }) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="border px-2">Mouse</td>
-            <td className="border px-2">{mousePosition.x.toFixed(2)}</td>
-            <td className="border px-2">{mousePosition.y.toFixed(2)}</td>
-            <td className="border px-2">N/A</td>
-          </tr>
           {icons.map((icon, index) => (
             <tr key={index}>
               <td className="border px-2">{icon.name}</td>
@@ -113,8 +112,8 @@ const Modal = ({ icon, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-4 rounded">
-        <h2>Ikon részletek fejlesztés alatt</h2>
-        <p>Az ikon típusa: {icon.name}</p>
+        <h2>Ikon részletek</h2>
+        <p>Az ikon típusa: {icon.path.split('/').pop().split('.')[0]}</p>
         <button onClick={onClose} className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">Bezárás</button>
       </div>
     </div>
@@ -125,7 +124,6 @@ const Icon3d = () => {
   const isMobile = useMobileView();
   const [selectedIcon, setSelectedIcon] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const desktopIcons = [
     { path: glbModeljs, scale: [15, 15, 15], speed: 0.01, direction: { x: -3, y: 3, z: 2 }, name: "js" },
@@ -164,14 +162,6 @@ const Icon3d = () => {
     });
   };
 
-  const handleMouseMove = (event) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top
-    });
-  };
-
   const handleClick = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -191,8 +181,8 @@ const Icon3d = () => {
   };
 
   return (
-    <div className="relative w-full h-full" onMouseMove={handleMouseMove}>
-      <CoordinatesTable icons={icons} positions={iconPositions} mousePosition={mousePosition}/>
+    <div className="relative w-full h-full">
+      <CoordinatesTable icons={icons}  positions={iconPositions} />
       {icons.map((icon, index) => (
         <div key={index} className="absolute inset-0">
           <Icon3dComp
