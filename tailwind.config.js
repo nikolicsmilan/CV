@@ -20,6 +20,15 @@ module.exports = {
             "4xl": "3.157rem",
             "5xl": "4.209rem",
           },
+          keyframes: {
+            'loading-bar': {
+              '0%': { width: '0%' },
+              '100%': { width: '100%' },
+            },
+          },
+          animation: {
+            'loading-bar': 'loading-bar 20s infinite',
+          },
         },
       },
       themes: [
@@ -66,6 +75,15 @@ module.exports = {
                 citybg4: "url('../src/assets/citybg4.jpg')",
                 flaskbg: "url('../src/assets/flask.png')",
             },
+            keyframes: {
+              'loading-bar': {
+                '0%': { width: '0%' },
+                '100%': { width: '100%' },
+              },
+            },
+            animation: {
+              'loading-bar': 'loading-bar 20s infinite',
+            },
           },
         },
         {
@@ -97,6 +115,15 @@ module.exports = {
                 "linear-gradient(130deg, rgb(70, 70, 70, 0.938) 80.1%, rgb(40, 40, 40, 0.938 ) 111.02%)",
                 spacevertical: "url('../src/assets/space-vertical.jpg')",
               
+            },
+            keyframes: {
+              'loading-bar': {
+                '0%': { width: '0%' },
+                '100%': { width: '100%' },
+              },
+            },
+            animation: {
+              'loading-bar': 'loading-bar 20s infinite',
             },
           },
         },
