@@ -58,7 +58,7 @@ const Roadmap = () => {
       {/* Diagonal Line */}
 
   {/* Loading Animation */}
-  <div className="flex  w-96 border-2 flex-col items-center justify-center min-h-screen bg-b">
+  <div className="flex hidden w-96 border-2 flex-col items-center justify-center min-h-screen bg-b">
         <div className="text-xl font-semibold mb-4">Loading...</div>
         <div className="w-full h-1 bg-gray-300 relative overflow-hidden">
           <div className="absolute left-0 top-0 h-full bg-black animate-loading-bar"></div>

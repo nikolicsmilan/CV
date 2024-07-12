@@ -1,16 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { PerspectiveCamera } from 'three';
-import glbModeljs from "../../assets/glb/jsok.glb";
-import glbModelhtml5 from "../../assets/glb/html5ok.glb";
-import glbModelcss from "../../assets/glb/cssok.glb";
-import glbModelreact from "../../assets/glb/reactok.glb";
-import glbModeltailwind from "../../assets/glb/tailwindok.glb";
-import glbModelnodejs from "../../assets/glb/nodejsok.glb";
-import glbModelfirebase from "../../assets/glb/firebaseok.glb";
-import glbModelbootstrap from "../../assets/glb/bootstrapok.glb";
-
+import { PerspectiveCamera } from "three";
+import CoordinatesTable from "./CoordinatesTable";
+import Modal from "./Modal";
+import { desktopIcons, mobileIcons } from "../../data/stack";
 const useMobileView = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -31,11 +25,16 @@ function Model({ path, scale, speed, direction, onPositionUpdate }) {
   const { scene } = useGLTF(path);
   const ref = useRef();
   const [moveDirection, setMoveDirection] = useState(direction);
-// Definiáljuk a kamera változót és hozzuk létre a perspektív kamerát
-const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  // Definiáljuk a kamera változót és hozzuk létre a perspektív kamerát
+  const camera = new PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
 
-// A kamera pozíciójának beállítása (opcionális, aszerint, hogy hol szeretnénk elhelyezni a kamerát)
-camera.position.set(0, 0, 5)
+  // A kamera pozíciójának beállítása (opcionális, aszerint, hogy hol szeretnénk elhelyezni a kamerát)
+  camera.position.set(0, 0, 5);
   useFrame(() => {
     if (!ref.current || speed === 0) return;
 
@@ -54,17 +53,16 @@ camera.position.set(0, 0, 5)
     ref.current.rotation.y += speed;
     ref.current.rotation.z += speed;
 
-
-      // Clone position to avoid modifying original
+    // Clone position to avoid modifying original
     const position = ref.current.position.clone();
 
     // Projects the 3D position to screen space
     position.project(camera);
 
     // Calculate screen coordinates
-   // const screenX = ((position.x + 1) / 2) * window.innerWidth; // Convert to screen X coordinate
-   // const screenY = ((-position.y + 1) / 2) * window.innerHeight; // Convert to screen Y coordinate
-/*
+    // const screenX = ((position.x + 1) / 2) * window.innerWidth; // Convert to screen X coordinate
+    // const screenY = ((-position.y + 1) / 2) * window.innerHeight; // Convert to screen Y coordinate
+    /*
     onPositionUpdate({
     //   x: ref.current.position.x,
     //    y: ref.current.position.y,
@@ -95,183 +93,11 @@ const Icon3dComp = ({ path, scale, speed, direction, onPositionUpdate }) => {
   );
 };
 
-const CoordinatesTable = ({ icons, positions, mousePosition }) => {
-  return (
-    <div className="absolute top-0 left-0 bg-white bg-opacity-75 p-2 z-50">
-      <table className="border-collapse">
-        <thead>
-          <tr>
-            <th className="border px-2">Icon</th>
-            <th className="border px-2">X</th>
-            <th className="border px-2">Y</th>
-            <th className="border px-2">Z</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="border px-2">Mouse</td>
-            <td className="border px-2">{mousePosition.x.toFixed(2)}</td>
-            <td className="border px-2">{mousePosition.y.toFixed(2)}</td>
-            <td className="border px-2">N/A</td>
-          </tr>
-          {icons.map((icon, index) => (
-            <tr key={index}>
-              <td className="border px-2">{icon.name}</td>
-              <td className="border px-2">{positions[index].x.toFixed(2)}</td>
-              <td className="border px-2">{positions[index].y.toFixed(2)}</td>
-              <td className="border px-2">{positions[index].z.toFixed(2)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-};
-
-const Modal = ({ icon, onClose }) => {
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 ">
-      <div className="bg-white p-0 rounded w-96 h-40 border-0 border-red-400 flex items-center justify-center">
-        <h2 className="text-center hidden">Ikon részletek fejlesztés alatt</h2>
-        <p className="text-center hidden">Az ikon típusa: {icon.name}</p>
-        <div className="border-0 flex justify-center items-center mt-4">
-        <button
-          onClick={onClose}
-          className="mt-0 bg-primary text-white px-4 py-2 rounded"
-        >
-          Continue!
-        </button>
-        </div>
-      
-      </div>
-    </div>
-  );
-};
-
 const Icon3d = () => {
   const isMobile = useMobileView();
   const [selectedIcon, setSelectedIcon] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  const desktopIcons = [
-    {
-      path: glbModeljs,
-      scale: [15, 15, 15],
-      speed: 0.01,
-      direction: { x: -3, y: 3, z: 2 },
-      name: "js",
-    },
-    {
-      path: glbModelhtml5,
-      scale: [150, 150, 150],
-      speed: 0.02,
-      direction: { x: -1, y: 2, z: 0 },
-      name: "html5",
-    },
-    {
-      path: glbModelcss,
-      scale: [0.3, 0.3, 0.3],
-      speed: 0.003,
-      direction: { x: 10, y: 10, z: 10 },
-      name: "css",
-    },
-    {
-      path: glbModelreact,
-      scale: [10, 10, 10],
-      speed: 0.004,
-      direction: { x: -10, y: -1, z: -5 },
-      name: "react",
-    },
-    {
-      path: glbModeltailwind,
-      scale: [500, 500, 500],
-      speed: 0.014,
-      direction: { x: -1, y: -2, z: -1 },
-      name: "tailwind",
-    },
-    {
-      path: glbModelnodejs,
-      scale: [1, 0.2, 1],
-      speed: 0.005,
-      direction: { x: 4, y: 2, z: 7 },
-      name: "nodejs",
-    },
-    {
-      path: glbModelfirebase,
-      scale: [0.4, 0.2, 0.4],
-      speed: 0.003,
-      direction: { x: 2, y: 2, z: 2 },
-      name: "firebase",
-    },
-    {
-      path: glbModelbootstrap,
-      scale: [5, 5, 5],
-      speed: 0.003,
-      direction: { x: 1, y: 2, z: 1 },
-      name: "bootstrap",
-    },
-  ];
-
-  const mobileIcons = [
-    {
-      path: glbModelhtml5,
-      scale: [100, 110, 100],
-      speed: 0.003,
-      direction: { x: -1, y: 2, z: 1 },
-      name: "html5",
-    },
-    {
-      path: glbModelcss,
-      scale: [0.1, 0.1, 0.1],
-      speed: 0.001,
-      direction: { x: 5, y: 5, z: 5 },
-      name: "css",
-    },
-    {
-      path: glbModeljs,
-      scale: [10, 10, 10],
-      speed: 0.02,
-      direction: { x: -1, y: 0, z: 1 },
-      name: "js",
-    },
-    {
-      path: glbModelreact,
-      scale: [5, 5, 5],
-      speed: 0.005,
-      direction: { x: -3, y: -0.5, z: -1.5 },
-      name: "react",
-    },
-    {
-      path: glbModeltailwind,
-      scale: [400, 400, 400],
-      speed: 0.003,
-      direction: { x: -0.5, y: -2, z: -3.5 },
-      name: "tailwind",
-    },
-    {
-      path: glbModelnodejs,
-      scale: [0.3, 0.05, 0.3],
-      speed: 0.005,
-      direction: { x: 2.0, y: -1, z: 1.5 },
-      name: "nodejs",
-    },
-    {
-      path: glbModelfirebase,
-      scale: [0.5, 0.1, 0.5],
-      speed: 0.01,
-      direction: { x: 1, y: 1, z: 1 },
-      name: "firebase",
-    },
-    {
-      path: glbModelbootstrap,
-      scale: [5, 5, 5],
-      speed: 0.003,
-      direction: { x: 1, y: 2, z: 1 },
-      name: "bootstrap",
-    },
-  ];
-
   const icons = isMobile ? mobileIcons : desktopIcons;
 
   const [iconPositions, setIconPositions] = useState(
@@ -317,16 +143,14 @@ const Icon3d = () => {
 
   return (
     <div className="relative w-full h-full" onMouseMove={handleMouseMove}>
-
-      <div   className="hidden">
-      <CoordinatesTable
-    
-    icons={icons}
-    positions={iconPositions}
-    mousePosition={mousePosition}
-  />
+      <div className="hidden">
+        <CoordinatesTable
+          icons={icons}
+          positions={iconPositions}
+          mousePosition={mousePosition}
+        />
       </div>
-     
+
       {icons.map((icon, index) => (
         <div key={index} className="absolute inset-0">
           <Icon3dComp
