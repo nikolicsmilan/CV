@@ -20,7 +20,7 @@
     "maindescription": "  Ezen az oldalon találsz néhányat azokból projektekből, amit az évek során készítettem.",
     "description1": "Ez az webalkalmazás MERN stackel készült. Mindent tud amit elvárhatsz egy modern webalakalmazástól.",
     "description2": "Ez webalkamalmazás, amit éppen most nézzel. Ez egyszerű weboldal, ami bemutat engem röviden. Reactot Tailwindet Contextet és Firebaset használtam. ",
-    "description3": "Egy `bútor` képnézegető. Még. De nem sokára az lesz, amilyet még nem láttál... :) ",
+    "description3": "Személyre szabható webshop. Írtam hozzá egy saját mini CMS-t, hogy dinamikusan cserélhetők legyenek a tartalmak.",
     "description4": "Nasa API feldolgozó rendszer. A NASA API-portál adatai alapján. React frontend, Firestore adatbázis, Node backend, Express webszerver"
   },
     "Contact": {
