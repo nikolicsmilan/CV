@@ -1,53 +1,42 @@
-import React from "react";
+import React from 'react';
 import { useTranslation } from "react-i18next";
-import usecolor from "../../hooks/use-color";
 
+const Asidecv = ({profil,stack,language}) => {
 
-const Asidecv = ({ profil, stack, language }) => {
   const { t } = useTranslation();
-
-  const {getColor}= usecolor()
   return (
-    <div className="w-auto border-0 border-sky-400   px-2  bg-dark ">
-      <img
-        src={profil}
-        alt="Milan"
-        className="rounded-full w-48 mx-auto my-0 border-0 border-primary py-1"
-      />
-      <h2 className=" text-2xl font-bold my-3 text-center">Stack</h2>
-      <div className="border-0 flex flex-col justify-center items-start">
-      {stack.map((item) => (
-        <div key={item.name} className={`flex text-xl ${getColor(item.name)} `}>
-          <h3 className="mx-2 text-2xl ">{item.icon}</h3>
-          <h3 className=" text-xl font-bold">{item.name}</h3>
-        </div>
-      ))}
+    <div className="w-3/12 border-0 border-sky-400 px-1 ">
+    <img
+      src={profil}
+      alt="Milan"
+      className="rounded-full w-full mx-auto my-3 border-4 border-primary"
+    />
+    <h2 className="text-start text-2xl font-bold my-3">Stack</h2>
+    {stack.map((item) => (
+      <div key={item.name}  className="flex text-xl">
+        <h3 className="mx-2 text-primary">{item.icon}</h3>
+        <h3 className="text-dark font-bold">{item.name}</h3>
       </div>
- 
-      <h2 className="text-center text-2xl font-bold my-3">
-        {t("Language.name")}
-      </h2>
-      {language.map((item) => (
-        <div
-          key={item.name}
-          className="flex flex-col border-2 border-primary text-lg  my-3 mx-2  rounded-2xl p-2 "
+    ))}
+    <h2 className="text-start text-2xl font-bold my-3">{t("Language.name")}</h2>
+    {language.map((item) => (
+      <div key={item.name}  className="flex flex-col text-lg  my-3 rounded-2xl p-2 ">
+        <h4
+          className="text-dark font-bold py-0 border-0"
+          style={{ lineHeight: "1" }}
         >
-          <h4
-            className="text-primary  font-bold py-0 border-0"
-            style={{ lineHeight: "1" }}
-          >
-            {t(`Language.${item.name}`)}:
-          </h4>
-          <h4
-            className="my-1 text-s border-0 text-primary block text-end"
-           
-          >
-            {t(`Language.${item.level}`)}
-          </h4>
-        </div>
-      ))}
-    </div>
-  );
-};
+          {t(`Language.${item.name}`)}:
+        </h4>
+        <h4
+          className="my-1text-sm border-0 text-primary"
+          style={{ lineHeight: "1.3" }}
+        >
+         {t(`Language.${item.level}`)}
+        </h4>
+      </div>
+    ))}
+  </div>
+  )
+}
 
-export default Asidecv;
+export default Asidecv

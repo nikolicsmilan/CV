@@ -20,15 +20,6 @@ module.exports = {
             "4xl": "3.157rem",
             "5xl": "4.209rem",
           },
-          keyframes: {
-            'loading-bar': {
-              '0%': { width: '0%' },
-              '100%': { width: '100%' },
-            },
-          },
-          animation: {
-            'loading-bar': 'loading-bar 20s infinite',
-          },
         },
       },
       themes: [
@@ -73,16 +64,6 @@ module.exports = {
                 citybg2: "url('../src/assets/citybg2.jpg')",
                 citybg3: "url('../src/assets/citybg3.jpg')",
                 citybg4: "url('../src/assets/citybg4.jpg')",
-                flaskbg: "url('../src/assets/flask.png')",
-            },
-            keyframes: {
-              'loading-bar': {
-                '0%': { width: '0%' },
-                '100%': { width: '100%' },
-              },
-            },
-            animation: {
-              'loading-bar': 'loading-bar 20s infinite',
             },
           },
         },
@@ -98,7 +79,7 @@ module.exports = {
               asidebg: "rgb(237, 237, 237)",
             },
             fontFamily: {
-              sans: "Josefin Sans",
+              sans: "Inter",
               brush: "Comforter Brush",
             },
             backgroundImage: {
@@ -116,17 +97,41 @@ module.exports = {
                 spacevertical: "url('../src/assets/space-vertical.jpg')",
               
             },
-            keyframes: {
-              'loading-bar': {
-                '0%': { width: '0%' },
-                '100%': { width: '100%' },
-              },
-            },
-            animation: {
-              'loading-bar': 'loading-bar 20s infinite',
-            },
           },
         },
+
+        {
+          name: "advanced",
+          extend: {
+            colors: {
+              primary: "#1E2A38", // Sötétkék főszín
+              secondary: "#ECF0F1", // Világosszürke
+              accent: "#E67E22", // Narancssárga a CTA-hoz
+              background: "#2C3E50", // Sötétebb árnyalat a háttérhez
+              success: "#2ECC71", // Zöld hangsúlyszín
+              text: "#BDC3C7", // Világosszürke a szövegekhez
+            },
+            fontFamily: {
+              sans: ["Roboto", "Open Sans", "Lato"], // Modern, olvasható sans-serif betűtípusok
+            },
+            fontSize: {
+              xs: "0.75rem", // 12px
+              sm: "0.875rem", // 14px
+              base: "1rem", // 16px (alap szövegméret)
+              xl: "1.5rem", // 24px (fejléc)
+              "2xl": "2rem", // 32px (nagyobb fejlécek)
+              "3xl": "2.5rem", // 40px
+              "4xl": "3rem", // 48px
+            },
+            backgroundImage: {
+              thinkingbg1: "url('../src/assets/advanced/thinking15.png')",
+              thinkingbg2: "url('../src/assets/advanced/thinking18.png')",
+              gradient:
+                "linear-gradient(130deg, #1E2A38 60%, #ECF0F1 30%, #E67E22 10%)", // 60-30-10 arány a háttérben
+            },
+          },
+        }
+
       ],
     }),
   ],

@@ -7,7 +7,7 @@ const Projects = () => {
   const { t } = useTranslation();
   return (
     <>
-      <h1 className="text-center text-4xl my-0 font-bold text-primary city:text-primary ">
+      <h1 className="text-center text-4xl my-0 font-bold text-primary city:text-primary">
         {t("Project.pagename")}
       </h1>
 
@@ -17,7 +17,7 @@ const Projects = () => {
       </p>
       <div className="flex flex-wrap 
       justify-center items-center lg:items-start gap-4 mx-0 p-0
-       my-0 border-0 py-2 border-stone-400 flex-col lg:flex-row border-0 border-red-400">
+       my-0 border-0 py-2 border-stone-400 flex-col lg:flex-row">
         {projects.map((project) => (
           <Card
             key={project.title}

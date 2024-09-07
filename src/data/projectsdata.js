@@ -31,7 +31,7 @@ export const projects = [
       { name: "CSS", icon: <FaCss3Alt /> },
       { name: "HTML", icon: <FaHtml5 /> },
       { name: "Tailwind", icon: <SiTailwindcss /> },
-      { name: "NodeJs", icon: <FaNodeJs /> },
+      { name: "Node", icon: <FaNodeJs /> },
       { name: "Firebase", icon: <SiFirebase /> },
     ],
   },
@@ -51,8 +51,8 @@ export const projects = [
       { name: "CSS", icon: <FaCss3Alt /> },
       { name: "HTML", icon: <FaHtml5 /> },
       { name: "Tailwind", icon: <SiTailwindcss /> },
-      { name: "NodeJs", icon: <FaNodeJs /> },
-     
+      { name: "Node", icon: <FaNodeJs /> },
+      { name: "Firebase", icon: <SiFirebase /> },
     ],
   },
   {
@@ -89,7 +89,7 @@ export const projects = [
       { name: "CSS", icon: <FaCss3Alt /> },
       { name: "HTML", icon: <FaHtml5 /> },
       { name: "Tailwind", icon: <SiTailwindcss /> },
-      { name: "NodeJs", icon: <FaNodeJs /> },
+      { name: "Node", icon: <FaNodeJs /> },
       { name: "Firebase", icon: <SiFirebase /> },
     ],
   },

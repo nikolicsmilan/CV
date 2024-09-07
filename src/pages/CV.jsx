@@ -1,31 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
+import AsideCv from "../components/cv/AsideCv";
+import MainCv from "../components/cv/MainCv";
 import CvMobil from "../components/cv/mobil/CvMobil";
-import profil7 from "../assets/Profil7.JPG"
+import profil from "../assets/Profil3.PNG";
+import profil4 from "../assets/Profil4.jpg";
 import { stack, language, contact } from "../data/stack";
 import { downloadPDF } from "../components/cv/pdfUtils";
 import { MyGeneralContext } from "../context/GeneralContext";
 import { useTranslation } from "react-i18next";
-import DesktopCv from "../components/cv/DesktopCv";
 
 const CV = () => {
   // Get the style and size values from the MyGeneralContext
   const { style, size } = MyGeneralContext();
   const { i18n } = useTranslation();
   const dochu =
-    "https://nikolicsmilan.hu/nikolicsmilan-cv.web.app_2024_06_27_hu.pdf";
+    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_07_14_hu.pdf";
   const docen =
-    "https://nikolicsmilan.hu/nikolicsmilan-cv.web.app_2024_06_27_en.pdf";
+    "https://nikolicsmilan-cv.web.app/nikolicsmilan-cv.web.app_2023_07_14_en.pdf";
   const currentLanguage = i18n.language;
 
-
+  console.log('ez mi????',currentLanguage)
   return (
     <>
-      <div className=" w-full flex flex-col items-center justify-center 
-      m-0 border-0 border-red-400">
+      <div className=" w-full flex flex-col items-center justify-center m-0 border-0 border-red-400">
       {currentLanguage === "hu" ? (
         <button
-          className={`hidde m-0 ${
+          className={` m-0 ${
             style === "city" ? "text-dark" : "text-white"
           } hover:text-primary`}
           onClick={()=>{downloadPDF(dochu,"hu")}}
@@ -34,7 +35,7 @@ const CV = () => {
         </button>
       ) : (
         <button
-          className={`hidde  m-0 ${
+          className={`  m-0 ${
             style === "city" ? "text-dark" : "text-white"
           } hover:text-primary`}
           onClick={()=>{downloadPDF(docen,"en")}}
@@ -47,15 +48,15 @@ const CV = () => {
         {size.width < 667 || size.width < size.height || 500 > size.height ? (
           // Mobile version of the CV
           // profil={require("../assets/Profil3.PNG")}
-          <CvMobil contact={contact} profil={profil7} stack={stack} />
+          <CvMobil contact={contact} profil={profil} stack={stack} />
         ) : (
           // Desktop version of the CV
           <div
-            className="max-w-screen-lg w-full 
-             py-0 bg-white shadow-md flex flex-row border-0 border-red-400"
+            className="max-w-screen-lg w-full px-4 sm:px-6 lg:px-8 py-6 bg-white shadow-md flex flex-row border-0 border-red-400"
             style={{ height: "29.7cm", width: "21cm" }}
           >
-          <DesktopCv profil={profil7} stack={stack} language={language} contact={contact} />
+            <AsideCv profil={profil4} stack={stack} language={language} />
+            <MainCv contact={contact} />
           </div>
         )}
       </div>

@@ -6,7 +6,7 @@
   "content": "This is the content of my app.",
   "greeting": "Hello, {{name}}!",
   "stylequestion": "What style do you prefer?",
-  "clickhere":"Click here!!!",
+  "clickhere":"Click here!",
   "Project": {
     "pagename": "Projects",
     "maindescription": "  On this page you can get to know some of my projects that I have made over the years.",

@@ -1,7 +1,4 @@
-
-
 /*MY SPECIAL COLOR*/
-
 .mycity {
   font-family: "Josefin Sans";
   letter-spacing: 5px;
@@ -74,6 +71,10 @@
   z-index: 10;
 }
 
+.mukodj {
+  background-color: rgba(34, 211, 238, 0.1) !important;
+}
+
 .content2 {
   position: relative;
   z-index: 11;
@@ -84,31 +85,3 @@
   height: 100%;
   margin-top: 100px;
 }
-
-.points-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #f0f0f0;
-}
-
-.point {
-  position: absolute;
-  background-color: blue;
-  border-radius: 50%;
-  transition: all 0.1s ease-out;
-}
-/*
-.grid-container2 {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #f0f0f0;
-}*/
-
-line {
-  transition: all 0.1s ease-out;
-}
-

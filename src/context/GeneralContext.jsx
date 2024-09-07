@@ -6,12 +6,13 @@ const GeneralContext = createContext();
 // Create a provider component to wrap around your app and provide the context values
 export const GeneralContextProvider = ({ children }) => {
   // Define state variables using the useState hook
-  const [style, setStyle] = useState("city"); // State for the style
+  const [style, setStyle] = useState("advanced"); // State for the style
   const [activeMenu, setActiveMenu] = useState(false); // State for the active menu
   const [size, setSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   }); // State for the window size
+  
 
   // Use the useEffect hook to handle the window resize event
   useEffect(() => {
@@ -41,6 +42,7 @@ export const GeneralContextProvider = ({ children }) => {
         setActiveMenu,
         size,
         setSize,
+        
       }}
     >
       {children}

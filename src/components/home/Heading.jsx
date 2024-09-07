@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import TypingAnimation from "./TypingAnimation"
 
 const Heading = ({ style, setActiveMenu }) => {
   const { t } = useTranslation();
@@ -14,24 +13,23 @@ const Heading = ({ style, setActiveMenu }) => {
               style === "city" ? " mycity" : "myspace"
             }`}
           >
-           <TypingAnimation customcontent={t("myname")} late={1000}/>
+           {t("myname")}
           </h1>
           <h2
             className={` text-center text-xl lg:text-3xl  border-0 ${
               style === "city" ? "mycity" : "myspace"
             }`}
           >
-        <TypingAnimation customcontent={t("myjob")}late={2000}/>
+            {t("myjob")}
           </h2>
           <h3
             className={` text-center text-sm lg:text-xl my-5 ${
               style === "city" ? "mycity" : "myspace"
             }`}
           >
-            <TypingAnimation customcontent={t("mainquestion")} late={3000}/>   
+             {t("mainquestion")} 
           </h3> 
-         <h3 className="text-3xl text-primary text-center">  <TypingAnimation customcontent={t("clickhere")} late={5000} />   </h3>
-       
+         <h3 className="text-3xl text-primary text-center"> {t("clickhere")} </h3>
         </NavLink>
       </div>
     </div>
@@ -40,4 +38,4 @@ const Heading = ({ style, setActiveMenu }) => {
 
 export default Heading;
 
-
+//{t("Translation.ize")}
