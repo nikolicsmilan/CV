@@ -85,3 +85,36 @@
   height: 100%;
   margin-top: 100px;
 }
+
+.hexagon {
+  position: relative;
+  width: 70px;
+  height: 60px;
+  background-color: #114d66; /* Tailwind sky-400 */
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 23.09px solid #38bdf8;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 23.09px solid #38bdf8;
+}
+

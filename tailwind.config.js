@@ -1,5 +1,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      screens: {
+        'xl': '1400px', // Egyedi breakpoint 1200px
+      },
+    },
+  },
   plugins: [
     require("tailwindcss-themer")({
       defaultTheme: {
@@ -59,11 +66,11 @@ module.exports = {
               gradient4: "linear-gradient(130deg, yellow, black 95%, #000000)",
               gradient5:
                 "linear-gradient(130deg,#C34A36 23.41%, rgb(23, 23, 23) 88.02%)",
-                cityvertical: "url('../src/assets/city-vertical.jpg')",
-                cityvertical2: "url('../src/assets/city-vertical6.jpg')",
-                citybg2: "url('../src/assets/citybg2.jpg')",
-                citybg3: "url('../src/assets/citybg3.jpg')",
-                citybg4: "url('../src/assets/citybg4.jpg')",
+              cityvertical: "url('../src/assets/city-vertical.jpg')",
+              cityvertical2: "url('../src/assets/city-vertical6.jpg')",
+              citybg2: "url('../src/assets/citybg2.jpg')",
+              citybg3: "url('../src/assets/citybg3.jpg')",
+              citybg4: "url('../src/assets/citybg4.jpg')",
             },
           },
         },
@@ -94,12 +101,10 @@ module.exports = {
                 "linear-gradient(130deg,#C34A36 23.41%, rgb(23, 23, 23) 88.02%)",
               gradient6:
                 "linear-gradient(130deg, rgb(70, 70, 70, 0.938) 80.1%, rgb(40, 40, 40, 0.938 ) 111.02%)",
-                spacevertical: "url('../src/assets/space-vertical.jpg')",
-              
+              spacevertical: "url('../src/assets/space-vertical.jpg')",
             },
           },
         },
-
         {
           name: "advanced",
           extend: {
@@ -130,9 +135,9 @@ module.exports = {
                 "linear-gradient(130deg, #1E2A38 60%, #ECF0F1 30%, #E67E22 10%)", // 60-30-10 arány a háttérben
             },
           },
-        }
-
+        },
       ],
     }),
   ],
 };
+
