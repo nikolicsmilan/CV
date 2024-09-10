@@ -131,6 +131,8 @@ module.exports = {
             backgroundImage: {
               thinkingbg1: "url('../src/assets/advanced/thinking15.png')",
               thinkingbg2: "url('../src/assets/advanced/thinking18.png')",
+              thinkingbg3: "url('../src/assets/advanced/thinking22.png')",
+              smilefront: "url('../src/assets/advanced/smile_front2.png')",
               gradient:
                 "linear-gradient(130deg, #1E2A38 60%, #ECF0F1 30%, #E67E22 10%)", // 60-30-10 arány a háttérben
             },
