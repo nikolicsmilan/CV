@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xl': '1400px', // Egyedi breakpoint 1200px
+        xl: "1400px", // Egyedi breakpoint 1200px
       },
     },
   },
@@ -111,7 +111,8 @@ module.exports = {
             colors: {
               primary: "#1E2A38", // Sötétkék főszín
               secondary: "#ECF0F1", // Világosszürke
-              accent: "#E67E22", // Narancssárga a CTA-hoz
+              // accent: "#E67E22", // Narancssárga a CTA-hoz
+              accent: "#D98E30",
               background: "#2C3E50", // Sötétebb árnyalat a háttérhez
               success: "#2ECC71", // Zöld hangsúlyszín
               text: "#BDC3C7", // Világosszürke a szövegekhez
@@ -133,9 +134,11 @@ module.exports = {
               thinkingbg2: "url('../src/assets/advanced/thinking18.png')",
               thinkingbg3: "url('../src/assets/advanced/thinking22.png')",
               smilefront: "url('../src/assets/advanced/smile_front2.png')",
-              fullstack: "url('../src/assets/advanced/fullstack.webp')",
+              fullstack: "url('../src/assets/advanced/fullstackdarkest2.webp')",
+              fullstackmobile: "url('../src/assets/advanced/fullstack.webp')",
               gradient:
-                "linear-gradient(130deg, #1E2A38 60%, #ECF0F1 30%, #E67E22 10%)", // 60-30-10 arány a háttérben
+                "linear-gradient(130deg, #1E2A38 60%, #ECF0F1 30%, #E67E22 10%)",
+              gradient2: "linear-gradient(-130deg, #E67E22 10%, #1E2A38 60%)",
             },
           },
         },
@@ -143,4 +146,3 @@ module.exports = {
     }),
   ],
 };
-

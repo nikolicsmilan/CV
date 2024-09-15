@@ -15,7 +15,7 @@ const AdvancedHome = () => {
 
       {/* Body */}
       <div className="w-full h-full ">
-        <div className="bg-primary  flex flex-col lg:flex-row lg:h-full border-0 border-lime-400 lg:bg-smilefront bg-no-repeat bg-center bg-cover">
+        <div className="bg-primary  flex flex-col lg:flex-row lg:h-full border-0 border-lime-400 lg:bg-thinkingbg2 bg-no-repeat bg-center bg-cover">
           {/* First page */}
           <div className=" w-full  flex flex-col lg:flex-row lg:items-start p-0 border-0  border-purple-400 shadow-none lg:shadow-none">
             <div className="lg:w-1/3 lg:p-10 flex flex-col lg:justify-between border-0 items-center lg:items-start">
@@ -31,7 +31,7 @@ const AdvancedHome = () => {
               <a
                 href="#contact"
                 className="w-60 m-5 px-6 py-3 bg-accent
-               text-white font-bold rounded-lg shadow-md hover:bg-orange-600 transition duration-300 text-center"
+               text-white font-bold rounded-lg shadow-md hover:bg-primary hover:border-2 border-accent transition duration-300 text-center"
               >
                 Let's Work Together
               </a>
@@ -50,34 +50,31 @@ const AdvancedHome = () => {
               </div>
             </div>
             <div className="w-full flex justify-center lg:hidden ">
-            <div className="flex justify-center border-0 rounded-ful w-96 h-96 shadow-2xl">
-              <img
-                src={smile}
-                className="w-full h-full object-cover rounded-ful"
-              />
+            
+              <div className="flex justify-center border-t-0 border-accent rounded-ful w-96 h-96 ">
+              <HexagonalIconList items={network} centerItem={network[0]} />
+                <img
+                  src={thinking}
+                  className="w-full h-full object-cover rounded-ful z-10"
+                />
+              </div>
             </div>
-          </div>
             <div className="border-0 bg-white lg:bg-primary">
-
-          <p className="text-lg xl:text-xl text-text ">  Empowering innovation through AI-driven solutions. Let's shape the future of web development together.</p>
-              <div className="hidde w-full lg:w-1/2 flex justify-center lg:justify-start p-5 border-0 my-10 lg:my-0">
+              <div className="hidden w-full lg:w-1/2 lg:flex justify-center lg:justify-start p-5 border-0 my-10 lg:my-0">
                 <HexagonalIconList items={network} centerItem={network[0]} />
               </div>
             </div>
           </div>
 
-        
-
           {/*Desktop quick menu */}
 
           {/*scroll button */}
-         
         </div>
         xxxxxxxxxxxxxxxxxxxxxx
       </div>
-      <div className="fixed bottom-4 right-4 w-14 h-14 flex justify-center items-center">
-  <FaArrowUp className="text-text hover:text-white hover:bg-accent cursor-pointer bg-primary border-2 rounded-full border-accent text-4xl p-2 transition duration-300" />
-</div>
+      <div className="fixed bottom-4 right-4 w-14 h-14 flex justify-center items-center z-30">
+        <FaArrowUp className="text-text hover:text-white hover:bg-accent cursor-pointer bg-primary border-2 rounded-full border-accent text-4xl p-2 transition duration-300" />
+      </div>
     </div>
   );
 };
