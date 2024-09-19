@@ -1,8 +1,8 @@
 import React from "react";
 //import { useNavigate } from "react-router-dom";
 
-const HexagonalIconList = ({ items, centerItem }) => {
-  const iconCount = items.length;
+const HexagonalIconList = ({ hexagon, centerItem }) => {
+  const iconCount = hexagon.length;
 
   // Responsive sugár a képernyő szélessége alapján
   const radius = window.innerWidth < 400 ? 100 : 150; // Kis képernyőn kisebb sugár
@@ -24,7 +24,7 @@ const HexagonalIconList = ({ items, centerItem }) => {
       </div>
 
       {/* Körben lévő ikonok */}
-      {items.map((item, index) => {
+      {hexagon.map((item, index) => {
         const angle = (index / iconCount) * (2 * Math.PI);
         const x = centerX + radius * Math.cos(angle) - 30; // Rugalmas ikon fél szélessége
         const y = centerY + radius * Math.sin(angle) - 30; // Rugalmas ikon fél magassága
