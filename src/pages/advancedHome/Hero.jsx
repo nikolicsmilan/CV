@@ -37,8 +37,8 @@ const Hero = ({ navigation, hexagon }) => {
             ))}
           </div>
         </div>
-        <div className="w-full flex justify-center lg:hidden ">
-          <div className="flex justify-center border-t-0 border-accent rounded-ful w-96 h-96 ">
+        <div className="w-full flex justify-center lg:hidden border-0 ">
+          <div className="flex justify-center border-t-0 border-accent rounded-ful w-full h-full border-0 ">
             <HexagonalIconList hexagon={hexagon} centerItem={hexagon[0]} />
             <img
               src={thinking}
