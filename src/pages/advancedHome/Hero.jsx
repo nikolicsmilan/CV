@@ -1,7 +1,7 @@
 import React from "react";
 import thinking from "../../assets/advanced/thinking24.png";
 import HexagonalIconList from "./components/HexagonalIconList";
-const Hero = ({ navigation, hexagon }) => {
+const Hero = ({ navigation, hexagon,cvButtonRef }) => {
   return (
     <div className="bg-primary  flex flex-col lg:flex-row lg:h-full border-0 border-lime-400 lg:bg-thinkingbg2 bg-no-repeat bg-center bg-cover">
       {/* First page */}
@@ -17,6 +17,7 @@ const Hero = ({ navigation, hexagon }) => {
           </p>
 
           <a
+          ref={cvButtonRef}
             href="#contact"
             className="w-60 m-5 px-6 py-3 bg-accent
          text-white font-bold rounded-lg shadow-md hover:bg-primary hover:border-2 border-accent transition duration-300 text-center"
@@ -24,7 +25,7 @@ const Hero = ({ navigation, hexagon }) => {
             Let's Work Together
           </a>
         </div>
-
+     
         <div className="lg:w-1/3 hidden lg:flex flex-col justify-end py-10 border-red-400 border-0 h-full">
           <div className="bg-background rounded w-96 h-16 my-10 flex text-2xl justify-center items-center">
             {navigation.map((item, index) => (

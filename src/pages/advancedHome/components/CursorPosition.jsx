@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
- import { MyGeneralContext } from "../../../context/GeneralContext";
+import { MyGeneralContext } from "../../../context/GeneralContext";
 const CursorPosition = () => {
-const {position, setPosition,scroll, setScroll}=MyGeneralContext()
+  const { position, setPosition, scroll, setScroll } = MyGeneralContext();
   // A window objektumra tesszük az egérmozgás követését
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -12,11 +12,11 @@ const {position, setPosition,scroll, setScroll}=MyGeneralContext()
     };
     // Görgetés figyelése
     const handleScroll = () => {
-        setScroll({
-          x: window.scrollX,
-          y: window.scrollY,
-        });
-      };
+      setScroll({
+        x: window.scrollX,
+        y: window.scrollY,
+      });
+    };
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("scroll", handleScroll);
     // Cleanup az esemény eltávolítására, amikor a komponens elhagyja a DOM-ot
@@ -27,7 +27,7 @@ const {position, setPosition,scroll, setScroll}=MyGeneralContext()
   }, []);
 
   return (
-    <div className="fixed top-0 right-0 bg-white p-2 z-50">
+    <div className="fixed bottom-0 right-0 bg-white p-2 z-50">
       <div className="text-2xl text-gray-800">
         Cursor Position: X: {position.x}, Y: {position.y}
       </div>
@@ -39,4 +39,3 @@ const {position, setPosition,scroll, setScroll}=MyGeneralContext()
 };
 
 export default CursorPosition;
-

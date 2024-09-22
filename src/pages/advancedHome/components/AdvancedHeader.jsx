@@ -1,9 +1,13 @@
-import React from "react";
+import React,{useRef,useState} from "react";
 import { motion } from "framer-motion"; // Framer Motion import
 import CursorPosition from "./CursorPosition";
 import { MyGeneralContext } from "../../../context/GeneralContext";
-const AdvancedHeader = ({ icons }) => {
+import ElementPositionTracker from "./ElementPositionTracker";
+const AdvancedHeader = ({ icons,cvButtonRef }) => {
   const { position, setPosition, scroll, setScroll } = MyGeneralContext();
+ 
+
+  //const cvButtonRef = useRef(null);
   return (
     <>
       {/* Ha görgetünk, akkor átalakul a felirat gömbbé és mozog */}
@@ -31,9 +35,10 @@ const AdvancedHeader = ({ icons }) => {
           className="flex justify-center items-center rounded-lg border-accent border-2 
       p-2 w-36 h-10 hover:text-white hover:bg-accent transition duration-300 cursor-pointer"
         >
-          <div>Download CV</div>
+          <div  >Download CV</div>
         </div>
-        <CursorPosition />
+       
+      
         <div className="flex text-xl justify-between w-44">
           {icons.map((item, index) => (
             <div
@@ -50,44 +55,12 @@ const AdvancedHeader = ({ icons }) => {
           <div className="hidden md:block lg:hidden xl:hidden"> md</div>
           <div className=" block md:hidden lg:hidden xl:hidden"> sm</div>
         </div>
+        <CursorPosition />
       </div>
     </>
   );
 };
 
 export default AdvancedHeader;
+//     <CursorPosition />
 
-/*import React from "react";
-
-const AdvancedHeader = ({ icons }) => {
-  return (
-    <>
-      <div className="uppercase text-accent text-2xl text-center border-0 hidde">EXPERT</div>
-      <div className="hidden lg:flex justify-between items-center w-96 h-16 pl-10">
-      <div className="flex justify-center items-center rounded-lg border-accent border-2 
-      p-2 w-36 h-10 hover:text-white hover:bg-accent transition duration-300 cursor-pointer">
-          <div>Download CV</div>
-        </div>
-        <div className="flex text-xl justify-between w-44">
-          {icons.map((item, index) => (
-            <div
-              key={index}
-              className="p-0 hover:text-accent transition duration-300 cursor-pointer"
-            >
-              {item.icon}
-            </div>
-          ))}
-        </div>
-        <div className="w-12 mx-5 hidden">
-          <div className="hidden   xl:block"> xl</div>
-          <div className="hidden  lg:block xl:hidden"> lg</div>
-          <div className="hidden md:block lg:hidden xl:hidden"> md</div>
-          <div className=" block md:hidden lg:hidden xl:hidden"> sm</div>
-        </div>
-       
-      </div>
-    </>
-  );
-};
-
-export default AdvancedHeader;*/
