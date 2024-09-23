@@ -1,44 +1,56 @@
-import React,{useRef,useState} from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion"; // Framer Motion import
-import CursorPosition from "./CursorPosition";
-import { MyGeneralContext } from "../../../context/GeneralContext";
 import ElementPositionTracker from "./ElementPositionTracker";
-const AdvancedHeader = ({ icons,cvButtonRef }) => {
-  const { position, setPosition, scroll, setScroll } = MyGeneralContext();
- 
+import { MyGeneralContext } from "../../../context/GeneralContext";
 
+const AdvancedHeader = ({ icons, elementPosition }) => {
+  const [movePosition, setMovePosition] = useState({ x: 0, y: 0 });
+  const { scroll } = MyGeneralContext();
+  const expertMove = useRef(null);
   //const cvButtonRef = useRef(null);
   return (
     <>
       {/* Ha görgetünk, akkor átalakul a felirat gömbbé és mozog */}
       <motion.div
+        ref={expertMove}
         className={`uppercase text-accent text-2xl text-center border-0`}
         animate={{
-          borderRadius: scroll.y < 100 ? "50%" : "0%", // Gömb alak, ha görgetünk
-          scale: scroll.y < 100 ? 1 : 1, // Méretnövelés
-          x: scroll.y < 100 ? 0 : scroll.x + 300, // Mozgás a vízszintes tengelyen
-          y: scroll.y < 100 ? 0 : scroll.y + 300, // Mozgás a függőleges tengelyen
+          // borderRadius: scroll.y < 100 ? "50%" : "0%", // Gömb alak, ha görgetünk
+          // scale: scroll.y < 100 ? 1 : 1, // Méretnövelés
+          //  x: scroll.y < 100 ? 0 : scroll.x + 300, // Mozgás a vízszintes tengelyen
+          //  y: scroll.y < 100 ? 0 : scroll.y + 300, // Mozgás a függőleges tengelyen
+          // y: scroll.y <= 10 ? 0 : elementPosition?.y + 200,
+          // ide az expert illetve a cvButtonRef külömbségével eltolt értéket kell
+          //hozáadni
+          //tehát animate cvButtonRef +ExpertPosition abszolút értékének összegét
+          //y:scroll.y < 100 ?0:movePosition.y
+          y: scroll.y < 100 ? 0 : elementPosition.y + 10 - movePosition.y,
+          x: scroll.y < 100 ? 0 : 342,
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        style={{
-          width: scroll.y < 100 ? "0px" : "100px",
-          height: scroll.y < 100 ? "0px" : "100px",
-          backgroundColor:
-            scroll.y < 1000 ? "rgba(217, 142, 48, 0.8)" : "transparent", // Gömb átlátszóság
-        }}
+        style={
+          {
+            //  width: scroll.y < 100 ? "0px" : "100px",
+            //height: scroll.y < 100 ? "0px" : "100px",
+            // backgroundColor:
+            // scroll.y < 1000 ? "rgba(217, 142, 48, 0.8)" : "transparent", // Gömb átlátszóság
+          }
+        }
       >
-        {scroll.y < 100 ? "EXPERT" : ""}
+        {scroll.y < 100 ? "EXPERT" : "Arrow"}
       </motion.div>
-
+      <div className="opacity-0" ref={expertMove}>
+        testposition
+      </div>
       <div className="hidden lg:flex justify-between items-center w-96 h-16 pl-10">
         <div
           className="flex justify-center items-center rounded-lg border-accent border-2 
       p-2 w-36 h-10 hover:text-white hover:bg-accent transition duration-300 cursor-pointer"
-        >
-          <div  >Download CV</div>
-        </div>
+        >Download CV
        
-      
+        
+        </div>
+
         <div className="flex text-xl justify-between w-44">
           {icons.map((item, index) => (
             <div
@@ -55,7 +67,10 @@ const AdvancedHeader = ({ icons,cvButtonRef }) => {
           <div className="hidden md:block lg:hidden xl:hidden"> md</div>
           <div className=" block md:hidden lg:hidden xl:hidden"> sm</div>
         </div>
-        <CursorPosition />
+        <ElementPositionTracker
+            elementRef={expertMove}
+            onPositionChange={setMovePosition}
+          />
       </div>
     </>
   );
@@ -63,4 +78,3 @@ const AdvancedHeader = ({ icons,cvButtonRef }) => {
 
 export default AdvancedHeader;
 //     <CursorPosition />
-

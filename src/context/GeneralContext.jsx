@@ -12,7 +12,7 @@ export const GeneralContextProvider = ({ children }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   }); // State for the window size
-  
+
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [scroll, setScroll] = useState({ x: 0, y: 0 });
   // Use the useEffect hook to handle the window resize event
@@ -43,7 +43,10 @@ export const GeneralContextProvider = ({ children }) => {
         setActiveMenu,
         size,
         setSize,
-        position, setPosition,scroll, setScroll
+        position,
+        setPosition,
+        scroll,
+        setScroll,
       }}
     >
       {children}

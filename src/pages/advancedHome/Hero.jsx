@@ -1,11 +1,11 @@
 import React from "react";
 import thinking from "../../assets/advanced/thinking24.png";
 import HexagonalIconList from "./components/HexagonalIconList";
-const Hero = ({ navigation, hexagon,cvButtonRef }) => {
+const Hero = ({ navigation, hexagon, cvButtonRef, scrolMenuRef }) => {
   return (
-    <div className="bg-primary  flex flex-col lg:flex-row lg:h-full border-0 border-lime-400 lg:bg-thinkingbg2 bg-no-repeat bg-center bg-cover">
+    <div className="bg-primary  flex flex-col lg:flex-row lg:h-full border-2 border-lime-400 lg:bg-thinkingbg2 bg-no-repeat bg-center bg-cover">
       {/* First page */}
-      <div className=" w-full  flex flex-col lg:flex-row lg:items-start p-0 border-0  border-purple-400 shadow-none lg:shadow-none">
+      <div className=" w-full  flex flex-col lg:flex-row lg:items-start p-0 border-2  border-purple-400 shadow-none lg:shadow-none">
         <div className="lg:w-1/3 lg:p-10 flex flex-col lg:justify-between border-0 items-center lg:items-start">
           <h1 className="text-3xl xl:text-4xl font-semibold text-white mb-6 text-center lg:text-start">
             Fullstack Web Developer from Hungary
@@ -17,7 +17,7 @@ const Hero = ({ navigation, hexagon,cvButtonRef }) => {
           </p>
 
           <a
-          ref={cvButtonRef}
+            ref={cvButtonRef}
             href="#contact"
             className="w-60 m-5 px-6 py-3 bg-accent
          text-white font-bold rounded-lg shadow-md hover:bg-primary hover:border-2 border-accent transition duration-300 text-center"
@@ -25,9 +25,12 @@ const Hero = ({ navigation, hexagon,cvButtonRef }) => {
             Let's Work Together
           </a>
         </div>
-     
+
         <div className="lg:w-1/3 hidden lg:flex flex-col justify-end py-10 border-red-400 border-0 h-full">
-          <div className="bg-background rounded w-96 h-16 my-10 flex text-2xl justify-center items-center">
+          <div
+            ref={scrolMenuRef}
+            className="bg-background rounded w-96 h-16 my-10 flex text-2xl justify-center items-center"
+          >
             {navigation.map((item, index) => (
               <div
                 key={index}
