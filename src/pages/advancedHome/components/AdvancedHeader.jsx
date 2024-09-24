@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion"; // Framer Motion import
+import ScrollAnimation from "./ScrollAnimation"; // Az animációs komponens importálása
 import ElementPositionTracker from "./ElementPositionTracker";
 import { MyGeneralContext } from "../../../context/GeneralContext";
 
@@ -7,12 +7,72 @@ const AdvancedHeader = ({ icons, elementPosition }) => {
   const [movePosition, setMovePosition] = useState({ x: 0, y: 0 });
   const { scroll } = MyGeneralContext();
   const expertMove = useRef(null);
+
+  return (
+    <>
+      <ScrollAnimation
+        scrollY={scroll.y}
+        elementPosition={elementPosition}
+        movePosition={movePosition}
+      />
+
+      <div className="opacity-0" ref={expertMove}>
+        startposition
+      </div>
+
+      <div className="hidden lg:flex justify-between items-center w-96 h-16 pl-10">
+        <div
+          className="flex justify-center items-center rounded-lg border-accent border-2 
+          p-2 w-36 h-10 hover:text-white hover:bg-accent transition duration-300 cursor-pointer"
+        >
+          Download CV
+        </div>
+
+        <div className="flex text-xl justify-between w-44">
+          {icons.map((item, index) => (
+            <div
+              key={index}
+              className="p-0 hover:text-accent transition duration-300 cursor-pointer"
+            >
+              {item.icon}
+            </div>
+          ))}
+        </div>
+
+        <div className="w-12 mx-5 hidden">
+          <div className="hidden xl:block"> xl</div>
+          <div className="hidden lg:block xl:hidden"> lg</div>
+          <div className="hidden md:block lg:hidden xl:hidden"> md</div>
+          <div className="block md:hidden lg:hidden xl:hidden"> sm</div>
+        </div>
+
+        <ElementPositionTracker
+          elementRef={expertMove}
+          onPositionChange={setMovePosition}
+        />
+      </div>
+    </>
+  );
+};
+
+export default AdvancedHeader;
+
+
+/*import React, { useRef, useState } from "react";
+import { motion } from "framer-motion"; // Framer Motion import
+import ElementPositionTracker from "./ElementPositionTracker";
+import { MyGeneralContext } from "../../../context/GeneralContext";
+import ScrollAnimation from "./ScrollAnimation";
+const AdvancedHeader = ({ icons, elementPosition }) => {
+  const [movePosition, setMovePosition] = useState({ x: 0, y: 0 });
+  const { scroll } = MyGeneralContext();
+  const expertMove = useRef(null);
   //const cvButtonRef = useRef(null);
   return (
     <>
-      {/* Ha görgetünk, akkor átalakul a felirat gömbbé és mozog */}
+    
       <motion.div
-        ref={expertMove}
+      //  ref={expertMove}
         className={`uppercase text-accent text-2xl text-center border-0`}
         animate={{
           // borderRadius: scroll.y < 100 ? "50%" : "0%", // Gömb alak, ha görgetünk
@@ -24,8 +84,9 @@ const AdvancedHeader = ({ icons, elementPosition }) => {
           //hozáadni
           //tehát animate cvButtonRef +ExpertPosition abszolút értékének összegét
           //y:scroll.y < 100 ?0:movePosition.y
-          y: scroll.y < 100 ? 0 : elementPosition.y + 10 - movePosition.y,
-          x: scroll.y < 100 ? 0 : 342,
+          y: scroll.y < 10 ? 0 : elementPosition.y + 10 - movePosition.y,
+          x: scroll.y < 10 ? 0 : 342,
+          y: scroll.y < 20 ? 0 : elementPosition.y + 300 - movePosition.y,
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         style={
@@ -40,7 +101,7 @@ const AdvancedHeader = ({ icons, elementPosition }) => {
         {scroll.y < 100 ? "EXPERT" : "Arrow"}
       </motion.div>
       <div className="opacity-0" ref={expertMove}>
-        testposition
+        startposition
       </div>
       <div className="hidden lg:flex justify-between items-center w-96 h-16 pl-10">
         <div
@@ -74,7 +135,7 @@ const AdvancedHeader = ({ icons, elementPosition }) => {
       </div>
     </>
   );
-};
+};*/
 
-export default AdvancedHeader;
+//export default AdvancedHeader;
 //     <CursorPosition />
