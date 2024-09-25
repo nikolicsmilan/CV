@@ -3,9 +3,9 @@ import thinking from "../../assets/advanced/thinking24.png";
 import HexagonalIconList from "./components/HexagonalIconList";
 const Hero = ({ navigation, hexagon, cvButtonRef, scrolMenuRef }) => {
   return (
-    <div className="bg-primary  flex flex-col lg:flex-row lg:h-full border-2 border-lime-400 lg:bg-thinkingbg2 bg-no-repeat bg-center bg-cover">
+    <div className="bg-primary  flex flex-col lg:flex-row lg:h-full border-0 border-lime-400 lg:bg-thinkingbg2 bg-no-repeat bg-center bg-cover">
       {/* First page */}
-      <div className=" w-full  flex flex-col lg:flex-row lg:items-start p-0 border-2  border-purple-400 shadow-none lg:shadow-none">
+      <div className=" w-full  flex flex-col lg:flex-row lg:items-start p-0 border-0  border-purple-400 shadow-none lg:shadow-none">
         <div className="lg:w-1/3 lg:p-10 flex flex-col lg:justify-between border-0 items-center lg:items-start">
           <h1 className="text-3xl xl:text-4xl font-semibold text-white mb-6 text-center lg:text-start">
             Fullstack Web Developer from Hungary

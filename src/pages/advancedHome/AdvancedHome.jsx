@@ -26,10 +26,10 @@ useEffect(() => {
   const handleScroll = () => {
     const scrollY = window.scrollY; // Natív scroll pozíció használata
 
-    if (scrollY <= 400) {
+    if (scrollY <= 200) {
       setCurrentRef(cvButtonRef);
       setCurrentRefName("cvButtonRef"); // Ref név beállítása
-    } else if (scrollY > 400) {
+    } else if (scrollY >= 300) {
       setCurrentRef(scrolMenuRef);
       setCurrentRefName("scrolMenuRef"); // Ref név beállítása
     } else {
