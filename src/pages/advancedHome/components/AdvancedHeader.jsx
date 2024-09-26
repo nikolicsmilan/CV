@@ -20,19 +20,19 @@ const AdvancedHeader = ({ icons, elementPosition }) => {
         startposition
       </div>
 
-      <div className="hidden lg:flex justify-between items-center w-96 h-16 pl-10">
+      <div className="hidde lg:flex justify-between items-center w-96 h-16 pl-10 border-0 border-red-400">
         <div
-          className="flex justify-center items-center rounded-lg border-accent border-2 
+          className=" hidden lg:flex justify-center items-center rounded-lg border-accent border-2 
           p-2 w-36 h-10 hover:text-white hover:bg-accent transition duration-300 cursor-pointer"
         >
           Download CV
         </div>
 
-        <div className="flex text-xl justify-between w-44">
+        <div className="hidden lg:flex text-2xl justify-between w-44 border-0">
           {icons.map((item, index) => (
             <div
               key={index}
-              className="p-0 hover:text-accent transition duration-300 cursor-pointer"
+              className="p-0 hover:bg-accent hover:text-white cursor-pointer"
             >
               {item.icon}
             </div>

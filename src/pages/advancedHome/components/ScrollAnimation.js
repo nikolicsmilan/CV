@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaArrowUp, FaArrowDown, FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
+import { MyGeneralContext } from "../../../context/GeneralContext";
 const ScrollAnimation = ({ scrollY, elementPosition, movePosition }) => {
+  const { width } = MyGeneralContext();
   const getAnimationAndArrow = (scrollY) => {
     let x = 0;
     let y = 0;
@@ -25,7 +26,7 @@ const ScrollAnimation = ({ scrollY, elementPosition, movePosition }) => {
         borderRadius = "25%";
         scale = 1.2;
         icon = <FaArrowLeft />;  // Balra mutató nyíl
-        text = "Click here";
+        text = ` ${width} Send me a message`;
         iconPosition = "left";  // Az ikon baloldalon
         break;
       case scrollY >= 300:
@@ -37,7 +38,7 @@ const ScrollAnimation = ({ scrollY, elementPosition, movePosition }) => {
         text = "Watch my videos";
         iconPosition = "right";  // Az ikon jobboldalon
         break;
-      case scrollY < 400:
+      case scrollY < 700:
         x = 150;
         y = elementPosition.y + 400 - movePosition.y;
         borderRadius = "5%";
@@ -64,7 +65,7 @@ const ScrollAnimation = ({ scrollY, elementPosition, movePosition }) => {
 
   return (
     <motion.div
-      className="uppercase text-accent text-2xl text-center border-0"
+      className="uppercase text-accent text-2xl text-center border-0 h-16 cursor-pointer"
       animate={{
         x: animationValues.x,
         y: animationValues.y,
@@ -73,18 +74,18 @@ const ScrollAnimation = ({ scrollY, elementPosition, movePosition }) => {
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center border-0">
         {animationValues.icon ? (
           animationValues.iconPosition === "left" ? (
-            // Ha az ikon balra van, akkor először megjelenik az ikon, utána a szöveg
+           
             <>
               {animationValues.icon}
-              <span className="ml-2 lowercase">{animationValues.text}</span>
+              <span className="ml-2 lowercase w-16 text-xl">{animationValues.text}</span>
             </>
           ) : (
-            // Ha az ikon jobbra van, akkor először a szöveg, utána az ikon
+        
             <>
-              <span className="mr-2 lowercase">{animationValues.text}</span>
+              <span className="mr-2 lowercase text-lg">{animationValues.text}</span>
               {animationValues.icon}
             </>
           )

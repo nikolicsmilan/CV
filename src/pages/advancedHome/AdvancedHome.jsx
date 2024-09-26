@@ -66,7 +66,7 @@ useEffect(() => {
         <Video />
       </div>
 
-      <div className="fixed bottom-4 right-4 w-14 h-14 flex justify-center items-center z-30">
+      <div className="fixed bottom-4 right-4 w-14 h-14 flex justify-center items-center z-50">
         <FaArrowUp
           className="text-text hover:text-white hover:bg-accent cursor-pointer bg-primary border-2 rounded-full border-accent text-4xl p-2 transition duration-300"
           onClick={scrollToTop}
