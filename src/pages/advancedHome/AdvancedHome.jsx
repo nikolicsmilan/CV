@@ -8,6 +8,7 @@ import { connection, navigation, network } from "../../data/advancedData";
 import ElementPositionTracker from "./components/ElementPositionTracker";
 import CursorPosition from "./components/CursorPosition";
 import { MyGeneralContext } from "../../context/GeneralContext";
+import ElectricFlow from "./components/ElectricFlow";
 
 const AdvancedHome = () => {
   const { scroll } = MyGeneralContext();
@@ -64,6 +65,7 @@ useEffect(() => {
 
         <CursorPosition />
         <Video />
+        <ElectricFlow/>
       </div>
 
       <div className="fixed bottom-4 right-4 w-14 h-14 flex justify-center items-center z-50">
