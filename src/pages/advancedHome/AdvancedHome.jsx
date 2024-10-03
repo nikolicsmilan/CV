@@ -14,7 +14,7 @@ const AdvancedHome = () => {
   const { scroll } = MyGeneralContext();
   const [elementPosition, setElementPosition] = useState({ x: 0, y: 0 });
   const [currentRef, setCurrentRef] = useState(null);
-  const [currentRefName, setCurrentRefName] = useState(""); // Új state a ref nevéhez
+  const [currentRefName, setCurrentRefName] = useState("cvButtonRef"); // Új state a ref nevéhez
   const cvButtonRef = useRef(null);
   const scrolMenuRef = useRef(null);
 
@@ -22,40 +22,38 @@ const AdvancedHome = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-// Scroll handler that updates the ref and its name based on scroll position
-useEffect(() => {
-  const handleScroll = () => {
-    const scrollY = window.scrollY; // Natív scroll pozíció használata
+  // Scroll handler that updates the ref and its name based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY; // Natív scroll pozíció használata
 
-    if (scrollY <= 200) {
-      setCurrentRef(cvButtonRef);
-      setCurrentRefName("cvButtonRef"); // Ref név beállítása
-    } else if (scrollY >= 300) {
-      setCurrentRef(scrolMenuRef);
-      setCurrentRefName("scrolMenuRef"); // Ref név beállítása
-    } else {
-      setCurrentRef(null);
-      setCurrentRefName(""); // Nincs ref a 400-500 közötti tartományban
-    }
-  };
+      if (scrollY <= 1) {
+        setCurrentRef(cvButtonRef);
+        setCurrentRefName("cvButtonRef"); // Ref név beállítása
+      } else if (scrollY >= 1000) {
+        setCurrentRef(scrolMenuRef);
+        setCurrentRefName("scrolMenuRef"); // Ref név beállítása
+      } else {
+        setCurrentRef(null);
+        setCurrentRefName("Nincs"); // Nincs ref a 400-500 közötti tartományban
+      }
+    };
 
-  window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  // Cleanup event listener on unmount
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []); // Üres dependency array azt jelenti, hogy csak egyszer fut le a komponens mount-olásakor
-
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Üres dependency array azt jelenti, hogy csak egyszer fut le a komponens mount-olásakor
 
   return (
-    <div className="shadow-2xl flex flex-col w-full h-full text-text text-base border-0 lg:border-0">
-      <div className="bg-primary w-full h-16 flex justify-between items-center px-5">
+    <div className="shadow-2xl flex flex-col w-full h-full text-text text-base border-0 lg:border-8 border-sky-400">
+      <div className="bg-primary w-full h-16 flex justify-between items-center px-5 ">
         <AdvancedHeader icons={connection} elementPosition={elementPosition} />
-       
       </div>
 
-      <div className="w-full h-full">
+      <div className="w-full h-full ">
         <Hero
           navigation={navigation}
           hexagon={network}
@@ -65,7 +63,7 @@ useEffect(() => {
 
         <CursorPosition />
         <Video />
-        <ElectricFlow/>
+        <ElectricFlow />
       </div>
 
       <div className="fixed bottom-4 right-4 w-14 h-14 flex justify-center items-center z-50">
@@ -76,10 +74,7 @@ useEffect(() => {
       </div>
 
       <div className="fixed bottom-0 left-0">
-        <div className="border-0 text-2xl bg-white p-2 z-50 text-gray-800">
-        CurrentRef Position - X: {elementPosition.x}, Y: {elementPosition.y}
-          <div>CurrentRef: {currentRefName || "N/A"} {elementPosition.y}</div> {/* Ref név kiírása */}
-        </div>
+      
         {currentRef && (
           <ElementPositionTracker
             elementRef={currentRef}
@@ -92,8 +87,17 @@ useEffect(() => {
 };
 
 export default AdvancedHome;
+/*
+  <div className="border-0 text-2xl bg-lime-400 p-2 z-50 text-gray-800 w-80">
+          CurrentRef Position - X: {Math.round(elementPosition.x)}, Y:{" "}
+          {Math.round(elementPosition.y)}
+          <div>
+            CurrentRef: {currentRefName || "N/A"}{" "}
+            {Math.round(elementPosition.y)}
+          </div>
+        </div>
 
-
+*/
 /*import React, { useEffect, useState, useRef } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { motion } from "framer-motion"; // Importáljuk a Framer Motion-t

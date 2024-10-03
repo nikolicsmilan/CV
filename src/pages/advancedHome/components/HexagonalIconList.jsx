@@ -26,7 +26,6 @@ const HexagonalIconList = ({ hexagon, centerItem, isHovered }) => {
       {hexagon.map((item, index) => {
         const baseAngle = (index / iconCount) * (2 * Math.PI); // Alap szög
         const offsetAngle = isHovered ? 0.2 : 0; // Ha hover történik, mozdítsuk el az ikonokat
-
         const x = centerX + radius * Math.cos(baseAngle + offsetAngle) - 30; // Elmozdítás a szögek alapján
         const y = centerY + radius * Math.sin(baseAngle + offsetAngle) - 30;
 

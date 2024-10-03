@@ -22,7 +22,7 @@ const AdvancedHeader = ({ icons, elementPosition }) => {
 
       <div className="hidde lg:flex justify-between items-center w-96 h-16 pl-10 border-0 border-red-400">
         <div
-          className=" hidden lg:flex justify-center items-center rounded-lg border-accent border-2 
+          className="hover:scale-125 cursor-pointer hidden lg:flex justify-center items-center rounded-lg border-accent border-2 
           p-2 w-36 h-10 hover:text-white hover:bg-accent transition duration-300 cursor-pointer"
         >
           Download CV
@@ -32,7 +32,7 @@ const AdvancedHeader = ({ icons, elementPosition }) => {
           {icons.map((item, index) => (
             <div
               key={index}
-              className="p-0 hover:bg-accent hover:text-white cursor-pointer"
+              className="p-0 hover:bg-accent hover:text-white hover:scale-125 cursor-pointer transition duration-300"
             >
               {item.icon}
             </div>

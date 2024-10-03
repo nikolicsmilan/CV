@@ -12,85 +12,77 @@ const ScrollAnimation = ({ scrollY, elementPosition, movePosition }) => {
     let icon = null;  // Alapértelmezetten nincs nyíl
     let text = "EXPERT";  // Alapértelmezett szöveg
     let iconPosition = "left"; // Új attribútum az ikon elhelyezésére (bal vagy jobb)
-
+    let classNames="";
     switch (true) {
       case scrollY < 10:
         x = 10;
         y = 10;
-        borderRadius = "50%";
+        //borderRadius = "50%";
         scale = 1.1;
         break;
-      case scrollY <= 200:
+      case scrollY >= 20:
         x = elementPosition.x + 250;
-        y = elementPosition.y + 10 - movePosition.y;
-        borderRadius = "25%";
+        y = elementPosition.y  ;
+       // borderRadius = "25%";
         scale = 1.2;
         icon = <FaArrowLeft />;  // Balra mutató nyíl
-        text = ` ${width} Send me a message`;
+        text = `Send me a message`;
         iconPosition = "left";  // Az ikon baloldalon
+        classNames="border-2 border-sky-400  p-10 rounded-2xl";
         break;
-      case scrollY >= 300:
-        x = elementPosition.x - 300;
-        y = elementPosition.y + 10 - movePosition.y;
+      case scrollY > 1000:
+        x = elementPosition.x - 250;
+        y = elementPosition.y + 30 - movePosition.y;
         borderRadius = "10%";
         scale = 1.3;
         icon = <FaArrowRight />;  // Jobbra mutató nyíl
         text = "Watch my videos";
         iconPosition = "right";  // Az ikon jobboldalon
         break;
-      case scrollY < 700:
-        x = 150;
-        y = elementPosition.y + 400 - movePosition.y;
-        borderRadius = "5%";
-        scale = 1.4;
-        icon = <FaArrowLeft />;  // Balra mutató nyíl
-        text = "Left";
-        iconPosition = "left";  // Az ikon baloldalon
-        break;
       default:
         x = 0;
-        y = 0;
+        y = 2000;
         borderRadius = "0%";
         scale = 1.5;
-        icon = <FaArrowUp />;  // Felfelé mutató nyíl
-        text = "Up";
+        icon = <FaArrowDown />;  // Felfelé mutató nyíl
+        text = "Fall";
         iconPosition = "right";  // Az ikon jobboldalon
         break;
     }
 
-    return { x, y, borderRadius, scale, icon, text, iconPosition };
+    return { x, y, borderRadius, scale, icon, text, iconPosition,classNames };
   };
 
   const animationValues = getAnimationAndArrow(scrollY);
 
   return (
     <motion.div
-      className="uppercase text-accent text-2xl text-center border-0 h-16 cursor-pointer"
+      className={`flex uppercase text-accent text-2xl text-center border-8 h-16 cursor-pointer ${animationValues.classNames} `}
       animate={{
         x: animationValues.x,
         y: animationValues.y,
         borderRadius: animationValues.borderRadius,
         scale: animationValues.scale,
       }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+      transition={{ duration: 1, ease: "easeInOut" }}
     >
-      <div className="flex justify-center items-center border-0">
+      <div className="flex justify-start items-center border-0 ">
         {animationValues.icon ? (
           animationValues.iconPosition === "left" ? (
            
             <>
               {animationValues.icon}
-              <span className="ml-2 lowercase w-16 text-xl">{animationValues.text}</span>
+              <span className="ml-2   text-xl">{animationValues.text}</span>
             </>
           ) : (
         
             <>
-              <span className="mr-2 lowercase text-lg">{animationValues.text}</span>
+              <span className="mr-2  text-lg">{animationValues.text}</span>
               {animationValues.icon}
             </>
           )
         ) : (
-          <span>{animationValues.text}</span>  
+          <span className="hover:scale-125 transition duration-300">{animationValues.text}</span>  
         )}
       </div>
     </motion.div>

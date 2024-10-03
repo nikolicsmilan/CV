@@ -27,14 +27,15 @@ const CursorPosition = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-0 right-0 bg-white p-2 z-50">
-      <div className="text-2xl text-gray-800">
-        Cursor Position: X: {position.x}, Y: {position.y}
-      </div>
-      <div className="text-2xl text-gray-800">
-        Scroll Position: X: {scroll.x}, Y: {scroll.y}
-      </div>
+    <div className="fixed bottom-0 right-0 bg-red-400 p-2 z-50">
+    <div className="text-2xl text-gray-800">
+      Cursor Position: X: {Math.round(position.x)}, Y: {Math.round(position.y)}
     </div>
+    <div className="text-2xl text-gray-800">
+      Scroll Position: X: {Math.round(scroll.x)}, Y: {Math.round(scroll.y)}
+    </div>
+  </div>
+  
   );
 };
 
