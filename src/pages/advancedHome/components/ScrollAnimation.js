@@ -22,13 +22,13 @@ const ScrollAnimation = ({ scrollY, elementPosition, movePosition }) => {
         break;
       case scrollY >= 20:
         x = elementPosition.x + 250;
-        y = elementPosition.y  ;
+        y = elementPosition.y -20 ;
        // borderRadius = "25%";
         scale = 1.2;
         icon = <FaArrowLeft />;  // Balra mutató nyíl
         text = `Send me a message`;
         iconPosition = "left";  // Az ikon baloldalon
-        classNames="border-2 border-sky-400  p-10 rounded-2xl";
+        classNames="border-0 border-sky-400  p-1 rounded-2xl";
         break;
       case scrollY > 1000:
         x = elementPosition.x - 250;
@@ -57,7 +57,7 @@ const ScrollAnimation = ({ scrollY, elementPosition, movePosition }) => {
 
   return (
     <motion.div
-      className={`flex uppercase text-accent text-2xl text-center border-8 h-16 cursor-pointer ${animationValues.classNames} `}
+      className={`flex uppercase text-accent text-2xl text-center border-0 h-16 cursor-pointer ${animationValues.classNames} `}
       animate={{
         x: animationValues.x,
         y: animationValues.y,
