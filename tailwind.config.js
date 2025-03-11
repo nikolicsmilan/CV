@@ -118,7 +118,7 @@ module.exports = {
               text: "#BDC3C7", // Világosszürke a szövegekhez
             },
             fontFamily: {
-              sans: ["Roboto", "Open Sans", "Lato"], // Modern, olvasható sans-serif betűtípusok
+              sans: ["Montserrat", "Inter", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
             },
             fontSize: {
               xs: "0.75rem", // 12px

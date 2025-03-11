@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "tailwindcss-themer": "^4.0.0",
     "three": "^0.165.0",
+    "typeface-montserrat": "^1.1.13",
     "ua-parser-js": "^1.0.35",
     "webpack": "^5.82.0"
   },

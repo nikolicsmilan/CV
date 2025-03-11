@@ -16,7 +16,8 @@ function App() {
   return (
     // Top-level container for the entire application
     <div
-      className={`bg-primary bg-no-repeat bg-center bg-cover w-full  flex font-sans text-base ${style} border-0 border-red-400 text-primary`}
+      className={`font-sans bg-no-repeat bg-center bg-cover w-full 
+         flex text-base ${style} border-0 border-red-400 text-primary`}
     >
       {/* Set up the routing for different pages */}
       <Routes>

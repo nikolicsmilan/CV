@@ -12,7 +12,7 @@ const HeroText = () => {
     <>
 
 <motion.div
-        className="lg:w-1/3 lg:p-10 flex flex-col border-0 border-orange-400 items-center lg:items-start"
+        className=" lg:p-10 flex flex-col border-0  border-orange-400 items-center lg:items-start"
         initial="initial"
         whileHover="hover" // Hover az egész div-re
         variants={{
@@ -20,7 +20,7 @@ const HeroText = () => {
         }}
       >
         <motion.h1
-          className="text-3xl xl:text-4xl font-semibold text-white mb-6 text-center lg:text-start"
+          className="text-3xl xl:text-4xl font-semibold text-accent mb-6 text-center lg:text-start"
           variants={textVariants} // Az animáció variánsokat használjuk
           transition={{ type: "spring", stiffness: 100 }}
         >
@@ -28,7 +28,7 @@ const HeroText = () => {
         </motion.h1>
      
         <motion.p
-          className="text-lg xl:text-xl text-text mb-2 leading-relaxed text-center lg:text-start p-2"
+          className="text-lg xl:text-xl text-black font-bold mb-2 leading-relaxed text-center lg:text-start p-2"
           variants={textVariants} // Az animáció variánsokat használjuk
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >

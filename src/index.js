@@ -11,6 +11,7 @@ import i18n from "i18next";
 import Backend from "i18next-xhr-backend";
 import enTranslation from "./locales/en.json";
 import huTranslation from "./locales/hu.json";
+import 'typeface-montserrat'
 
 // Initialize i18next
 
