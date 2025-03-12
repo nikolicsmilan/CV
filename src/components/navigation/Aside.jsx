@@ -1,7 +1,7 @@
 import React from "react";
 import StyleChangeAside from "./StyleChangeAside";
 import { NavLink, useMatch } from "react-router-dom";
-import { links } from "../../data/aside";
+import { links } from "../../data/aside.jsx";
 import LanguageChangeAisde from "./LanguageChangeAside";
 import { MyGeneralContext } from "../../context/GeneralContext";
 import { useTranslation } from 'react-i18next';

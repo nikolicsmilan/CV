@@ -1,5 +1,5 @@
 import React from "react";
-import { skillsIcon } from "../data/aside";
+import { skillsIcon } from "../data/aside.jsx";
 import { useTranslation } from "react-i18next";
 import Icon3d from "../components/stack/Icon3d";
 

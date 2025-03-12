@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../components/projects/Card";
-import { projects } from "../data/projectsdata";
+import { projects } from "../data/projectsdata.jsx";
 import { useTranslation } from "react-i18next";
 
 const Projects = () => {
