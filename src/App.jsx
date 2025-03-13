@@ -1,3 +1,11 @@
+/*import React from "react";
+
+function App() {
+  return <div className={``}>Legyen hozé</div>;
+}
+
+export default App;*/
+
 import React, { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/navigation/Layout";
@@ -19,11 +27,11 @@ function App() {
       className={`font-sans bg-no-repeat bg-center bg-cover w-full 
          flex text-base ${style} border-0 border-red-400 text-primary`}
     >
-      {/* Set up the routing for different pages */}
+    
       <Routes>
-        {/* Parent route with the layout component */}
+      
         <Route path="/" element={<AdvancedLayout />}>
-          {/* Child routes for individual pages */}
+        
           <Route
             path="/"
             element={
@@ -32,7 +40,7 @@ function App() {
               </Suspense>
             }
           />{" "}
-          {/* Home page */}
+         
         </Route>
       </Routes>
     </div>
@@ -59,4 +67,49 @@ const Info = React.lazy(() => import("./pages/Info"));
 const Roadmap = React.lazy(() => import("./pages/Roadmap"));
 const BackgroundVideo = React.lazy(() => import("./pages/BackgroundVideo"));
 const NotFound = React.lazy(() => import("./pages/NotFound")); 
+*/
+
+/*
+import React, { Suspense } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/navigation/Layout";
+import { MyGeneralContext } from "./context/GeneralContext";
+import "./App.css";
+import AdvancedLayout from "./components/navigation/AdvancedLayout";
+// Lazy load the page components
+const AdvancedHome = React.lazy(() =>
+  import("./pages/advancedHome/AdvancedHome")
+);
+
+function App() {
+  // Get the style value from the MyGeneralContext
+  const { style } = MyGeneralContext();
+
+  return (
+    // Top-level container for the entire application
+    <div
+      className={`font-sans bg-no-repeat bg-center bg-cover w-full 
+         flex text-base ${style} border-0 border-red-400 text-primary`}
+    >
+    
+      <Routes>
+      
+        <Route path="/" element={<AdvancedLayout />}>
+        
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <AdvancedHome />
+              </Suspense>
+            }
+          />{" "}
+         
+        </Route>
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
 */

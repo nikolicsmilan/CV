@@ -4,7 +4,7 @@ import { motion } from "framer-motion"; // Importáljuk a Framer Motion-t
 import AdvancedHeader from "./components/AdvancedHeader";
 import Hero from "./Hero";
 import Video from "./Video";
-import { connection, navigation, network } from "../../data/advancedData";
+import { connection, navigation, network } from "../../data/advancedData.jsx";
 import { MyGeneralContext } from "../../context/GeneralContext";
 import ElectricFlow from "./components/ElectricFlow";
 

@@ -5,7 +5,7 @@ import MainCv from "../components/cv/MainCv";
 import CvMobil from "../components/cv/mobil/CvMobil";
 import profil from "../assets/Profil3.PNG";
 import profil4 from "../assets/Profil4.jpg";
-import { stack, language, contact } from "../data/stack";
+import { stack, language, contact } from "../data/stack.jsx";
 import { downloadPDF } from "../components/cv/pdfUtils";
 import { MyGeneralContext } from "../context/GeneralContext";
 import { useTranslation } from "react-i18next";

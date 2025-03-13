@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import GravityPoints from "./GravityPoints";
 import GravityGrids from "./GravityGrid";
-import { mobileIcons, desktopIcons } from "../../data/stack";
+import { mobileIcons, desktopIcons } from "../../data/stack.jsx";
 
 const useMobileView = () => {
   const [isMobile, setIsMobile] = useState(false);
