@@ -1,14 +1,11 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
+import react from '@vitejs/plugin-react-swc'
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  assetsInclude: ['**/*.JPG', '**/*.PNG'], // Hozzáadtuk a .PNG-t
   build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'src/index.jsx'), // A helyes belépési pont
-      },
-    },
+    outDir: 'build', // Itt módosítottuk a build mappa nevét.
   },
 })
