@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { MyGeneralContext } from "../../../context/GeneralContext";
 import Navigation from "./Navigation";
 
-const AdvancedHeader = ({ icons }) => {
+const AdvancedHeader = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const { scroll } = MyGeneralContext();
   const expertMove = useRef(null);
 
@@ -18,7 +18,7 @@ const AdvancedHeader = ({ icons }) => {
         Nikolics Milán
       </div>
 
-      <Navigation />
+      <Navigation setIsSidebarOpen={setIsSidebarOpen} isSidebarOpen={isSidebarOpen}/>
     </div>
   );
 };

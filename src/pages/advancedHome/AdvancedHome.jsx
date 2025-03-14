@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef,useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import AdvancedHeader from "./components/AdvancedHeader";
 import Hero from "./Hero";
@@ -9,16 +9,16 @@ const AdvancedHome = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div className=" flex flex-col w-full h-full 
      text-base border-0 lg:border-0 border-sky-400">
       <div className=" border-0 border-red-400 
       w-full   ">
-        <AdvancedHeader />
+        <AdvancedHeader setIsSidebarOpen={setIsSidebarOpen} isSidebarOpen={isSidebarOpen}/>
       </div>
 
-      <div className="w-full h-full ">
+      <div className={`w-full h-full   ${isSidebarOpen ? 'opacity-50 pointer-events-none' : 'opacity-100'} hidde`}>
         <Hero />
       </div>
 

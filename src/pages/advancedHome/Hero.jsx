@@ -18,10 +18,10 @@ const Hero = ({  }) => {
   return (
     <div className="bg-gray-100 flex flex-col lg:flex-row lg:h-full border-0
      border-lime-400 bg-no-repeat bg-left bg-cover max-w-7xl mx-auto px-4">
-      <div ref={heroTextRef} className="w-1/3">
+      <div ref={heroTextRef} className="mt-10 lg:my-0 lg:w-1/3">
         <HeroText />
       </div>
-      <div className="border-0 ">
+      <div className="border-0 flex items-center justify-center">
         <img ref={imgRef} className="border-0 border-lime-400" src={profile} />
       </div>
     </div>
