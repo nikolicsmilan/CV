@@ -19,6 +19,15 @@ module.exports = {
         sans: ['Montserrat', 'sans-serif'], // Használd a Tailwind beépített betűtípusait
         brush: ['Comforter Brush', 'cursive'],
       },
+      colors: {
+        primary: "#1E2A38", // Sötétkék főszín
+        secondary: "#ECF0F1", // Világosszürke
+        // accent: "#E67E22", // Narancssárga a CTA-hoz
+        accent: "#D98E30",
+        background: "#2C3E50", // Sötétebb árnyalat a háttérhez
+        success: "#2ECC71", // Zöld hangsúlyszín
+        text: "#BDC3C7", // Világosszürke a szövegekhez
+      },
     },
   },
   plugins: [
