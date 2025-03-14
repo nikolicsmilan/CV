@@ -4,7 +4,7 @@ const HeroText = () => {
 
     const textVariants = {
         initial: { x: 0, scale: 1 },
-        hover: { x: 20, scale: 1.01 }, // Jobbra mozdulnak és növekednek
+        hover: { x: 20, scale: 1.1 }, // Jobbra mozdulnak és növekednek
       };
 
       
@@ -20,7 +20,7 @@ const HeroText = () => {
         }}
       >
         <motion.h1
-          className="text-3xl xl:text-4xl font-semibold text-accent mb-6 text-center lg:text-start"
+          className="text-3xl xl:text-4xl font-semibold  mb-6 text-center lg:text-start"
           variants={textVariants} // Az animáció variánsokat használjuk
           transition={{ type: "spring", stiffness: 100 }}
         >
@@ -37,14 +37,14 @@ const HeroText = () => {
           build something great!
         </motion.p>
 
-        <motion.a
+        <a
           href="#contact"
-          className="w-60 m-5 px-6 py-3 bg-accent text-white font-bold rounded-lg shadow-md hover:bg-primary hover:border-2 border-accent transition text-center"
+          className="w-60 m-5 px-6 py-3 bg-accent text-white font-bold rounded-lg shadow-md  hover:border-2 border-accent transition text-center hover:bg-gray-100 hover:text-black"
           variants={textVariants} // Az animáció variánsokat használjuk
           transition={{ duration: 0.1, stiffness: 100, damping: 100 }}
         >
           Let's Work Together
-        </motion.a>
+        </a>
       </motion.div>
 
     </>

@@ -1,54 +1,25 @@
-import React, { useRef, useState } from "react";
-import ElementPositionTracker from "./ElementPositionTracker";
+import React, { useRef } from "react";
 import { MyGeneralContext } from "../../../context/GeneralContext";
+import Navigation from "./Navigation";
 
-const AdvancedHeader = ({ icons, elementPosition }) => {
-  const [movePosition, setMovePosition] = useState({ x: 0, y: 0 });
+const AdvancedHeader = ({ icons }) => {
   const { scroll } = MyGeneralContext();
   const expertMove = useRef(null);
 
   return (
-    <>
-      <div className="flex uppercase text-accent text-2xl text-center border-0  cursor-pointer">
-        Expert
+    <div
+      className="mx-2 border-0 border-lime-400 h-16 flex
+     justify-between items-center"
+    >
+      <div
+        ref={expertMove}
+        className=" uppercase  text-2xl text-center border-0  cursor-pointer"
+      >
+        Nikolics Milán
       </div>
 
-      <div className="opacity-0" ref={expertMove}>
-        startposition
-      </div>
-
-      <div className="hidde lg:flex justify-between items-center w-96 h-16 pl-10 border-0 border-red-400">
-        <div
-          className="hover:scale-110 cursor-pointer hidden lg:flex justify-center items-center rounded-lg border-accent border-2 
-          p-2 w-36 h-10 hover:text-white hover:bg-accent transition duration-300 cursor-pointer"
-        >
-          Download CV
-        </div>
-
-        <div className="hidden lg:flex text-2xl justify-between w-44 border-0">
-          {icons.map((item, index) => (
-            <div
-              key={index}
-              className="p-0  hover:text-white hover:scale-125 cursor-pointer transition duration-300"
-            >
-              {item.icon}
-            </div>
-          ))}
-        </div>
-
-        <div className="w-12 mx-5 hidden">
-          <div className="hidden xl:block"> xl</div>
-          <div className="hidden lg:block xl:hidden"> lg</div>
-          <div className="hidden md:block lg:hidden xl:hidden"> md</div>
-          <div className="block md:hidden lg:hidden xl:hidden"> sm</div>
-        </div>
-
-        <ElementPositionTracker
-          elementRef={expertMove}
-          onPositionChange={setMovePosition}
-        />
-      </div>
-    </>
+      <Navigation />
+    </div>
   );
 };
 

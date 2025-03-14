@@ -7,32 +7,27 @@ import { TbWorld } from "react-icons/tb";
 import { SlBasket } from "react-icons/sl";
 import { MdOutlineEmail } from "react-icons/md";
 
-export const connection = [
+export const socialmedia = [
   { name: "Linkedin", icon: <FaLinkedin /> },
   { name: "Github", icon: <FaGithub /> },
   { name: "YouTube", icon: <FaYoutube /> },
   { name: "Facebook", icon: <FaFacebook /> },
 ];
 
-export const navigation = [
- 
+export const sections = [
   {
-    name: "Video",
+    name: "About Me",
     icon: <FaVideo />,
     path: "/Intro",
-  },
-  {
-    name: "Stack",
-    icon: <BsStack />,
-    path: "/Stack",
-  },
+  }, 
   {
     name: "Projects",
     icon: <FaCode />,
     path: "/Projects",
   },
+
   {
-    name: "Mail",
+    name: "Contact",
     icon: <  MdOutlineEmail />,
     path: "/mail",
   },
