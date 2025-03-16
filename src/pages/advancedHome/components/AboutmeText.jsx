@@ -1,113 +1,94 @@
-/*import React from 'react';
-
-const AboutmeText = () => {
-  return (
-    <div>
-      <h2 className="text-2xl font-bold mb-4">About Me</h2>
-      <p className="mb-4">
-        I'm Milan Nikolics, a passionate and experienced Medior Fullstack Web Developer with a strong focus on creating efficient, scalable, and user-friendly web applications.
-      </p>
-      <p className="mb-4">
-        I have a solid understanding of the MERN stack (MongoDB, Express.js, React, Node.js) and I'm comfortable working with various other technologies and tools, such as:
-      </p>
-      <ul className="list-disc pl-5 mb-4">
-        <li>JavaScript (ES6+)</li>
-        <li>React.js</li>
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>MongoDB</li>
-        <li>Firebase</li>
-        <li>Git</li>
-        <li>HTML5</li>
-        <li>CSS3</li>
-      </ul>
-      <p className="mb-4">
-        I'm always eager to learn new things and I'm passionate about writing clean, maintainable, and well-tested code.
-      </p>
-      <p>
-        I'm looking for a challenging and rewarding remote opportunity where I can contribute to a team and make a real impact.
-      </p>
-    </div>
-  );
-};
-
-export default AboutmeText;*/
-import React from 'react';
+import React from "react";
 import { motion } from "framer-motion";
 
-const AboutmeText = () => {
-  const headingVariants = {
-    initial: { x: 0, scale: 1 },
-    hover: { x: 10, scale: 1.05 },
-  };
+const headingVariants = {
+  initial: { x: 0, scale: 1 },
+  hover: { x: 5, scale: 1.05 },
+};
 
+const transitionConfig = { type: "spring", stiffness: 100 };
+
+const AboutmeText = () => {
   return (
-    <div
-      className="lg:p-10 flex flex-col border-0 items-start"
-    >
+    <div className="lg:p-10 flex flex-col border-0 lg:items-start items-center">
       <motion.h2
-        className="text-2xl font-semibold mb-4 text-left"
+        className="text-2xl font-semibold mb-4 lg:text-left text-center"
         variants={headingVariants}
+        initial="initial"
         whileHover="hover"
-        transition={{ type: "spring", stiffness: 100 }}
+        transition={transitionConfig}
       >
         About Me
       </motion.h2>
 
-      <p
-        className="text-lg text-gray-800 mb-3 leading-relaxed text-left"
-      >
-        A highly motivated and skilled Software Engineer / Full-Stack Developer with a proven track record of developing robust and scalable web applications using the MERN stack.
+      <p className="text-lg text-gray-800 leading-relaxed lg:text-left text-center mb-4">
+        A highly motivated and skilled Software Engineer / Full-Stack Developer
+        with a proven track record of developing robust and scalable web
+        applications using the MERN stack.
       </p>
-
-      <p
-        className="text-lg text-gray-800 mb-3 leading-relaxed text-left"
-      >
-        Proficient in designing and implementing microservice architectures, managing cloud technologies, and ensuring application security. Eager to leverage expertise in backend development and DevOps practices to contribute to innovative and impactful projects.
+      <p className="text-lg text-gray-800 leading-relaxed lg:text-left text-center mb-6">
+        Proficient in designing and implementing microservice architectures,
+        cloud-based deployments, and ensuring application security. Passionate
+        about backend development and DevOps practices, eager to contribute to
+        innovative projects.
       </p>
 
       <motion.h3
-        className="text-xl font-semibold mb-3 text-left"
+        className="text-xl font-semibold mb-4 lg:text-left text-center"
         variants={headingVariants}
+        initial="initial"
         whileHover="hover"
-        transition={{ type: "spring", stiffness: 100 }}
+        transition={transitionConfig}
       >
         Key Skills & Experience
       </motion.h3>
 
-      <ul  className="list-disc pl-5 mb-3 text-lg text-gray-800 leading-relaxed text-left">
-        <li>Full-Stack Web Development:  MERN stack (MongoDB, Express.js, React, Node.js) expertise.</li>
-        <li>Microservice Architecture: Designing and implementing microservices.</li>
-        <li>RESTful API Design:  Designing and developing RESTful APIs.</li>
-        <li>Databases:  NoSQL databases (e.g., MongoDB).</li>
-        <li>Frontend Development:  React and TypeScript for user-friendly UIs.</li> {/*TypeScript hozzáadva*/}
-        <li>Version Control:  Git.</li>
-        <li>Testing:  Unit and integration tests.</li>
-        <li>Debugging:  Efficiently debug and fix code.</li>
-   
+      <ul className="lg:list-disc pl-5 mb-6 text-lg text-gray-800 leading-relaxed lg:text-left text-center">
+        <li>MERN stack (MongoDB, Express.js, React, Node.js) expertise.</li>
+        <li>
+          Microservice Architecture: Designing and implementing microservices.
+        </li>
+        <li>RESTful API Design & Development.</li>
+        <li>NoSQL & SQL Databases: MongoDB, Mongoose, PostgreSQL.</li>
+        <li>
+          Frontend: React, Next.js, React Native, TypeScript, Redux Toolkit,
+          Tailwind CSS, Bootstrap, Sass.
+        </li>
+        <li>Cloud & DevOps: AWS, Firebase, Terraform.</li>
+        <li>Version Control: Git, GitHub.</li>
+        <li>Testing: Unit and integration testing.</li>
+        <li>Debugging: Efficient troubleshooting and optimization.</li>
+        <li>
+          Security: Authentication, Authorization, JWT, Secure API Development.
+        </li>
+        <li>Performance Optimization: Efficient code, caching, Redis.</li>
+        <li>Server & Deployment: Docker, CI/CD, SSH, Terraform.</li>
       </ul>
 
       <motion.h3
-        className="text-xl font-semibold mb-3 text-left"
+        className="text-xl font-semibold  mb-4 lg:text-left text-center"
         variants={headingVariants}
+        initial="initial"
         whileHover="hover"
-        transition={{ type: "spring", stiffness: 100 }}
+        transition={transitionConfig}
       >
         Technical Stack
       </motion.h3>
 
-      <ul  className="list-disc pl-5 mb-3 text-lg text-gray-800 leading-relaxed text-left">
-        <li>Frontend: React, TypeScript, JavaScript (ES6+), HTML5, CSS3, Redux, Axios</li> {/*TypeScript hozzáadva*/}
-        <li>Backend: Node.js, Express.js, MongoDB, Mongoose, JWT, CORS, dotenv, Winston, AWS</li> {/*AWS hozzáadva*/}
-        <li>Other: Git, npm, ESLint, Prettier, Postman, Docker, CI/CD</li>
+      <ul className="lg:list-disc pl-5 text-lg text-gray-800 leading-relaxed flex flex-col gap-2 lg:text-left text-center">
+        <li>
+          Frontend: React, Next.js, React Native, TypeScript, JavaScript (ES6+),
+          HTML5, CSS3, Redux Toolkit, Axios, Tailwind CSS, Bootstrap, Sass.
+        </li>
+        <li>
+          Backend: Node.js, Express.js, MongoDB, Mongoose, PostgreSQL, JWT,
+          CORS, dotenv, Winston, AWS, Firebase, Redis.
+        </li>
+        <li>
+          DevOps & Tools: Docker, CI/CD, Terraform, SSH, Postman, ESLint,
+          Prettier.
+        </li>
       </ul>
-
-      <p
-        className="text-lg text-gray-800 mt-4 mb-3 leading-relaxed text-left"  //nagyobb margó a listához képest
-      >
-        Seeking a challenging remote Fullstack Web Developer position to contribute to a dynamic team.
-      </p>
-
     </div>
   );
 };

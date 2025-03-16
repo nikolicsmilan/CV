@@ -9,7 +9,7 @@ const HeroText = () => {
   return (
     <>
       <motion.div
-        className=" lg:p-10 flex flex-col border-0  border-orange-400 items-center lg:items-start"
+        className="p-2 lg:p-10 flex flex-col border-0  border-orange-400 items-center lg:items-start"
         initial="initial"
         whileHover="hover" // Hover az egész div-re
         variants={{
