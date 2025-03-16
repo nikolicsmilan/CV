@@ -12,39 +12,28 @@ const AdvancedHome = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [sectionHeight, setSectionHeight] = useState(0);
-
-  useEffect(() => {
-    const calculateSectionHeight = () => {
-      if (headerRef.current) {
-        const headerHeight = headerRef.current.offsetHeight;
-        setSectionHeight(window.innerHeight - headerHeight);
-      }
-    };
-
-    calculateSectionHeight();
-    window.addEventListener('resize', calculateSectionHeight);
-
-    return () => {
-      window.removeEventListener('resize', calculateSectionHeight);
-    };
-  }, []);
 
   return (
     <div className=" flex flex-col w-full h-full text-base border-0 lg:border-0 border-sky-400">
       <div className="w-full" ref={headerRef}>
-        <AdvancedHeader setIsSidebarOpen={setIsSidebarOpen} isSidebarOpen={isSidebarOpen} />
+        <AdvancedHeader
+          setIsSidebarOpen={setIsSidebarOpen}
+          isSidebarOpen={isSidebarOpen}
+        />
       </div>
 
       <div
-        className={`w-full h-full ${isSidebarOpen ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}
-        style={{ height: `${sectionHeight}px` }}
+        className={`w-full h-full border-0 border-red-400 ${
+          isSidebarOpen ? "opacity-50 pointer-events-none" : "opacity-100"
+        }`}
       >
         <Hero />
       </div>
       <div
-        className={`w-full h-full ${isSidebarOpen ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}
-        style={{ height: `${sectionHeight}px` }}
+        className={`w-full h-full ${
+          isSidebarOpen ? "opacity-50 pointer-events-none" : "opacity-100"
+        }`}
+        // style={{ height: `${sectionHeight}px` }}
       >
         <Aboutme />
       </div>

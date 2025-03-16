@@ -1,28 +1,23 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import HeroText from "./components/HeroText";
 import profile from "../../assets/Profil7.png";
 
 const Hero = ({}) => {
-  const heroTextRef = useRef(null);
-  const imgRef = useRef(null);
-
-  useEffect(() => {
-    if (heroTextRef.current && imgRef.current) {
-      const heroTextHeight = heroTextRef.current.offsetHeight;
-      imgRef.current.style.height = `${heroTextHeight}px`;
-    }
-  });
-
   return (
     <div
-      className="bg-gray-100 flex flex-col lg:flex-row lg:h-full border-0
-     border-lime-400 bg-no-repeat bg-left bg-cover max-w-7xl mx-auto lg:px-4"
+      className="bg-gray-100 flex flex-col justify-center 
+      items-center lg:items-start lg:flex-row  lg:h-full border-0
+     border-sky-400 lg:max-w-7xl mx-auto "
     >
-      <div ref={heroTextRef} className="mt-10 lg:my-0 lg:w-1/3">
+      <div className="lg:mt-10 pt-5 lg:my-0 w-96 border-0 border-sky-400 lg:p-0">
         <HeroText />
       </div>
-      <div className="border-0 flex items-center justify-center">
-        <img ref={imgRef} className="border-0 border-lime-400" src={profile} />
+      <div className="border-0 border-red-400  lg:h-full w-full flex justify-center lg:items-center">
+        <img
+          className="border-0 border-lime-400 object-cover object-[0px] lg:object-[-30px]
+        lg:w-full lg:h-full h-full"
+          src={profile}
+        />
       </div>
     </div>
   );

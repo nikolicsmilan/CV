@@ -1,9 +1,6 @@
 import React, { useRef } from "react";
 import AboutmeText from "./components/AboutmeText";
 import thinking from "../../assets/Thinking5.png";
-import thinking2 from "../../assets/advanced/thinking24.png"
-import smilefront from "../../assets/advanced/smile_front.png"
-import smilefront2 from "../../assets/advanced/smile5.png"
 
 const Aboutme = () => {
   const aboutmeTextRef = useRef(null);
@@ -20,10 +17,10 @@ const Aboutme = () => {
       </div>
       <div
         ref={imgRef}
-        className="border-0 lg:flex-1 p-1" // Fontos a flex-1
+        className="shadow-2xl overflow-hidden lg:flex-1 p-100 rounded-full flex items-center justify-center m-5 lg:m-0" // Fontos a flex-1
       >
         <img
-          className="border-0 lg:w-full lg:h-full lg:object-cover lg:object-position-top" // Hozzáadtuk az object-position-top osztályt
+          className="border-0 lg:w-full lg:h-full lg:object-cover lg:object-[-60px] " // Hozzáadtuk az object-position-top osztályt
           src={thinking}
           alt="Milan Nikolics - Fullstack Web Developer"
         />
@@ -33,11 +30,3 @@ const Aboutme = () => {
 };
 
 export default Aboutme;
-// for
-/*
-<img
-          className="border-0 w-full h-full object-cover  object-position-top" // Hozzáadtuk az object-position-top osztályt
-          src={smilefront2}
-          alt="Milan Nikolics - Fullstack Web Developer"
-        />
-*/
